@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "additionalProperties": true,
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "properties": {
+    "accused_action": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/accused_action",
+      "title": "The Accused_action Schema",
+      "type": "string"
+    },
+    "accused_gender": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/accused_gender",
+      "title": "The Accused_gender Schema",
+      "type": "string"
+    },
+    "accused_names": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/accused_names",
+      "title": "The Accused_names Schema",
+      "type": "string"
+    },
+    "accused_religion": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/accused_religion",
+      "title": "The Accused_religion Schema",
+      "type": "string"
+    },
+    "accused_tag": {
+      "default": "",
+      "description": "",
+      "id": "/properties/accused_tag",
+      "title": "The Accused_tag Schema",
+      "type": "string"
+    },
+    "area": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/area",
+      "title": "The Area Schema",
+      "type": "string"
+    },
+    "count_dead": {
+      "default": 0,
+      "description": "An explanation about the purpose of this instance.",
+      "exclusiveMaximum": false,
+      "exclusiveMinimum": false,
+      "id": "/properties/count_dead",
+      "title": "The Count_dead Schema",
+      "type": "integer"
+    },
+    "count_injured": {
+      "default": 0,
+      "description": "An explanation about the purpose of this instance.",
+      "exclusiveMaximum": false,
+      "exclusiveMinimum": false,
+      "id": "/properties/count_injured",
+      "title": "The Count_injured Schema",
+      "type": "integer"
+    },
+    "date": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/date",
+      "title": "The Date Schema",
+      "type": "string"
+    },
+    "does_the_state_criminalise_accused_actions": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/does_the_state_criminalise_accused_actions",
+      "title": "The Does_the_state_criminalise_accused_actions Schema",
+      "type": "string"
+    },
+    "does_the_state_criminalise_victims_actions": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/does_the_state_criminalise_victims_actions",
+      "title": "The Does_the_state_criminalise_victims_actions Schema",
+      "type": "string"
+    },
+    "image": {
+      "default": "",
+      "description": "",
+      "id": "/properties/image",
+      "title": "The Image Schema",
+      "type": "string"
+    },
+    "menu": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/menu",
+      "title": "The Menu Schema",
+      "type": "string"
+    },
+    "state": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/state",
+      "title": "The State Schema",
+      "type": "string"
+    },
+    "state_ruling_party": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/state_ruling_party",
+      "title": "The State_ruling_party Schema",
+      "type": "string"
+    },
+    "the_lynching": {
+      "default": "",
+      "description": "",
+      "id": "/properties/the_lynching",
+      "title": "The The_lynching Schema",
+      "type": "string"
+    },
+    "title": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/title",
+      "title": "The Title Schema",
+      "type": "string"
+    },
+    "url": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/url",
+      "title": "The Url Schema",
+      "type": "string"
+    },
+    "victim_action": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_action",
+      "title": "The Victim_action Schema",
+      "type": "string"
+    },
+    "victim_crime": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_crime",
+      "title": "The Victim_crime Schema",
+      "type": "string"
+    },
+    "victim_gender": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_gender",
+      "title": "The Victim_gender Schema",
+      "type": "string"
+    },
+    "victim_names": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_names",
+      "title": "The Victim_names Schema",
+      "type": "string"
+    },
+    "victim_religion": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_religion",
+      "title": "The Victim_religion Schema",
+      "type": "string"
+    },
+    "victim_tag": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/victim_tag",
+      "title": "The Victim_tag Schema",
+      "type": "string"
+    },
+    "which_law": {
+      "default": "",
+      "description": "An explanation about the purpose of this instance.",
+      "id": "/properties/which_law",
+      "title": "The Which_law Schema",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
