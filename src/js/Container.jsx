@@ -75,7 +75,55 @@ export default class MobJusticeCard extends React.Component {
     if (this.state.schemaJSON === undefined ){
       return(<div>Loading</div>)
     } else {
-      return(<div>Waiting for Laptop mode</div>)
+      const data = this.state.dataJSON.card_data;
+      let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
+      return (
+        <div id="protograph-div" className="protograph-tooltip" style = {styles}>
+          <div className='t-date-div'>
+            <div className="t-date">{data.data.date}</div>
+          </div>
+          <div className="proto-col-sm-6">
+            <div className="t-title">{data.data.title}</div>
+            <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
+          </div>
+          {data.data.image ? <div className="proto-col-sm-6"><img className="t-image" src={data.data.image}/></div> : ''}
+          <div className="proto-col-sm-6">
+            <div className="t-header">What were the victims doing?</div>
+            <div className="t-p">
+              {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} 
+            </div>
+          </div>
+          <div className="proto-col-sm-6">
+            {data.data.victim_names !== '' ? <div><div className="t-header">Names of the victims</div>
+            <div className="t-p">{data.data.victim_names}</div></div> : ''}
+          </div>
+          <div className="proto-col-sm-6">
+            <div className="t-header">What was the mob doing?</div>
+            <div className="t-p">
+              {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} 
+            </div>
+          </div>
+          {data.data.accused_names !== '' ? <div className="proto-col-sm-6"><div className="t-header">Names of the accused</div><div className="t-p">{data.data.accused_names}</div></div>: ''}
+          <div className="proto-col-sm-6">
+            <div className="t-header">Was it illegal?</div>
+            <div className="t-p">
+              The mob broke the law. 
+              {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
+              }
+            </div>
+          </div>
+          <div className="proto-col-sm-6">
+            <div className="t-header">What happened?</div>
+            <div className="t-p">{data.data.the_lynching}</div>
+            <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+            </div>
+          </div>
+          <div className="proto-col-sm-6">
+            <div className="t-header">Further Reading</div>
+            <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+          </div>
+        </div>
+      )
     }
   }
 
@@ -92,34 +140,44 @@ export default class MobJusticeCard extends React.Component {
           <div className="t-title">{data.data.title}</div>
           <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
           {data.data.image ? <img className="t-image" src={data.data.image}/> : ''}
-          <div className="t-header">What were the victims doing?</div>
-          <div className="t-p">
-            {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} 
+          <div className="t-section">
+            <div className="t-header">What were the victims doing?</div>
+            <div className="t-p">
+              {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} 
+            </div>
           </div>
           {data.data.image ? <div id="first-read" className="t-read-more first-read-more" onClick={(e) => this.handleFirstReadMoreClick(e)}>Read More</div> : ''}
           <div className={data.data.image ? 't-after-first-read-more': 't-not-after-first-read-more'}>
-            {data.data.victim_names !== '' ? <div><div className="t-header">Names of the victims</div>
+            {data.data.victim_names !== '' ? <div className="t-section"><div className="t-header">Names of the victims</div>
             <div className="t-p">{data.data.victim_names}</div></div> : ''}
-            <div className="t-header">What was the mob doing?</div>
-            <div className="t-p">
-              {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} 
+            <div className="t-section">
+              <div className="t-header">What was the mob doing?</div>
+              <div className="t-p">
+                {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} 
+              </div>
             </div>
             {data.data.image ? '' : <div className="t-read-more second-read-more" onClick={(e) => this.handleSecondReadMoreClick(e)}>Read More</div> }
             <div className={data.data.image ? 't-not-after-second-read-more' : 't-after-second-read-more' }>
-              {data.data.accused_names !== '' ? <div><div className="t-header">Names of the accused</div>
+              {data.data.accused_names !== '' ? <div className="t-section"><div className="t-header">Names of the accused</div>
               <div className="t-p">{data.data.accused_names}</div></div>: ''}
-              <div className="t-header">Was it illegal?</div>
-              <div className="t-p">
-              The mob broke the law. 
-              {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
-              }
+              <div className="t-section">
+                <div className="t-header">Was it illegal?</div>
+                <div className="t-p">
+                The mob broke the law. 
+                {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
+                }
+                </div>
               </div>
-              <div className="t-header">What happened?</div>
-              <div className="t-p">{data.data.the_lynching}</div>
-              <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+              <div className="t-section">
+                <div className="t-header">What happened?</div>
+                <div className="t-p">{data.data.the_lynching}</div>
+                <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+                </div>
               </div>
-              <div className="t-header">Further Reading</div>
-              <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+              <div className="t-section">
+                <div className="t-header">Further Reading</div>
+                <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+              </div>
             </div>
           </div>
         </div>
@@ -133,43 +191,50 @@ export default class MobJusticeCard extends React.Component {
     } else {
       const data = this.state.dataJSON.card_data;
       let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
-      let screenshot_styles =  {
-        height:'auto'
-      }
       return (
-        <div id="ProtoScreenshot" className="protograph-tooltip"  style={styles}>
+        <div id="protograph-div" className="protograph-tooltip" style = {styles}>
           <div className="t-date">{data.data.date}</div>
           <div className="t-title">{data.data.title}</div>
           <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
           {data.data.image ? <img className="t-image" src={data.data.image}/> : ''}
-          <div className="t-header">What were the victims doing?</div>
-          <div className="t-p">
-            {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} 
-          </div>
-          {data.data.image ? <div className="t-read-more first-read-more" onClick={(e) => this.handleFirstReadMoreClick(e)}>Read More</div> : ''}
-          <div className={data.data.image ? 't-after-first-read-more': 't-not-after-first-read-more'}>
-            {data.data.victim_names !== '' ? <div><div className="t-header">Names of the victims</div>
-            <div className="t-p">{data.data.victim_names}</div></div> : ''}
-            <div className="t-header">What was the mob doing?</div>
+          <div className="t-section">
+            <div className="t-header">What were the victims doing?</div>
             <div className="t-p">
-              {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} 
+              {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} 
+            </div>
+          </div>
+          {data.data.image ? <div id="first-read" className="t-read-more first-read-more" onClick={(e) => this.handleFirstReadMoreClick(e)}>Read More</div> : ''}
+          <div className={data.data.image ? 't-after-first-read-more': 't-not-after-first-read-more'}>
+            {data.data.victim_names !== '' ? <div className="t-section"><div className="t-header">Names of the victims</div>
+            <div className="t-p">{data.data.victim_names}</div></div> : ''}
+            <div className="t-section">
+              <div className="t-header">What was the mob doing?</div>
+              <div className="t-p">
+                {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} 
+              </div>
             </div>
             {data.data.image ? '' : <div className="t-read-more second-read-more" onClick={(e) => this.handleSecondReadMoreClick(e)}>Read More</div> }
             <div className={data.data.image ? 't-not-after-second-read-more' : 't-after-second-read-more' }>
-              {data.data.accused_names !== '' ? <div><div className="t-header">Names of the accused</div>
+              {data.data.accused_names !== '' ? <div className="t-section"><div className="t-header">Names of the accused</div>
               <div className="t-p">{data.data.accused_names}</div></div>: ''}
-              <div className="t-header">Was it illegal?</div>
-              <div className="t-p">
-              The mob broke the law. 
-              {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
-              }
+              <div className="t-section">
+                <div className="t-header">Was it illegal?</div>
+                <div className="t-p">
+                The mob broke the law. 
+                {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
+                }
+                </div>
               </div>
-              <div className="t-header">What happened?</div>
-              <div className="t-p">{data.data.the_lynching}</div>
-              <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+              <div className="t-section">
+                <div className="t-header">What happened?</div>
+                <div className="t-p">{data.data.the_lynching}</div>
+                <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+                </div>
               </div>
-              <div className="t-header">Further Reading</div>
-              <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+              <div className="t-section">
+                <div className="t-header">Further Reading</div>
+                <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+              </div>
             </div>
           </div>
         </div>
