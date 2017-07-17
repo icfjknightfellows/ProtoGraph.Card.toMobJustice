@@ -13,6 +13,7 @@ export default class EditMobJusticeCard extends React.Component {
         card_data: {},
         configs: {}
       },
+      uiSchemaJSON: {},
       mode: "laptop",
       publishing: false,
       schemaJSON: undefined,
@@ -30,15 +31,15 @@ export default class EditMobJusticeCard extends React.Component {
       optionalConfigJSON: this.state.dataJSON.configs,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.explainer_header.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
   componentDidMount() {
     // get sample json data based on type i.e string or object
     if (typeof this.props.dataURL === "string"){
-      axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
-        .then(axios.spread((card, schema, opt_config, opt_config_schema) => {
+      axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL),  axios.get(this.props.uiSchemaURL)])
+        .then(axios.spread((card, schema, opt_config, opt_config_schema, uiSchema) => {
           this.setState({
             dataJSON: {
               card_data: card.data,
@@ -46,7 +47,8 @@ export default class EditMobJusticeCard extends React.Component {
             },
             schemaJSON: schema.data,
             optionalConfigJSON: opt_config.data,
-            optionalConfigSchemaJSON: opt_config_schema.data
+            optionalConfigSchemaJSON: opt_config_schema.data,
+            uiSchemaJSON: uiSchema.data
           });
         }));
     }
@@ -96,7 +98,7 @@ export default class EditMobJusticeCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.card_data.data.explainer_header}</h3><p>${this.state.dataJSON.card_data.data.explainer_text}</p></blockquote>`
+    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.card_data.data.title}</h3><p>${this.state.dataJSON.card_data.data.state}</p><p>${this.state.dataJSON.card_data.data.area}</p></blockquote>`
     return seo_blockquote;
   }
 
@@ -182,13 +184,15 @@ export default class EditMobJusticeCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    ToExplain
+                    ToMobJustice
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}
                   onSubmit={((e) => this.onSubmitHandler(e))}
                   onChange={((e) => this.onChangeHandler(e))}
-                  formData={this.renderFormData()}>
+                  formData={this.renderFormData()}
+                  uiSchema={this.state.uiSchema}
+                  >
                   <a id="protograph-prev-link" className={`${this.state.publishing ? 'protograph-disable' : ''}`} onClick={((e) => this.onPrevHandler(e))}>{this.showLinkText()} </a>
                   <button type="submit" className={`${this.state.publishing ? 'ui primary loading disabled button' : ''} default-button protograph-primary-button`}>{this.showButtonText()}</button>
                 </JSONSchemaForm>

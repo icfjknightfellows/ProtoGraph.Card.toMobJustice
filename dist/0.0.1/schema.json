@@ -1,188 +1,225 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "additionalProperties": true,
   "definitions": {},
   "id": "http://example.com/example.json",
   "properties": {
-    "accused_action": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/accused_action",
-      "title": "The Accused_action Schema",
-      "type": "string"
-    },
-    "accused_gender": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/accused_gender",
-      "title": "The Accused_gender Schema",
-      "type": "string"
-    },
-    "accused_names": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/accused_names",
-      "title": "The Accused_names Schema",
-      "type": "string"
-    },
-    "accused_religion": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/accused_religion",
-      "title": "The Accused_religion Schema",
-      "type": "string"
-    },
-    "accused_tag": {
-      "default": "",
-      "description": "",
-      "id": "/properties/accused_tag",
-      "title": "The Accused_tag Schema",
-      "type": "string"
-    },
-    "area": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/area",
-      "title": "The Area Schema",
-      "type": "string"
-    },
-    "count_dead": {
-      "default": 0,
-      "description": "An explanation about the purpose of this instance.",
-      "exclusiveMaximum": false,
-      "exclusiveMinimum": false,
-      "id": "/properties/count_dead",
-      "title": "The Count_dead Schema",
-      "type": "integer"
-    },
-    "count_injured": {
-      "default": 0,
-      "description": "An explanation about the purpose of this instance.",
-      "exclusiveMaximum": false,
-      "exclusiveMinimum": false,
-      "id": "/properties/count_injured",
-      "title": "The Count_injured Schema",
-      "type": "integer"
-    },
-    "date": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/date",
-      "title": "The Date Schema",
-      "type": "string"
-    },
-    "does_the_state_criminalise_accused_actions": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/does_the_state_criminalise_accused_actions",
-      "title": "The Does_the_state_criminalise_accused_actions Schema",
-      "type": "string"
-    },
-    "does_the_state_criminalise_victims_actions": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/does_the_state_criminalise_victims_actions",
-      "title": "The Does_the_state_criminalise_victims_actions Schema",
-      "type": "string"
-    },
-    "image": {
-      "default": "",
-      "description": "",
-      "id": "/properties/image",
-      "title": "The Image Schema",
-      "type": "string"
-    },
-    "menu": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/menu",
-      "title": "The Menu Schema",
-      "type": "string"
-    },
-    "state": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/state",
-      "title": "The State Schema",
-      "type": "string"
-    },
-    "state_ruling_party": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/state_ruling_party",
-      "title": "The State_ruling_party Schema",
-      "type": "string"
-    },
-    "the_lynching": {
-      "default": "",
-      "description": "",
-      "id": "/properties/the_lynching",
-      "title": "The The_lynching Schema",
-      "type": "string"
-    },
-    "title": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/title",
-      "title": "The Title Schema",
-      "type": "string"
-    },
-    "url": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/url",
-      "title": "The Url Schema",
-      "type": "string"
-    },
-    "victim_action": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_action",
-      "title": "The Victim_action Schema",
-      "type": "string"
-    },
-    "victim_crime": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_crime",
-      "title": "The Victim_crime Schema",
-      "type": "string"
-    },
-    "victim_gender": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_gender",
-      "title": "The Victim_gender Schema",
-      "type": "string"
-    },
-    "victim_names": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_names",
-      "title": "The Victim_names Schema",
-      "type": "string"
-    },
-    "victim_religion": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_religion",
-      "title": "The Victim_religion Schema",
-      "type": "string"
-    },
-    "victim_tag": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/victim_tag",
-      "title": "The Victim_tag Schema",
-      "type": "string"
-    },
-    "which_law": {
-      "default": "",
-      "description": "An explanation about the purpose of this instance.",
-      "id": "/properties/which_law",
-      "title": "The Which_law Schema",
-      "type": "string"
+    "data": {
+      "id": "http://example.com/example.json/properties/data",
+      "properties": {
+        "accused_action": {
+          "default": "saw the victims's pick-up on the highway and assumed that they were illegally transporting bovines.",
+          "id": "http://example.com/example.json/properties/data/properties/accused_action",
+          "title": "The accused action",
+          "type": "string"
+        },
+        "accused_gender": {
+          "default": "Male",
+          "id": "http://example.com/example.json/properties/data/properties/accused_gender",
+          "title": "The accused gender",
+          "type": "string",
+          "enum": [
+            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ],
+          "enumNames": [
+            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ]
+        },
+        "accused_names": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/accused_names",
+          "title": "The accused names",
+          "type": "string"
+        },
+        "accused_religion": {
+          "default": "Hindu",
+          "id": "http://example.com/example.json/properties/data/properties/accused_religion",
+          "title": "The accused religion",
+          "type": "string",
+          "enum": [
+            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+          ],
+          "enumNames": [
+            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+          ]
+        },
+        "accused_tag": {
+          "default": "gau rakshaks",
+          "id": "http://example.com/example.json/properties/data/properties/accused_tag",
+          "title": "The accused tag",
+          "type": "string"
+        },
+        "area": {
+          "default": "Alwar",
+          "id": "http://example.com/example.json/properties/data/properties/area",
+          "title": "Area",
+          "type": "string"
+        },
+        "count_dead": {
+          "default": 0,
+          "id": "http://example.com/example.json/properties/data/properties/count_dead",
+          "title": "Number of dead",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "count_injured": {
+          "default": 0,
+          "id": "http://example.com/example.json/properties/data/properties/count_injured",
+          "title": "Number of injured",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "date": {
+          "default": "April 5, 2017",
+          "id": "http://example.com/example.json/properties/data/properties/date",
+          "title": "Date",
+          "type": "string"
+        },
+        "does_the_state_criminalise_accused_actions": {
+          "default": "Yes",
+          "id": "http://example.com/example.json/properties/data/properties/does_the_state_criminalise_accused_actions",
+          "title": "Was the accused possibly committing a crime?",
+          "type": "string",
+          "enum": [
+            "Yes", "No", "Don’t know?"
+          ],
+          "enumNames": [
+            "Yes", "No", "Don’t know?"
+          ]
+        },
+        "does_the_state_criminalise_victims_actions": {
+          "default": "No",
+          "id": "http://example.com/example.json/properties/data/properties/does_the_state_criminalise_victims_actions",
+          "title": "Was the victim possibly committing a crime?",
+          "type": "string",
+          "enum": [
+            "Yes", "No", "Don’t know?"
+          ],
+          "enumNames": [
+            "Yes", "No", "Don’t know?"
+          ]
+        },
+        "image": {
+          "default": "http://images.indianexpress.com/2017/04/cow-vigilantism-759.jpg",
+          "id": "http://example.com/example.json/properties/data/properties/image",
+          "title": "Image URL",
+          "type": "string"
+        },
+        "menu": {
+          "default": "Cattle Slaughter",
+          "id": "http://example.com/example.json/properties/data/properties/menu",
+          "title": "Category",
+          "type": "string"
+        },
+        "state": {
+          "default": "Rajasthan",
+          "id": "http://example.com/example.json/properties/data/properties/state",
+          "title": "State",
+          "type": "string"
+        },
+        "state_ruling_party": {
+          "default": "BJP",
+          "id": "http://example.com/example.json/properties/data/properties/state_ruling_party",
+          "title": "State ruling party",
+          "type": "string"
+        },
+        "the_lynching": {
+          "default": "The Gau Rakshaks intercepted the pick-up and proceeded to beat up the men. Pehlu Khan succumbs to injuries.",
+          "id": "http://example.com/example.json/properties/data/properties/the_lynching",
+          "title": "Lynching",
+          "type": "string"
+        },
+        "title": {
+          "default": "Pehlu Khan (55) and others",
+          "id": "http://example.com/example.json/properties/data/properties/title",
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "default": "http://indianexpress.com/article/india/rajasthan-five-men-assaulted-by-gau-rakshaks-in-alwar-1-dead-4599964/",
+          "id": "http://example.com/example.json/properties/data/properties/url",
+          "title": "Further reading",
+          "type": "string"
+        },
+        "victim_action": {
+          "default": "were legally transporting two milch cows in a pickup truck on a Haryana-bound highway in Rajasthan",
+          "id": "http://example.com/example.json/properties/data/properties/victim_action",
+          "title": "Victim's action",
+          "type": "string"
+        },
+        "victim_crime": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/victim_crime",
+          "title": "Victim's crime",
+          "type": "string"
+        },
+        "victim_gender": {
+          "default": "Male",
+          "id": "http://example.com/example.json/properties/data/properties/victim_gender",
+          "title": "Victim's gender",
+          "type": "string",
+          "enum": [
+            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ],
+          "enumNames": [
+            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ]
+        },
+        "victim_names": {
+          "default": "Pehlu Khan (55), Azmat (22), Irshad, Aarif and Rafiq",
+          "id": "http://example.com/example.json/properties/data/properties/victim_names",
+          "title": "Victim's names",
+          "type": "string"
+        },
+        "victim_religion": {
+          "default": "Muslim",
+          "id": "http://example.com/example.json/properties/data/properties/victim_religion",
+          "title": "Victim's religion",
+          "type": "string",
+          "enum": [
+            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+          ],
+          "enumNames": [
+            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+          ]
+        },
+        "victim_tag": {
+          "default": "farmers",
+          "id": "http://example.com/example.json/properties/data/properties/victim_tag",
+          "title": "Victim's tag",
+          "type": "string"
+        },
+        "which_law": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/which_law",
+          "title": "Which law?",
+          "type": "string"
+        },
+        "sub_crime": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/sub_crime",
+          "title": "Subcrime",
+          "type": "string"
+        },
+        "lat": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/lat",
+          "title": "Latitude",
+          "type": "number"
+        },
+        "lng":{
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/lng",
+          "title": "Longitude",
+          "type": "number"
+        }
+      },
+      "type": "object"
     }
   },
+  "required": [
+      "data"
+  ],
   "type": "object"
 }

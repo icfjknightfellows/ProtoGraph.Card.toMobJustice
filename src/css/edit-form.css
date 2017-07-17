@@ -51,4 +51,10 @@
   pointer-events: none;
   cursor: default;
 }
+
+.form-container{
+  overflow-y: scroll;
+  height: 650px; 
+}
+
 /*# sourceMappingURL=master-style.css.map */
