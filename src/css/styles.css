@@ -155,7 +155,7 @@ hr{
 
 .desktop-view .card{
   background: white;
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid #efefef;
   padding: 15px 5px;
   display: inline-block;
