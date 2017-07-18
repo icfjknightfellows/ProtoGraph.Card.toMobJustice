@@ -104,7 +104,7 @@
               if(clientRect.height){
                 var height = clientRect.height,
                   width = clientRect.width;
-                console.log(that, "that in get size")
+                // console.log(that, "that in get size")
                 that.send("resize_frame", {height: height, width: width});
                 clearInterval(intervalId);
               }

@@ -78,49 +78,48 @@ export default class MobJusticeCard extends React.Component {
       const data = this.state.dataJSON.card_data;
       let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
       return (
-        <div id="protograph-div" className="protograph-tooltip" style = {styles}>
-          <div className='t-date-div'>
-            <div className="t-date">{data.data.date}</div>
-          </div>
-          <div className="proto-col-sm-6">
-            <div className="t-title">{data.data.title}</div>
-            <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
-          </div>
-          {data.data.image ? <div className="proto-col-sm-6"><img className="t-image" src={data.data.image}/></div> : ''}
-          <div className="proto-col-sm-6">
-            <div className="t-header">What were the victims doing?</div>
-            <div className="t-p">
-              {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action}
+        <div id="protograph-div" className="protograph-tooltip desktop-view" style = {styles}>
+          <div className="card">
+            <div className='date'>{data.data.date}</div>
+            <div className="card-header">
+              <div className="card-title">{data.data.title}</div>
             </div>
-          </div>
-          <div className="proto-col-sm-6">
-            {data.data.victim_names !== '' ? <div><div className="t-header">Names of the victims</div>
-            <div className="t-p">{data.data.victim_names}</div></div> : ''}
-          </div>
-          <div className="proto-col-sm-6">
-            <div className="t-header">What was the mob doing?</div>
-            <div className="t-p">
-              {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action}
+            <div className="first-set-info">
+              <div className="information-set bottom-border">
+                <div className="card-lable">Location</div>
+                <div className="card-text">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
+              </div>
+              <div className="information-set bottom-border">
+               {data.data.victim_names !== '' ? <div><div className="card-lable">Names of the victims</div><div className="card-text">{data.data.victim_names}</div></div> : ''}
+              </div>
+              <div className="information-set bottom-border">
+                <div className="card-lable">What were the victims doing?</div>
+                <div className="card-text">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action}</div>
+              </div>
+              {data.data.accused_names !== '' ? <div className="information-set bottom-border"><div className="card-lable">Names of the accused</div><div className="card-text">{data.data.accused_names}</div></div> : ''}
+              <div className="information-set bottom-border">
+                <div className="card-lable">What was the mob doing?</div>
+                <div className="card-text">{data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action}</div>
+              </div>
+              <div className="information-set">
+                <div className="card-lable">Was it illegal?</div>
+                <div className="card-text">The mob broke the law.
+                  {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
+                  }
+                </div>
+              </div>
             </div>
-          </div>
-          {data.data.accused_names !== '' ? <div className="proto-col-sm-6"><div className="t-header">Names of the accused</div><div className="t-p">{data.data.accused_names}</div></div>: ''}
-          <div className="proto-col-sm-6">
-            <div className="t-header">Was it illegal?</div>
-            <div className="t-p">
-              The mob broke the law.
-              {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
-              }
+            <div className="first-set-info">
+              {data.data.image ? <div><img className="image-area" src={data.data.image}/></div> : ''}
+              <div className="information-set bottom-border">
+                <div className="card-lable">What happened?</div>
+                <div className="card-text">{data.data.the_lynching}<br/><br/> {data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</div>
+              </div>
+              <div className="information-set">
+                <div className="card-lable">Further Reading</div>
+                <div className="card-text"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+              </div>
             </div>
-          </div>
-          <div className="proto-col-sm-6">
-            <div className="t-header">What happened?</div>
-            <div className="t-p">{data.data.the_lynching}</div>
-            <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
-            </div>
-          </div>
-          <div className="proto-col-sm-6">
-            <div className="t-header">Further Reading</div>
-            <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
           </div>
         </div>
       )
@@ -258,3 +257,44 @@ export default class MobJusticeCard extends React.Component {
     }
   }
 }
+
+          // <div className="proto-col-sm-6">
+          //   <div className="t-title">{data.data.title}</div>
+          //   <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
+          // </div>
+          // {data.data.image ? <div className="proto-col-sm-6"><img className="t-image" src={data.data.image}/></div> : ''}
+          // <div className="proto-col-sm-6">
+          //   <div className="t-header">What were the victims doing?</div>
+          //   <div className="t-p">
+          //     {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action}
+          //   </div>
+          // </div>
+          // <div className="proto-col-sm-6">
+          //   {data.data.victim_names !== '' ? <div><div className="t-header">Names of the victims</div>
+          //   <div className="t-p">{data.data.victim_names}</div></div> : ''}
+          // </div>
+          // <div className="proto-col-sm-6">
+          //   <div className="t-header">What was the mob doing?</div>
+          //   <div className="t-p">
+          //     {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action}
+          //   </div>
+          // </div>
+          // {data.data.accused_names !== '' ? <div className="proto-col-sm-6"><div className="t-header">Names of the accused</div><div className="t-p">{data.data.accused_names}</div></div>: ''}
+          // <div className="proto-col-sm-6">
+          //   <div className="t-header">Was it illegal?</div>
+          //   <div className="t-p">
+          //     The mob broke the law.
+          //     {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
+          //     }
+          //   </div>
+          // </div>
+          // <div className="proto-col-sm-6">
+          //   <div className="t-header">What happened?</div>
+          //   <div className="t-p">{data.data.the_lynching}</div>
+          //   <div className="t-p t-padup">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.
+          //   </div>
+          // </div>
+          // <div className="proto-col-sm-6">
+          //   <div className="t-header">Further Reading</div>
+          //   <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
+          // </div>
