@@ -145,15 +145,7 @@ hr{
   border: 1px solid #efefef;
 }
 
-.desktop-view .container{
-  width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-
 .desktop-view .card{
-  background: white;
   padding-top:15px;
   display: inline-block;
 }
