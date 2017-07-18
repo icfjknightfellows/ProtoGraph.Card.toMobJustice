@@ -62,13 +62,18 @@ export default class MobJusticeCard extends React.Component {
   handleFirstReadMoreClick() {
     document.getElementsByClassName('first-read-more')[0].style.display = 'none'
     document.getElementsByClassName('t-after-first-read-more')[0].style.display = 'block'
-    this.props.clickCallback();
+    console.log(this.props.mode)
+    if(typeof this.props.clickCallback === 'function') {
+      this.props.clickCallback();
+    }
   }
 
   handleSecondReadMoreClick() {
     document.getElementsByClassName('second-read-more')[0].style.display = 'none'
     document.getElementsByClassName('t-after-second-read-more')[0].style.display = 'block'
-    this.props.clickCallback();
+    if(typeof this.props.clickCallback === 'function') {
+      this.props.clickCallback();
+    }
   }
 
   renderLaptop() {
@@ -78,7 +83,7 @@ export default class MobJusticeCard extends React.Component {
       const data = this.state.dataJSON.card_data;
       let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
       return (
-        <div id="protograph-div" className="protograph-tooltip desktop-view" style = {styles}>
+        <div id="protograph-div" className="desktop-view" style = {styles}>
           <div className="card">
             <div className='date'>{data.data.date}</div>
             <div className="card-header">
