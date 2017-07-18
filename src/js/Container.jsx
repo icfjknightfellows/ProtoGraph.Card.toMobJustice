@@ -94,9 +94,7 @@ export default class MobJusticeCard extends React.Component {
                 <div className="card-lable">Location</div>
                 <div className="card-text">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
               </div>
-              <div className="information-set bottom-border">
-               {data.data.victim_names !== '' ? <div><div className="card-lable">Names of the victims</div><div className="card-text">{data.data.victim_names}</div></div> : ''}
-              </div>
+               {data.data.victim_names !== '' ? <div className="information-set bottom-border"><div className="card-lable">Names of the victims</div><div className="card-text">{data.data.victim_names}</div></div> : ''}
               <div className="information-set bottom-border">
                 <div className="card-lable">What were the victims doing?</div>
                 <div className="card-text">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action}</div>
