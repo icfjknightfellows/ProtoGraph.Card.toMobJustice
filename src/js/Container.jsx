@@ -133,6 +133,7 @@ export default class MobJusticeCard extends React.Component {
       const data = this.state.dataJSON.card_data;
       // console.log(data, "data");
       let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
+      styles['width'] = '320px';
       return (
         <div id="protograph-div" className="protograph-tooltip" style = {styles}>
           <div className="t-date">{data.data.date}</div>

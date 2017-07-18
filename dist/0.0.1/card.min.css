@@ -3,7 +3,6 @@ body{
 }
 
 .proto-col-sm-6{
-  width: 47%;
   display: inline-block;
   padding-right:15px;
   margin-bottom:20px;
@@ -11,7 +10,6 @@ body{
 
 .t-section{
   margin-bottom:20px;
-  width: 47%;
   display: inline-block;
   vertical-align: top;
 }
@@ -38,7 +36,7 @@ body{
   line-height: 24px;
   z-index: 100;
   pointer-events: all;
-  /*border: 1px solid #efefef;*/
+  border: 1px solid #efefef;
 }
 
 .t-title{
@@ -49,9 +47,9 @@ body{
 }
 
 .t-image {
-  width: 47%;
   margin-right: 15px;
   margin-bottom:5px;
+  width: 100%;
 }
 
 .t-date-div{
@@ -135,7 +133,6 @@ hr{
 
 .t-not-after-second-read-more{
   display: inline-block;
-  width: 47%;
 }
 
 .t-not-after-second-read-more .t-section{
@@ -156,7 +153,7 @@ hr{
 .desktop-view .card{
   background: white;
   border-radius: 4px;
-  border: 1px solid #efefef;
+  /*border: 1px solid #efefef;*/
   padding: 15px 5px;
   display: inline-block;
 }
