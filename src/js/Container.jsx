@@ -197,8 +197,7 @@ export default class MobJusticeCard extends React.Component {
       const data = this.state.dataJSON.card_data;
       let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
       return (
-        <div id='ProtoScreenshot'>
-          <div id="protograph-div" className="protograph-tooltip" style = {styles}>
+        <div id="ProtoScreenshot" className="protograph-tooltip" style = {styles}>
           <div className="t-date">{data.data.date}</div>
           <div className="t-title">{data.data.title}</div>
           <div className="t-location">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</div>
@@ -209,7 +208,6 @@ export default class MobJusticeCard extends React.Component {
               {data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action}
             </div>
           </div>
-          {data.data.image ? <div id="first-read" className="t-read-more first-read-more" onClick={(e) => this.handleFirstReadMoreClick(e)}>Read More</div> : ''}
           <div className={data.data.image ? 't-after-first-read-more': 't-not-after-first-read-more'}>
             {data.data.victim_names !== '' ? <div className="t-section"><div className="t-header">Names of the victims</div>
             <div className="t-p">{data.data.victim_names}</div></div> : ''}
@@ -242,7 +240,6 @@ export default class MobJusticeCard extends React.Component {
                 <div className="t-p t-padup"><a id="t-further-reading" href={data.data.url} target="_blank">{data.data.url}</a></div>
               </div>
             </div>
-          </div>
           </div>
         </div>
       )
