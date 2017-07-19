@@ -6,20 +6,89 @@
     "data": {
       "id": "http://example.com/example.json/properties/data",
       "properties": {
-        "accused_action": {
-          "default": "saw the victims's pick-up on the highway and assumed that they were illegally transporting bovines.",
-          "id": "http://example.com/example.json/properties/data/properties/accused_action",
-          "title": "The accused action",
+        "date": {
+          "default": "April 5, 2017",
+          "id": "http://example.com/example.json/properties/data/properties/date",
+          "title": "Date",
           "type": "string"
         },
-        "accused_gender": {
-          "default": "Male",
-          "id": "http://example.com/example.json/properties/data/properties/accused_gender",
-          "title": "The accused gender",
+        "menu": {
+          "default": "Cattle Slaughter",
+          "id": "http://example.com/example.json/properties/data/properties/menu",
+          "title": "Category",
+          "type": "string"
+        },
+        "sub_crime": {
+          "default": "",
+          "id": "http://example.com/example.json/properties/data/properties/sub_crime",
+          "title": "Subcrime",
+          "type": "string"
+        },
+        "title": {
+          "default": "Pehlu Khan (55) and others",
+          "id": "http://example.com/example.json/properties/data/properties/title",
+          "title": "Title",
+          "type": "string"
+        },
+        "image": {
+          "default": "http://images.indianexpress.com/2017/04/cow-vigilantism-759.jpg",
+          "id": "http://example.com/example.json/properties/data/properties/image",
+          "title": "Image URL",
+          "type": "string"
+        },
+        "area": {
+          "default": "Alwar",
+          "id": "http://example.com/example.json/properties/data/properties/area",
+          "title": "Area",
+          "type": "string"
+        },
+        "state": {
+          "default": "Rajasthan",
+          "id": "http://example.com/example.json/properties/data/properties/state",
+          "title": "State",
+          "type": "string"
+        },
+        "state_ruling_party": {
+          "default": "BJP",
+          "id": "http://example.com/example.json/properties/data/properties/state_ruling_party",
+          "title": "State ruling party",
+          "type": "string"
+        },
+        "victim_names": {
+          "default": "Pehlu Khan (55), Azmat (22), Irshad, Aarif and Rafiq",
+          "id": "http://example.com/example.json/properties/data/properties/victim_names",
+          "title": "Victim's names",
+          "type": "string"
+        },
+        "victim_religion": {
+          "default": "Muslim",
+          "id": "http://example.com/example.json/properties/data/properties/victim_religion",
+          "title": "Victim's religion",
           "type": "string",
           "enum": [
-            "","Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+            "","Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
           ]
+        },
+        "victim_gender": {
+          "default": "Male",
+          "id": "http://example.com/example.json/properties/data/properties/victim_gender",
+          "title": "Victim's gender",
+          "type": "string",
+          "enum": [
+            "", "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ]
+        },
+        "victim_tag": {
+          "default": "farmers",
+          "id": "http://example.com/example.json/properties/data/properties/victim_tag",
+          "title": "Victim's tag",
+          "type": "string"
+        },
+        "victim_action": {
+          "default": "were legally transporting two milch cows in a pickup truck on a Haryana-bound highway in Rajasthan",
+          "id": "http://example.com/example.json/properties/data/properties/victim_action",
+          "title": "Victim's action",
+          "type": "string"
         },
         "accused_names": {
           "default": "",
@@ -36,38 +105,25 @@
             "","Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
           ]
         },
+        "accused_gender": {
+          "default": "Male",
+          "id": "http://example.com/example.json/properties/data/properties/accused_gender",
+          "title": "The accused gender",
+          "type": "string",
+          "enum": [
+            "","Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+          ]
+        },
         "accused_tag": {
           "default": "gau rakshaks",
           "id": "http://example.com/example.json/properties/data/properties/accused_tag",
           "title": "The accused tag",
           "type": "string"
         },
-        "area": {
-          "default": "Alwar",
-          "id": "http://example.com/example.json/properties/data/properties/area",
-          "title": "Area",
-          "type": "string"
-        },
-        "count_dead": {
-          "default": 0,
-          "id": "http://example.com/example.json/properties/data/properties/count_dead",
-          "title": "Number of dead",
-          "maximum": 100,
-          "minimum": 0,
-          "type": "number"
-        },
-        "count_injured": {
-          "default": 0,
-          "id": "http://example.com/example.json/properties/data/properties/count_injured",
-          "title": "Number of injured",
-          "maximum": 100,
-          "minimum": 0,
-          "type": "number"
-        },
-        "date": {
-          "default": "April 5, 2017",
-          "id": "http://example.com/example.json/properties/data/properties/date",
-          "title": "Date",
+        "accused_action": {
+          "default": "saw the victims's pick-up on the highway and assumed that they were illegally transporting bovines.",
+          "id": "http://example.com/example.json/properties/data/properties/accused_action",
+          "title": "The accused action",
           "type": "string"
         },
         "does_the_state_criminalise_accused_actions": {
@@ -88,94 +144,38 @@
             "Yes", "No", "Don't know?"
           ]
         },
-        "image": {
-          "default": "http://images.indianexpress.com/2017/04/cow-vigilantism-759.jpg",
-          "id": "http://example.com/example.json/properties/data/properties/image",
-          "title": "Image URL",
-          "type": "string"
-        },
-        "menu": {
-          "default": "Cattle Slaughter",
-          "id": "http://example.com/example.json/properties/data/properties/menu",
-          "title": "Category",
-          "type": "string"
-        },
-        "state": {
-          "default": "Rajasthan",
-          "id": "http://example.com/example.json/properties/data/properties/state",
-          "title": "State",
-          "type": "string"
-        },
-        "state_ruling_party": {
-          "default": "BJP",
-          "id": "http://example.com/example.json/properties/data/properties/state_ruling_party",
-          "title": "State ruling party",
-          "type": "string"
-        },
-        "the_lynching": {
-          "default": "The Gau Rakshaks intercepted the pick-up and proceeded to beat up the men. Pehlu Khan succumbs to injuries.",
-          "id": "http://example.com/example.json/properties/data/properties/the_lynching",
-          "title": "Lynching",
-          "type": "string"
-        },
-        "title": {
-          "default": "Pehlu Khan (55) and others",
-          "id": "http://example.com/example.json/properties/data/properties/title",
-          "title": "Title",
-          "type": "string"
-        },
-        "url": {
-          "default": "http://indianexpress.com/article/india/rajasthan-five-men-assaulted-by-gau-rakshaks-in-alwar-1-dead-4599964/",
-          "id": "http://example.com/example.json/properties/data/properties/url",
-          "title": "Further reading",
-          "type": "string"
-        },
-        "victim_action": {
-          "default": "were legally transporting two milch cows in a pickup truck on a Haryana-bound highway in Rajasthan",
-          "id": "http://example.com/example.json/properties/data/properties/victim_action",
-          "title": "Victim's action",
-          "type": "string"
-        },
-        "victim_gender": {
-          "default": "Male",
-          "id": "http://example.com/example.json/properties/data/properties/victim_gender",
-          "title": "Victim's gender",
-          "type": "string",
-          "enum": [
-            "", "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
-          ]
-        },
-        "victim_names": {
-          "default": "Pehlu Khan (55), Azmat (22), Irshad, Aarif and Rafiq",
-          "id": "http://example.com/example.json/properties/data/properties/victim_names",
-          "title": "Victim's names",
-          "type": "string"
-        },
-        "victim_religion": {
-          "default": "Muslim",
-          "id": "http://example.com/example.json/properties/data/properties/victim_religion",
-          "title": "Victim's religion",
-          "type": "string",
-          "enum": [
-            "","Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
-          ]
-        },
-        "victim_tag": {
-          "default": "farmers",
-          "id": "http://example.com/example.json/properties/data/properties/victim_tag",
-          "title": "Victim's tag",
-          "type": "string"
-        },
         "which_law": {
           "default": "",
           "id": "http://example.com/example.json/properties/data/properties/which_law",
           "title": "Which law?",
           "type": "string"
         },
-        "sub_crime": {
-          "default": "",
-          "id": "http://example.com/example.json/properties/data/properties/sub_crime",
-          "title": "Subcrime",
+        "the_lynching": {
+          "default": "The Gau Rakshaks intercepted the pick-up and proceeded to beat up the men. Pehlu Khan succumbs to injuries.",
+          "id": "http://example.com/example.json/properties/data/properties/the_lynching",
+          "title": "What happened?",
+          "type": "string"
+        },
+        "count_injured": {
+          "default": 0,
+          "id": "http://example.com/example.json/properties/data/properties/count_injured",
+          "title": "Number of injured",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "count_dead": {
+          "default": 0,
+          "id": "http://example.com/example.json/properties/data/properties/count_dead",
+          "title": "Number of dead",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "url": {
+          "default": "http://indianexpress.com/article/india/rajasthan-five-men-assaulted-by-gau-rakshaks-in-alwar-1-dead-4599964/",
+          "id": "http://example.com/example.json/properties/data/properties/url",
+          "title": "Further reading",
           "type": "string"
         },
         "lat": {
