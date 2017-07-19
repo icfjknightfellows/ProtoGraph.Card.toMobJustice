@@ -23,7 +23,6 @@
 .default-button {
   border: 1px solid #c5c5c5;
   display: inline-block;
-  padding: 2px;
   border-radius: 4px; }
   .default-button i.icon, .default-button i.icons {
     color: #969696;

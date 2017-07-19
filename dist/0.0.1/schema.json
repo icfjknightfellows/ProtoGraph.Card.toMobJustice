@@ -18,10 +18,7 @@
           "title": "The accused gender",
           "type": "string",
           "enum": [
-            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
-          ],
-          "enumNames": [
-            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+            "","Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
           ]
         },
         "accused_names": {
@@ -36,10 +33,7 @@
           "title": "The accused religion",
           "type": "string",
           "enum": [
-            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
-          ],
-          "enumNames": [
-            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+            "","Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
           ]
         },
         "accused_tag": {
@@ -82,10 +76,7 @@
           "title": "Was the accused possibly committing a crime?",
           "type": "string",
           "enum": [
-            "Yes", "No", "Don’t know?"
-          ],
-          "enumNames": [
-            "Yes", "No", "Don’t know?"
+            "Yes", "No", "Don't know?"
           ]
         },
         "does_the_state_criminalise_victims_actions": {
@@ -94,10 +85,7 @@
           "title": "Was the victim possibly committing a crime?",
           "type": "string",
           "enum": [
-            "Yes", "No", "Don’t know?"
-          ],
-          "enumNames": [
-            "Yes", "No", "Don’t know?"
+            "Yes", "No", "Don't know?"
           ]
         },
         "image": {
@@ -148,22 +136,13 @@
           "title": "Victim's action",
           "type": "string"
         },
-        "victim_crime": {
-          "default": "",
-          "id": "http://example.com/example.json/properties/data/properties/victim_crime",
-          "title": "Victim's crime",
-          "type": "string"
-        },
         "victim_gender": {
           "default": "Male",
           "id": "http://example.com/example.json/properties/data/properties/victim_gender",
           "title": "Victim's gender",
           "type": "string",
           "enum": [
-            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
-          ],
-          "enumNames": [
-            "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+            "", "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
           ]
         },
         "victim_names": {
@@ -178,10 +157,7 @@
           "title": "Victim's religion",
           "type": "string",
           "enum": [
-            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
-          ],
-          "enumNames": [
-            "Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
+            "","Hindu", "Hindu Dalit", "Muslim","Sikh", "Jain", "Christian", "Buddhist", "Jew"
           ]
         },
         "victim_tag": {

@@ -154,8 +154,6 @@ export default class EditMobJusticeCard extends React.Component {
   }
 
   toggleMode(e) {
-    // document.querySelector('.protograph_explainer_text').style.height = '70px'
-    // document.querySelector('.protograph_explainer_text').innerHTML = this.state.dataJSON.card_data.data.explainer_text;
     let element = e.target.closest('a'),
       mode = element.getAttribute('data-mode');
     this.setState((prevState, props) => {
