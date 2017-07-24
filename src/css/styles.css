@@ -2,232 +2,113 @@ body{
   margin: 0px;
 }
 
-.proto-col-sm-6{
-  display: inline-block;
-  padding-right:15px;
-  margin-bottom:20px;
+.protograph-card{
+  padding: 20px;
+  transition: 0.2s ease-in-out;
 }
 
-.t-section{
-  margin-bottom:20px;
-  display: inline-block;
-  vertical-align: top;
+sup{
+  color: gray;
+  text-transform: uppercase !important;
 }
 
-.t-after-first-read-more .t-section{
-  display: inherit;
+.protograph-read-more{
+  width: 100%;
+  border: 1px solid #ececec!important;
+  padding: 8px 0px;
+  font-size: 12px;
+  background: #fafafa !important;
+  margin-bottom: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.protograph-read-more:hover{
+  background: #efefef !important;
+}
+
+h1.ui.header, h2.ui.header, h3.ui.header, h4.ui.header, h5.ui.header, h6.ui.header{
+  margin-bottom: 5px;
+  padding-bottom: 0px;
+  margin-top: 5px;
+  padding-top: 0px;
+}
+
+h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
+
+
+.protograph-card:hover{
+  background: #fafafa;
+}
+
+.protograph-card > .protograph-footer{
+  display: inline-block;
+  width: 100%;
+}
+
+.protograph-card > .protograph-footer > .protograph-source{
+  padding: 0px;
+  font-size: 10px;
+  color: transparent;
+  display: inline;
+  float: left;
+  transition: 0.2s ease-in-out;
+}
+
+.protograph-card:hover > .protograph-footer > .protograph-source{
+  color: #7a7a7a;
+}
+
+.protograph-card > .protograph-footer > .protograph-credits{
+  color: transparent;
+  float: right;
+  font-size: 10px;
+  display: inline;
+  transition: 0.2s ease-in-out;
+}
+
+.protograph-further-reading {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1e70bf;
+}
+
+.protograph-margin{
+  margin-bottom: 20px !important;
+}
+
+.hide-content{
+  display: none;
+}
+
+.what-happened {
+  height: 60px;
+}
+
+.no-image-div{
+  width: 100%;
+  height: 190px;
+  background-color: #efefef;
+}
+
+.protograph-card:hover > .protograph-footer > .protograph-credits{
+  color: #7a7a7a;
+}
+
+.protograph-card:hover > .protograph-footer > .protograph-source:hover{
+  color: blue;
+}
+
+.protograph-card:hover > .protograph-footer > .protograph-credits:hover{
+  color: blue;
 }
 
 #ProtoScreenshot {
   width: 450px;
   padding: 10px 15px;
-  margin-left: 20px;
-  margin-top:20px;
   height: 450px;
   overflow: hidden;
 }
 
-.protograph-tooltip {
-  color: black;
-  font-family: Helvetica;
-  font-size: 14px;
-  padding: 10px;
-  position: absolute;
-  line-height: 24px;
-  z-index: 100;
-  pointer-events: all;
-  border: 1px solid #efefef;
-}
-
-.t-title{
-  font-family: Helvetica;
-  font-size: 20px;
-  margin-bottom: 5px;
-  /*font-weight: bold;*/
-}
-
-.t-image {
-  margin-right: 15px;
-  margin-bottom:5px;
-  width: 100%;
-}
-
-.t-date-div{
-  /*padding-left: 10px;*/
-}
-
-.t-date{
-  font-size: 12px;
-  margin-bottom: 10px;
-  color: white;
-  letter-spacing: 0.5px;
-  line-height: 14px;
-  background-color: #D80202;
-  padding: 7px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-#t-pin {
-  display: none;
-}
-
-.t-pushpin {
-  height: 30px;
-  float: right;
-  cursor: pointer;
-}
-
-.t-location{
-  font-size: 12px;
-  margin-bottom: 15px;
-  color: #999;
-  letter-spacing: 0.5px;
-  line-height: 14px;
-}
-
-.t-header{
-  font-size: 13px;
-  /*text-transform: uppercase;*/
-  color: #999;
-  margin-bottom: 5px;
-}
-
-#t-further-reading{
-  word-wrap: break-word;
-}
-
-hr{
-  border-top: 0.5px solid #F5F5F5;
-  box-shadow: 0px;
-}
-
-.t-p, .t-law{
-  font-size: 14px;
-  color: #333;
-  line-height: 20px;
-  /*margin-bottom: 20px;*/
-}
-
-.t-padup{
-  margin-top: 10px;
-}
-
-.t-read-more{
-  text-align: center;
-  background: #fafafa;
-  padding: 5px;
-  border-radius: 5px;
-  color: #999;
-  margin-bottom:20px;
-  cursor: pointer;
-}
-
-.t-after-first-read-more, .t-after-second-read-more{
-  display: none;
-}
-
-.t-not-after-first-read-more, .t-not-after-second-read-more{
-  display: block;
-}
-
-.t-not-after-second-read-more .t-section{
-  width: 100%;
-}
-
-.desktop-view{
-  font-family: Helvetica;
-  color: black;
-  font-size: 14px;
-  position: absolute;
-  line-height: 24px;
-  z-index: 100;
-  pointer-events: all;
-  border: 1px solid #efefef;
-}
-
-.desktop-view .card{
-  padding-top:15px;
-  display: inline-block;
-}
-
-.desktop-view .date{
-  font-size: 12px;
-  color: white;
-  background: #D80202;
-  padding: 5px 7px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-bottom: 20px;
-  margin-left: 15px;
-}
-
-.desktop-view .card-title{
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-  padding: 5px 15px;
-}
-
-.desktop-view .card-lable{
-  font-size: 10px;
-  margin-bottom: 10px;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.desktop-view .card-text{
-  font-size: 14px;
-  color: #333;
-  line-height: 20px;
-}
-
-.desktop-view .first-set-info{
-  display: inline-block;
-  width: 50%;
-  padding: 0px 15px;
-  vertical-align: top;
-  box-sizing: border-box;
-  float: left;
-}
-
-
-.desktop-view .information-set{
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-.desktop-view .bottom-border{
-  border-bottom: 1px solid #efefef;
-}
-
-.desktop-view .image-area{
-  width: 100%;
- /* background: #efefef;
-  padding: 0px 15px;
-  height: 200px;
-  display: inline-block;
-  box-sizing: border-box;
-  margin-bottom: 15px;*/
-  /*display: none;*/
-}
-
-@media only screen and (max-width: 450px){
-  .t-image {
-    height: 165px;
-  }
-
-  .protograph-tooltip {
-    width:100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #efefef;
-  }
-
-  body{
-    margin: 0px;
-  }
-}
 
 
