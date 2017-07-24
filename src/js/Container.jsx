@@ -75,15 +75,18 @@ export default class MobJusticeCard extends React.Component {
       props = this.props;
     while(el.scrollHeight > el.offsetHeight) {
       wordArray.pop();
-      el.innerHTML = wordArray.join(' ') + '...';
+      el.innerHTML = wordArray.join(' ') + '...' + '<br><button id="read-more-button" class="protograph-read-more">View more</button>' ;
     }
-  }
-
-  handleReadMoreClick() {
-    document.getElementsByClassName('protograph-read-more')[0].style.display = 'none'
-    document.getElementsByClassName('hide-content')[0].style.display = 'block'
-    if(typeof this.props.clickCallback === 'function') {
-      this.props.clickCallback();
+    if(document.getElementById('read-more-button') !== null){
+      document.getElementById('read-more-button').addEventListener('click', function(){
+        document.getElementById('read-more-button').style.display = 'none'
+        document.querySelector('.what-happened').style.height = 'auto';
+        document.querySelector('.what-happened').innerHTML = mergeText;
+        document.querySelector('.hide-content').style.display = 'block'
+        if(typeof props.clickCallback === 'function') {
+          this.props.clickCallback();
+        }
+      })
     }
   }
 
@@ -144,8 +147,7 @@ export default class MobJusticeCard extends React.Component {
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="protograph-margin what-happened">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
-            <button className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button>
+            <p className="what-happened">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
             <div className='hide-content'>
               <sup>Casualties</sup>
               <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
@@ -181,20 +183,17 @@ export default class MobJusticeCard extends React.Component {
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
             <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
-            <button className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button>
-            <div className='hide-content'>
-              <sup>Casualties</sup>
-              <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-              <sup>LEGAL</sup>
-              <p className="protograph-margin">The mob broke the law. {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span> }
-              </p>
-              {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
-                <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
-              {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
-                <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
-              <sup>SOURCE</sup>
-              <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
-            </div>
+            <sup>Casualties</sup>
+            <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
+            <sup>LEGAL</sup>
+            <p className="protograph-margin">The mob broke the law. {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span> }
+            </p>
+            {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
+              <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
+            {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
+              <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
+            <sup>SOURCE</sup>
+            <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
           </div>
         </div>
       )
