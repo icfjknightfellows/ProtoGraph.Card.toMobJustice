@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import MobJusticeCard from './Container.jsx';
+import ReportViolenceCard from './Container.jsx';
 import JSONSchemaForm from '../../lib/js/react-jsonschema-form';
 
-export default class EditMobJusticeCard extends React.Component {
+export default class EditReportViolenceCard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -182,7 +182,7 @@ export default class EditMobJusticeCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    ToMobJustice
+                    ToReportViolence
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}
@@ -212,7 +212,7 @@ export default class EditMobJusticeCard extends React.Component {
                     </a>
                   </div>
                 </div>
-                <MobJusticeCard
+                <ReportViolenceCard
                   mode={this.state.mode}
                   dataJSON={this.state.dataJSON}
                   schemaJSON={this.state.schemaJSON}

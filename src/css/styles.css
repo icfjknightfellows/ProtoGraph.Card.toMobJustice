@@ -21,6 +21,7 @@ sup{
   margin-bottom: 10px;
   margin-top: 10px;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .protograph-read-more:hover{
@@ -80,10 +81,6 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
 
 .hide-content{
   display: none;
-}
-
-.what-happened {
-  height: 120px;
 }
 
 .no-image-div{

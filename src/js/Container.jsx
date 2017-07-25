@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-export default class MobJusticeCard extends React.Component {
+export default class ReportViolenceCard extends React.Component {
   constructor(props) {
     super(props)
     let stateVar = {
@@ -57,40 +57,15 @@ export default class MobJusticeCard extends React.Component {
             optionalConfigSchemaJSON: opt_config_schema.data
           });
         }));
-    } else {
-      this.componentDidUpdate();
     }
   }
 
-  componentDidUpdate() {
-    if (this.props.mode === 'mobile'){
-      let elem = document.querySelector('.what-happened')
-      this.multiLineTruncate(elem)
-    }
-  }
-
-  multiLineTruncate(el) {
-    let data = this.state.dataJSON.card_data,
-      mergeText = `${data.data.victim_religion} ${data.data.victim_gender} ${data.data.victim_tag} ${data.data.victim_action} ${data.data.accused_religion} ${data.data.accused_gender} ${data.data.accused_tag} ${data.data.accused_action} ${data.data.the_lynching}`,
-      wordArray = mergeText.split(' '),
-      props = this.props;   
-    while(el.scrollHeight > el.offsetHeight) {
-      console.log("-------")
-      this.state.truncate = true;
-      wordArray.pop();
-      el.innerHTML = wordArray.join(' ') + '...' + '<br><button id="read-more-button" class="protograph-read-more">View more</button>' ;
-    }
-    if(document.getElementById('read-more-button') !== null){
-      document.getElementById('read-more-button').addEventListener('click', function(){
-        document.getElementById('read-more-button').style.display = 'none'
-        document.querySelector('.what-happened').style.height = 'auto';
-        document.querySelector('.what-happened').innerHTML = mergeText;
-        document.querySelector('.hide-content').style.display = 'block'
-        if(typeof props.clickCallback === 'function') {
-          props.clickCallback();
-        }
-      })
-    }
+  handleReadMoreClick(e) {
+    document.getElementById('read-more-button').style.display = 'none'
+    document.querySelector('.hide-content').style.display = 'block'
+    if(typeof this.props.clickCallback === 'function') {
+      this.props.clickCallback();
+    } 
   }
 
   renderLaptop() {
@@ -150,8 +125,8 @@ export default class MobJusticeCard extends React.Component {
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="what-happened" style={this.state.truncate ? {height:'120px'}: {height:'auto'}}>{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
-            {this.state.truncate ? '' : <button id="read-more-button" className="protograph-read-more">View more</button>}
+            <p className="what-happened">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
+            <button id="read-more-button" className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button>
             <div className='hide-content'>
               <sup>Casualties</sup>
               <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>

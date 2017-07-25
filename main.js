@@ -1,27 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MobJusticeCard from './src/js/Container.jsx';
+import ReportViolenceCard from './src/js/Container.jsx';
 
 window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
 
 
-ProtoGraph.Card.toMobJustice = function () {
-  this.cardType = 'MobJusticeCard';
+ProtoGraph.Card.toReportViolence = function () {
+  this.cardType = 'ReportViolenceCard';
 }
 
-ProtoGraph.Card.toMobJustice.prototype.init = function (options) {
+ProtoGraph.Card.toReportViolence.prototype.init = function (options) {
   this.options = options;
 }
 
-ProtoGraph.Card.toMobJustice.prototype.getData = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toMobJustice.prototype.renderLaptop = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.renderLaptop = function (data) {
   this.mode = 'laptop';
   ReactDOM.render(
-    <MobJusticeCard
+    <ReportViolenceCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -34,10 +34,10 @@ ProtoGraph.Card.toMobJustice.prototype.renderLaptop = function (data) {
     this.options.selector);
 }
 
-ProtoGraph.Card.toMobJustice.prototype.renderMobile = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.renderMobile = function (data) {
   this.mode = 'mobile';
   ReactDOM.render(
-    <MobJusticeCard
+    <ReportViolenceCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -50,10 +50,10 @@ ProtoGraph.Card.toMobJustice.prototype.renderMobile = function (data) {
     this.options.selector);
 }
 
-ProtoGraph.Card.toMobJustice.prototype.renderScreenshot = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.renderScreenshot = function (data) {
   this.mode = 'screenshot';
   ReactDOM.render(
-    <MobJusticeCard
+    <ReportViolenceCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}

@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditMobJusticeCard from './src/js/EditContainer.jsx';
+import EditReportViolenceCard from './src/js/EditContainer.jsx';
 
-ProtoGraph.Card.toMobJustice.prototype.getData = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toMobJustice.prototype.renderSEO = function (data) {
+ProtoGraph.Card.toReportViolence.prototype.renderSEO = function (data) {
   this.renderMode = 'SEO';
   return this.containerInstance.renderSEO();
 }
 
-ProtoGraph.Card.toMobJustice.prototype.renderEdit = function (onPublishCallback) {
+ProtoGraph.Card.toReportViolence.prototype.renderEdit = function (onPublishCallback) {
   this.mode = 'edit';
   this.onPublishCallback = onPublishCallback;
   ReactDOM.render(
-    <EditMobJusticeCard
+    <EditReportViolenceCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}

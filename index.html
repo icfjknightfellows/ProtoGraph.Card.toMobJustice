@@ -3,17 +3,17 @@
   <head>
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mob Justice Card</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
+    <title>Report Violence Card</title>
+    <link rel="stylesheet" type="text/css" href="https://dwln9tzsi7g07.cloudfront.net/Assets/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="src/css/styles.css">
   </head>
   <body>
-    <div id="mob-justice-div"></div>
+    <div id="report-violence-div"></div>
     <script src = "dist/0.0.1/card.min.js"></script>
     <script type="text/javascript">
-    var x = new ProtoGraph.Card.toMobJustice();
+    var x = new ProtoGraph.Card.toReportViolence();
     x.init({
-      selector: document.querySelector('#mob-justice-div'),
+      selector: document.querySelector('#report-violence-div'),
       data_url: "https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/e693fdcfbb39b0bcd14308f8/data.json",
       // data_url: 'dist/0.0.1/sample.json',
       schema_url: 'https://s3.ap-south-1.amazonaws.com/dev.cdn.protograph/8fe46be1629b/schema.json',
