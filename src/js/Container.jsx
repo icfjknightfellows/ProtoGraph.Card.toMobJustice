@@ -110,7 +110,7 @@ export default class MobJusticeCard extends React.Component {
               </div>
               <div className="eight wide column" style={{paddingRight: '30px'}}>
                 <sup>WHAT HAPPENED?</sup>
-                <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
+                <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender} {data.data.accused_action} {data.data.the_lynching}</p>
                 <sup>Casualties</sup>
                 <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
                 <sup>LEGAL</sup>
@@ -150,7 +150,7 @@ export default class MobJusticeCard extends React.Component {
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="what-happened" style={this.state.truncate ? {height:'120px'}: {height:'auto'}}>{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
+            <p className="what-happened" style={this.state.truncate ? {height:'120px'}: {height:'auto'}}>{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender} {data.data.accused_action} {data.data.the_lynching}</p>
             {this.state.truncate ? '' : <button id="read-more-button" className="protograph-read-more">View more</button>}
             <div className='hide-content'>
               <sup>Casualties</sup>
@@ -186,7 +186,7 @@ export default class MobJusticeCard extends React.Component {
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
+            <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender} {data.data.accused_action} {data.data.the_lynching}</p>
             <sup>Casualties</sup>
             <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
             <sup>LEGAL</sup>
