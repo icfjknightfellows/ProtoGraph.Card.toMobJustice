@@ -7,6 +7,7 @@ export default class MobJusticeCard extends React.Component {
     super(props)
     let stateVar = {
       fetchingData: true,
+      truncate: false,
       dataJSON: {
         card_data: {},
         configs: {}
@@ -72,8 +73,10 @@ export default class MobJusticeCard extends React.Component {
     let data = this.state.dataJSON.card_data,
       mergeText = `${data.data.victim_religion} ${data.data.victim_gender} ${data.data.victim_tag} ${data.data.victim_action} ${data.data.accused_religion} ${data.data.accused_gender} ${data.data.accused_tag} ${data.data.accused_action} ${data.data.the_lynching}`,
       wordArray = mergeText.split(' '),
-      props = this.props;
+      props = this.props;   
     while(el.scrollHeight > el.offsetHeight) {
+      console.log("-------")
+      this.state.truncate = true;
       wordArray.pop();
       el.innerHTML = wordArray.join(' ') + '...' + '<br><button id="read-more-button" class="protograph-read-more">View more</button>' ;
     }
@@ -84,7 +87,7 @@ export default class MobJusticeCard extends React.Component {
         document.querySelector('.what-happened').innerHTML = mergeText;
         document.querySelector('.hide-content').style.display = 'block'
         if(typeof props.clickCallback === 'function') {
-          this.props.clickCallback();
+          props.clickCallback();
         }
       })
     }
@@ -147,7 +150,8 @@ export default class MobJusticeCard extends React.Component {
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="what-happened">{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
+            <p className="what-happened" style={this.state.truncate ? {height:'120px'}: {height:'auto'}}>{data.data.victim_religion} {data.data.victim_gender} {data.data.victim_tag} {data.data.victim_action} {data.data.accused_religion} {data.data.accused_gender} {data.data.accused_tag} {data.data.accused_action} {data.data.the_lynching}</p>
+            {this.state.truncate ? '' : <button id="read-more-button" className="protograph-read-more">View more</button>}
             <div className='hide-content'>
               <sup>Casualties</sup>
               <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
