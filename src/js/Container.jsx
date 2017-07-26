@@ -103,6 +103,9 @@ export default class ReportViolenceCard extends React.Component {
                 <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
               </div>
             </div>
+            <div className="protograph-footer" style={{marginTop: '15px'}}>
+              <div className="protograph-credits"><a className="protograph-card-link" href="https://protograph.pykih.com/card/toreportviolence" target="_blank">toReportViolence</a></div>
+            </div>
           </div>
         </div>
       )
@@ -138,7 +141,10 @@ export default class ReportViolenceCard extends React.Component {
               {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
                 <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
               <sup>SOURCE</sup>
-              <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
+              <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
+            </div>
+            <div className="protograph-footer">
+              <div className="protograph-credits"><a className="protograph-card-link" href="https://protograph.pykih.com/card/toreportviolence" target="_blank">toReportViolence</a></div>
             </div>
           </div>
         </div>

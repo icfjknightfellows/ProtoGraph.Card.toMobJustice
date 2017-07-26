@@ -56,7 +56,11 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
   transition: 0.2s ease-in-out;
 }
 
-.protograph-card:hover > .protograph-footer > .protograph-source{
+.protograph-card > .protograph-footer > .protograph-credits > .protograph-card-link{
+  color: transparent;
+}
+
+.protograph-card:hover > .protograph-footer > .protograph-credits > .protograph-card-link{
   color: #7a7a7a;
 }
 
