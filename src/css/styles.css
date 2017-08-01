@@ -73,9 +73,6 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
 }
 
 .protograph-further-reading {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: #1e70bf;
 }
 

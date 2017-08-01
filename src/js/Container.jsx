@@ -80,17 +80,19 @@ export default class ReportViolenceCard extends React.Component {
             <div className="ui grid">
               <div className="sixteen wide column">
                 <h3 className="ui header">{data.data.title}</h3>
-                <h6 className="ui header">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</h6>
+                <h6 className="ui header">{data.data.area}, {data.data.district}, {data.data.state} ({data.data.area_classification})</h6>
                 <h6 className='ui header'>{data.data.date}</h6>
               </div>
               <div className="eight wide column" style={{paddingRight: '30px'}}>
                 <sup>WHAT HAPPENED?</sup>
                 <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
+                <p>The lynching was {data.data.how_was_the_lynching_planned}. {data.data['did_the_police_intervene_and_prevent_the_death?'] === 'Yes' ? (`The police intervened in time to prevent deaths.`) : ''}</p>
                 <sup>Casualties</sup>
                 <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-                <sup>LEGAL</sup>
-                <p className="protograph-margin">The mob broke the law. {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span>
-                  }
+                {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
+                <sup>More details about the state</sup>
+                <p className="protograph-margin">
+                  At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
                 </p>
               </div>
               <div className="eight wide column">
@@ -100,7 +102,7 @@ export default class ReportViolenceCard extends React.Component {
                 {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
                   <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
                 <sup>SOURCE</sup>
-                <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
+                <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
               </div>
             </div>
             <div className="protograph-footer" style={{marginTop: '15px'}}>
@@ -118,30 +120,34 @@ export default class ReportViolenceCard extends React.Component {
     } else {
       const data = this.state.dataJSON.card_data;
       let styles = this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
+      console.log(data, data.data['did_the_police_intervene_and_prevent_the_death?'],"data-------")
       styles['width'] = '300px';
       return (
         <div id="protograph-div" style = {styles}>
           <div className="protograph-card">
             <h3 className="ui header">{data.data.title}</h3>
-            <h6 className="ui header">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</h6>
+            <h6 className="ui header">{data.data.area}, {data.data.district}, {data.data.state} ({data.data.area_classification})</h6>
             <h6 className='ui header'>{data.data.date}</h6>
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
             <p className="what-happened">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
+            <p>The lynching was {data.data.how_was_the_lynching_planned}. {data.data['did_the_police_intervene_and_prevent_the_death?'] === 'Yes' ? (`The police intervened in time to prevent deaths.`) : ''}</p>
             <button id="read-more-button" className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button>
             <div className='hide-content'>
               <sup>Casualties</sup>
               <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-              <sup>LEGAL</sup>
-              <p className="protograph-margin">The mob broke the law. {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span> }
-              </p>
+              {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
               {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
                 <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
               {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
                 <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
+              <sup>More details about the state</sup>
+              <p className="protograph-margin">
+                At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+              </p>
               <sup>SOURCE</sup>
-              <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
+              <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
             </div>
             <div className="protograph-footer">
               <div className="protograph-credits"><a className="protograph-card-link" href="https://protograph.pykih.com/card/toreportviolence" target="_blank">toReportViolence</a></div>
@@ -162,7 +168,7 @@ export default class ReportViolenceCard extends React.Component {
         <div id="ProtoScreenshot" style = {styles}>
           <div className="protograph-card">
             <h3 className="ui header">{data.data.title}</h3>
-            <h6 className="ui header">{data.data.area}, {data.data.state} ({data.data.state_ruling_party} ruled)</h6>
+            <h6 className="ui header">{data.data.area}, {data.data.district}, {data.data.state} ({data.data.area_classification})</h6>
             <h6 className='ui header'>{data.data.date}</h6>
             <br/>
             {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
@@ -170,15 +176,17 @@ export default class ReportViolenceCard extends React.Component {
             <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
             <sup>Casualties</sup>
             <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-            <sup>LEGAL</sup>
-            <p className="protograph-margin">The mob broke the law. {data.data.does_the_state_criminalise_victims_actions === 'No' ? '' : <span> The victims actions were also possibly illegal because {data.data.which_law}</span> }
-            </p>
+            {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
             {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
               <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
             {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
               <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
+            <sup>More details about the state</sup>
+            <p className="protograph-margin">
+              At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+            </p>
             <sup>SOURCE</sup>
-            <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.url}</a></p>
+            <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
           </div>
         </div>
       )
@@ -199,3 +207,5 @@ export default class ReportViolenceCard extends React.Component {
     }
   }
 }
+
+// {data.data['did_the_police_intervene_and_prevent_the_death?'] === 'Yes' ? (The police intervened in time to prevent deaths.) : '' }
