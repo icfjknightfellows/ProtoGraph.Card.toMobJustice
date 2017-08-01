@@ -1,7 +1,64 @@
 {
   "data": {
-    "does_the_state_criminalise_victims_actions": {
-      "ui:widget": "updown"
+    "story_source": {
+      "ui:help": "E.g. Reporter name, Express News Service, PTI, Reuters, etc."
+    },
+    "area": {
+      "ui:help": "Go as local as possible e.g. village name, town name."
+    },
+    "lat": {
+      "ui:help": "Manually find it."
+    },
+    "lng": {
+      "ui:help": "Manually find it."
+    },
+    "victim_religion": {
+      "ui:help": "Take directly from article if mentioned. Deduce from name where possible to ascertain with some surety. In case of confusion or if victims are from multiple religions then leave blank."
+    },
+    "victim_tag": {
+      "ui:help": "Generally the occupation of the victim. E.g. agricultural labourers, farmers, BSF officer, housewife, etc."
+    },
+    "victim_action": {
+      "ui:help": "End this statement with a full stop."
+    },
+    "accused_religion": {
+      "ui:help": "Take directly from article if mentioned. Deduce from name where possible to ascertain with some surety. In case of confusion or if accused are from multiple religions then leave blank."
+    },
+    "accused_action": {
+      "ui:help": "End this statement with a full stop."
+    },
+    "the_lynching": {
+      "ui:help": "How did the actual lynching take place? More details on the incident. Please do not repeat details from above. End this statement with a full stop."
+    },
+    "count_injured": {
+      "ui:help": "People impacted but not dead"
+    },
+    "victim_names": {
+      "ui:help": "Comma separated list of name of victims followed by their age in bracket."
+    },
+    "title": {
+      "ui:help": "Choose one victim’s name (choose person who died over those who were injured), followed by age of the victim in brackets e.g. Junaid Khan (15). If there are more than one victim then append “and others” to the name of the victim e.g. Junaid Khan (15) and others."
+    },
+    "how_was_the_lynching_planned": {
+      "ui:help": "3 categories for now: 1. Planned where it was clearly planned against the victim. 2. Sporadic where it was a spontaneous act. 3. Neighbourhood watch where the mob was on the lookout for alleged criminals and prepared to punish him/her/them."
+    },
+    "accused_names": {
+      "ui:help": "Comma separated list of name of victims followed by their age in bracket."
+    },
+    "did_the_police_intervene_and_prevent_the_death?": {
+      "ui:help": "Yes if the police intervened and prevented a possible death. Otherwise, no."
+    },
+    "what_the_victim_did": {
+      "ui:help": "In two words"
+    },
+    "what_was_the_mob_doing": {
+      "ui:help": "In two words"
+    },
+    "menu": {
+      "ui:help": "In two words"
+    },
+    "is_notable_incident": {
+      "ui:help": "If yes, then this incident will be highlighted on map."
     }
   }
 }

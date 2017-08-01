@@ -189,7 +189,7 @@ export default class EditReportViolenceCard extends React.Component {
                   onSubmit={((e) => this.onSubmitHandler(e))}
                   onChange={((e) => this.onChangeHandler(e))}
                   formData={this.renderFormData()}
-                  uiSchema={this.state.uiSchema}
+                  uiSchema={this.state.uiSchemaJSON}
                   >
                   <a id="protograph-prev-link" className={`${this.state.publishing ? 'protograph-disable' : ''}`} onClick={((e) => this.onPrevHandler(e))}>{this.showLinkText()} </a>
                   <button type="submit" className={`${this.state.publishing ? 'ui primary loading disabled button' : ''} default-button protograph-primary-button`}>{this.showButtonText()}</button>
