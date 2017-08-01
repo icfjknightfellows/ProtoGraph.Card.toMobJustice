@@ -92,7 +92,7 @@ export default class ReportViolenceCard extends React.Component {
                 {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
                 <sup>More details about the state</sup>
                 <p className="protograph-margin">
-                  At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+                  At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
                 </p>
               </div>
               <div className="eight wide column">
@@ -144,7 +144,7 @@ export default class ReportViolenceCard extends React.Component {
                 <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
               <sup>More details about the state</sup>
               <p className="protograph-margin">
-                At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+                At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
               </p>
               <sup>SOURCE</sup>
               <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
@@ -183,7 +183,7 @@ export default class ReportViolenceCard extends React.Component {
               <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
             <sup>More details about the state</sup>
             <p className="protograph-margin">
-              At the time of the incident, a ({data.data.state_ruling_party}) Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+              At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
             </p>
             <sup>SOURCE</sup>
             <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
