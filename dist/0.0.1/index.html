@@ -52,8 +52,10 @@
       var x = new ProtoGraph.Card.toReportViolence();
       function findGetParameter(parameterName) {
         var result = null,
-            tmp = [];
-        location.search
+            tmp = [],
+            search_url = decodeURIComponent(location.search);
+
+        search_url
             .substr(1)
             .split("&")
             .forEach(function (item) {
@@ -61,7 +63,7 @@
               if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
             });
         return result;
-      }
+    }
 
       let view_cast_id = findGetParameter('view_cast_id'),
         schema_id = findGetParameter('schema_id'),
