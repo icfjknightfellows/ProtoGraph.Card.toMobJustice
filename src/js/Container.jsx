@@ -114,14 +114,29 @@ export default class ReportViolenceCard extends React.Component {
     }
   }
 
-  renderMobile() {
+  renderMobile(readMoreEnabled) {
     if (this.state.schemaJSON === undefined ){
       return(<div>Loading</div>)
     } else {
       const data = this.state.dataJSON.card_data;
       let styles = this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
-      console.log(data, data.data['did_the_police_intervene_and_prevent_the_death?'],"data-------")
       styles['width'] = '300px';
+      let more_content = 
+        <div>
+          <sup>Casualties</sup>
+          <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
+          {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
+          {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
+          <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
+          {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
+          <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
+          <sup>More details about the state</sup>
+          <p className="protograph-margin">
+            At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+          </p>
+          <sup>SOURCE</sup>
+          <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
+        </div>
       return (
         <div id="protograph-div" style = {styles}>
           <div className="protograph-card">
@@ -133,22 +148,8 @@ export default class ReportViolenceCard extends React.Component {
             <sup>WHAT HAPPENED?</sup>
             <p className="what-happened">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
             <p>The lynching was {data.data.how_was_the_lynching_planned}. {data.data['did_the_police_intervene_and_prevent_the_death?'] === 'Yes' ? (`The police intervened in time to prevent deaths.`) : ''}</p>
-            <button id="read-more-button" className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button>
-            <div className='hide-content'>
-              <sup>Casualties</sup>
-              <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-              {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
-              {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
-                <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
-              {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
-                <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
-              <sup>More details about the state</sup>
-              <p className="protograph-margin">
-                At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
-              </p>
-              <sup>SOURCE</sup>
-              <p className="protograph-further-reading protograph-margin"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
-            </div>
+            {readMoreEnabled ? <button id="read-more-button" className="protograph-read-more" onClick={(e) => this.handleReadMoreClick(e)}>View more</button> : '' }
+            {readMoreEnabled ? <div className='hide-content'>{more_content}</div> : (more_content)}
             <div className="protograph-footer">
               <div className="protograph-credits"><a className="protograph-card-link" href="https://protograph.pykih.com/card/toreportviolence" target="_blank">toReportViolence</a></div>
             </div>
@@ -197,15 +198,10 @@ export default class ReportViolenceCard extends React.Component {
     switch(this.props.mode) {
       case 'laptop' :
         return this.renderLaptop();
-        break;
       case 'mobile' :
-        return this.renderMobile();
-        break;
+        return this.renderMobile(this.props.readMoreEnabled);
       case 'screenshot' :
         return this.renderScreenshot();
-        break;
     }
   }
 }
-
-// {data.data['did_the_police_intervene_and_prevent_the_death?'] === 'Yes' ? (The police intervened in time to prevent deaths.) : '' }

@@ -68,7 +68,8 @@
 
     let view_cast_id = findGetParameter('view_cast_id'),
       schema_id = findGetParameter('schema_id'),
-      mode = findGetParameter('mode');
+      mode = findGetParameter('mode'),
+      readMoreEnabled = true;
 
     if(typeof (view_cast_id) !== 'undefined' && typeof(schema_id) !== 'undefined'){
       var  data_base_path = base_url + "/" + view_cast_id,
@@ -81,17 +82,17 @@
         configuration_url: data_base_path + "/view_cast.json",
         configuration_schema_url: 'configuration_schema.json',
       })
-      renderWithMode(mode);
+      renderWithMode(mode, readMoreEnabled);
     }
 
-    function renderWithMode(mode) {
+    function renderWithMode(mode, readMoreEnabled) {
       switch(mode){
         case "laptop":
           x.renderLaptop();
           break;
         case "mobile":
         default:
-          x.renderMobile();
+          x.renderMobile(readMoreEnabled);
           break;
       }
     }

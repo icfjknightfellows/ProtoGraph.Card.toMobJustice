@@ -72,7 +72,7 @@
 
       var ReceiverConsumer = Oasis.Consumer.extend({
         requests: {
-          receive: function(mode) {
+          receive: function(mode, readMoreEnabled) {
             if(typeof (view_cast_id) !== 'undefined' && typeof(schema_id) !== 'undefined'){
               var that = this,
                 data_base_path = base_url + "/" + view_cast_id,
@@ -92,7 +92,7 @@
                   that.send('resize_frame', {width: '100%', height: h})
                 }
               })
-              renderWithMode(mode);
+              renderWithMode(mode, readMoreEnabled);
             }
           }
         },
@@ -111,8 +111,8 @@
             }, 10)
 
           },
-          change_mode: function(mode){
-            renderWithMode(mode);
+          change_mode: function(mode, readMoreEnabled){
+            renderWithMode(mode, readMoreEnabled);
             var that = this;
             setTimeout(function(){
               height = x.getData().height;
@@ -127,13 +127,13 @@
         }
       });
 
-      function renderWithMode(mode) {
+      function renderWithMode(mode, readMoreEnabled) {
         switch(mode){
           case "laptop":
             x.renderLaptop();
             break;
           case "mobile":
-            x.renderMobile();
+            x.renderMobile(readMoreEnabled);
             break;
         }
       }

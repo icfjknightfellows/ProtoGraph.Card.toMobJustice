@@ -30,7 +30,7 @@
           "title": "Byline Summary",
           "type": "string",
           "enum": [
-            "Wire with reporter input", "Reportage", "Wire Copies"
+            "Wire Copies", "Reportage"
           ]
         },
         "date": {
@@ -79,7 +79,7 @@
           ]
         },
         "state_ruling_party": {
-          "default": "BJP",
+          "default": "Congress",
           "id": "http://example.com/example.json/properties/data/properties/state_ruling_party",
           "title": "Which party’s Chief Minister was in power in the state when the incident occurred?",
           "type": "string"
@@ -97,7 +97,7 @@
           "title": "Judge to Population Ratio in that state",
           "type": "string",
           "enum": [
-            "Good", "Above Average", "Average", "Below Average", "Bad"
+            "Bad", "Below Average", "Average", "Above Average", "Good"
           ]
         },
         "lat": {
@@ -133,7 +133,7 @@
           "title": "Victim's gender",
           "type": "string",
           "enum": [
-            "", "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+            "", "boy", "boys", "girl", "girls", "man", "men", "woman", "women", "Boy", "Boys", "Girl", "Girls", "Man", "Men", "Woman", "Women"
           ]
         },
         "victim_action": {
@@ -163,7 +163,7 @@
           "title": "Accused's gender",
           "type": "string",
           "enum": [
-            "", "Boy", "Boys", "boy", "boys", "Girl", "Girls", "girl", "girls", "Man", "Men", "man", "men", "Woman", "Women", "woman", "women"
+            "", "boy", "boys", "girl", "girls", "man", "men", "woman", "women", "Boy", "Boys", "Girl", "Girls", "Man", "Men", "Woman", "Women"
           ]
         },
         "accused_action": {
@@ -212,7 +212,7 @@
           "title": "Was the lynching planned?",
           "type": "string",
           "enum": [
-            "Planned", "Spontaneous", "Neighbourhood watch", "Planned (village decision)", "Dont know"
+            "Planned", "Spontaneous", "Neighbourhood watch", "Dont know"
           ]
         },
         "accused_names": {
@@ -222,16 +222,16 @@
           "type": "string"
         },
         "did_the_police_intervene_and_prevent_the_death?": {
-          "default": "Yes",
+          "default": "No",
           "id": "/properties/did_the_police_intervene_and_prevent_the_death?",
           "title": "Did the police intervene and prevent death?",
           "type": "string",
           "enum": [
-            "Yes", "No"
+            "No", "Yes"
           ]
         },
         "does_the_state_criminalise_victims_actions": {
-          "default": "Yes",
+          "default": "No",
           "id": "http://example.com/example.json/properties/data/properties/does_the_state_criminalise_victims_actions",
           "title": "If the allegation on the victim were true, would it be a punishable offence?",
           "type": "string",
@@ -257,7 +257,7 @@
           "title": "Broad Category - Reason for the lynching",
           "type": "string",
           "enum": [
-            "Cattle protection", "Other", "Petty dispute", "Sexual harassment", "Suspected child lifting", "Murder / Death", "Petty Dispute", "General crime", "Witchcraft"
+            "Other", "Cattle protection", "Petty dispute", "Sexual harassment", "Suspected child lifting", "Murder / Death", "General crime", "Witchcraft"
           ]
         },
         "is_notable_incident": {
@@ -272,7 +272,7 @@
       },
       "type": "object",
       "required": [
-        "headline", "url", "story_source", "story_source_summary", "date", "state", "district", "area_classification", "state_ruling_party", "police_to_population", "judge_to_population", "count_injured", "count_dead", "title", "how_was_the_lynching_planned", "did_the_police_intervene_and_prevent_the_death?", "what_the_victim_did", "what_was_the_mob_doing", "menu", "is_notable_incident"
+        "headline", "url", "story_source", "story_source_summary", "date", "state", "district", "area_classification", "state_ruling_party", "police_to_population", "judge_to_population", "count_injured", "count_dead", "title", "how_was_the_lynching_planned", "did_the_police_intervene_and_prevent_the_death?", "what_the_victim_did", "what_was_the_mob_doing", "menu", "is_notable_incident", "lng", "lat"
       ]
     }
   },
