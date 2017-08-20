@@ -53,6 +53,8 @@
       "is_hate_crime":"No"
     },
     "addendum": {
+      "does_the_state_criminalise_victims_actions": "No",
+      "which_law": "",
       "notes_to_explain_nuances": "No",
       "referral_link_1": "",
       "referral_link_2": "",

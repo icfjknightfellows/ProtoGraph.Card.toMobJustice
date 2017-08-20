@@ -108,6 +108,12 @@
       }
     },
     "addendum": {
+      "does_the_state_criminalise_victims_actions": {
+        "ui:widget": "hidden"
+      },
+      "which_law": {
+        "ui:widget": "hidden"
+      },
       "referral_link_1": {
         "ui:help": "Which other articles did you refer to fill up this card?"
       }

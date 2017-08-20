@@ -387,6 +387,14 @@
           "id": "/properties/data/properties/addendum",
           "title": "Addendum",
           "properties": {
+            "does_the_state_criminalise_victims_actions": {
+              "id": "/properties/data/properties/addendum/properties/does_the_state_criminalise_victims_actions",
+              "type": "string"
+            },
+            "which_law": {
+              "id": "/properties/data/properties/addendum/properties/which_law",
+              "type": "string"
+            },
             "notes_to_explain_nuances": {
               "id": "/properties/data/properties/addendum/properties/notes_to_explain_nuances",
               "type": "string",

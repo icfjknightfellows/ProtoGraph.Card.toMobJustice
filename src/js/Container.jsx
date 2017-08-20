@@ -150,7 +150,7 @@ export default class ReportViolenceCard extends React.Component {
           <p className="protograph-margin">{the_people_involved.accused_names}</p></div> : ''}
           <sup>More details about the state</sup>
           <p className="protograph-margin">
-            At the time of the incident, a {when_and_where_it_occur.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {when_and_where_it_occur.police_to_population_in_state}. The judge to population ratio in the state is {when_and_where_it_occur.judge_to_population_in_state}
+            At the time of the incident, a {when_and_where_it_occur.party_whose_chief_minister_is_in_power} Chief Minister was in power. The police to population ratio in the state is {when_and_where_it_occur.police_to_population_in_state}. The judge to population ratio in the state is {when_and_where_it_occur.judge_to_population_in_state}
           </p>
           <sup>SOURCE</sup>
           <p className="protograph-further-reading protograph-margin"><a href={copy_paste_from_article.url} target="_blank">{copy_paste_from_article.headline}</a></p>
@@ -182,30 +182,35 @@ export default class ReportViolenceCard extends React.Component {
       return(<div>Loading</div>)
     } else {
       const data = this.state.dataJSON.data;
-      let styles =this.state.dataJSON.configs ? {backgroundColor: this.state.dataJSON.configs.background_color} : undefined;
+      let copy_paste_from_article = data.copy_paste_from_article,
+        when_and_where_it_occur = data.when_and_where_it_occur,
+        the_incident = data.the_incident,
+        the_people_involved = data.the_people_involved,
+        hate_crime = data.hate_crime,
+        addendum = data.addendum;
+      let styles = this.state.optionalConfigJSON ? {backgroundColor: this.state.optionalConfigJSON.background_color} : undefined;
       return (
         <div id="ProtoScreenshot" style = {styles}>
           <div className="protograph-card">
-            <h3 className="ui header">{data.data.title}</h3>
-            <h6 className="ui header">{data.data.area}, {data.data.district}, {data.data.state} ({data.data.area_classification})</h6>
-            <h6 className='ui header'>{data.data.date}</h6>
+            <h3 className="ui header">{the_people_involved.title}</h3>
+            <h6 className="ui header">{when_and_where_it_occur.area}, {when_and_where_it_occur.district}, {when_and_where_it_occur.state} ({when_and_where_it_occur.area_classification})</h6>
+            <h6 className='ui header'>{when_and_where_it_occur.approximate_date_of_incident}</h6>
             <br/>
-            {data.data.image !== '' ? <img className="image-area protograph-margin" src={data.data.image} style={{width: '100%'}}/> : ''}
+            {copy_paste_from_article.image !== '' ? <img className="image-area protograph-margin" src={copy_paste_from_article.image} style={{width: '100%'}}/> : ''}
             <sup>WHAT HAPPENED?</sup>
-            <p className="protograph-margin">{data.data.victim_religion} {data.data.victim_tag} {data.data.victim_gender !=='' ? (`(${data.data.victim_gender})`): '' } {data.data.victim_action} {data.data.accused_religion} {data.data.accused_tag} {data.data.accused_gender !=='' ? (`(${data.data.accused_gender})`): '' } {data.data.accused_action} {data.data.the_lynching}</p>
+            <p className="protograph-margin">{the_incident.describe_the_event}</p>
             <sup>Casualties</sup>
-            <p className="protograph-margin">{data.data.count_injured} victims were injured and {data.data.count_dead} victims were left dead.</p>
-            {data.data.does_the_state_criminalise_victims_actions === 'Yes' ? <div><sup>LEGAL</sup><p className="protograph-margin"><span> If the allegation on the victim were true, then it would be a punishable offence.</span></p></div> : ''}
-            {data.data.victim_names !== '' ? <div><sup>VICTIMS</sup>
-              <p className="protograph-margin">{data.data.victim_names}</p></div> : ''}
-            {data.data.accused_names !== '' ? <div><sup>ACCUSED</sup>
-              <p className="protograph-margin">{data.data.accused_names}</p></div> : ''}
+            <p className="protograph-margin">{the_incident.count_injured} victims were injured and {the_incident.count_dead} victims were left dead.</p>
+            {the_people_involved.victim_names !== '' ? <div><sup>VICTIMS</sup>
+              <p className="protograph-margin">{the_people_involved.victim_names}</p></div> : ''}
+            {the_people_involved.accused_names !== '' ? <div><sup>ACCUSED</sup>
+              <p className="protograph-margin">{the_people_involved.accused_names}</p></div> : ''}
             <sup>More details about the state</sup>
             <p className="protograph-margin">
-              At the time of the incident, a {data.data.state_ruling_party} Chief Minister was in power. The police to population ratio in the state is {data.data.police_to_population}. The judge to population ratio in the state is {data.data.judge_to_population}
+              At the time of the incident, a {when_and_where_it_occur.party_whose_chief_minister_is_in_power} Chief Minister was in power. The police to population ratio in the state is {when_and_where_it_occur.police_to_population_in_state}. The judge to population ratio in the state is {when_and_where_it_occur.judge_to_population_in_state}
             </p>
             <sup>SOURCE</sup>
-            <p className="protograph-further-reading"><a href={data.data.url} target="_blank">{data.data.headline}</a></p>
+            <p className="protograph-further-reading"><a href={copy_paste_from_article.url} target="_blank">{copy_paste_from_article.headline}</a></p>
           </div>
         </div>
       )
