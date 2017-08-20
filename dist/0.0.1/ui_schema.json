@@ -1,64 +1,122 @@
 {
   "data": {
-    "story_source": {
-      "ui:help": "E.g. Reporter name, Express News Service, PTI, Reuters, etc."
+    "when_and_where_it_occur": {
+      "approximate_date_of_incident":{
+        "ui:help": "Interpret from article"
+      },
+      "area_classification":{
+        "ui:help": "Quick Google Search"
+      },
+      "party_whose_chief_minister_is_in_power":{
+        "ui:help": "Quick Google Search"
+      },
+      "lat":{
+        "ui:help": "Find via Google Maps"
+      },
+      "lng": {
+        "ui:help": "Find via Google Maps"
+      },
+      "police_vehicles_per_km": {
+        "ui:help": "Data compiled by Bureau of Police Research and Development as on Jan 2016"
+      },
+      "does_state_have_village_defence_force": {
+        "ui:help": "Based on what we could find from Google Searches"
+      },
+      "police_to_population_in_state": {
+        "ui:help": "Data compiled by Bureau of Police Research and Development as on Jan 2016. The UN recommended police to population ratio is 230"
+      },
+      "judge_to_population_in_state": {
+        "ui:help": "From Court News, publication of the Supreme Court, Vol XI Issue No. 1 Jan - Mar 2016"
+      } 
     },
-    "area": {
-      "ui:help": "Go as local as possible e.g. village name, town name."
+    "the_incident": {
+      "count_injured": {
+        "ui:help": "Mentioned in article"
+      },
+      "count_dead": {
+        "ui:help": "Mentioned in article"
+      },
+      "did_the_police_intervene":{
+        "ui:help": "Interpret from article"
+      },
+      "did_the_police_intervention_prevent_death": {
+        "ui:help": "Interpret from article"
+      },
+      "what_the_victim_did": {
+        "ui:help": "This is not exposed to readers"
+      },
+      "what_was_the_mob_doing": {
+        "ui:help": "This is not exposed to readers"
+      },
+      "describe_the_event": {
+        "ui:help": "This is exposed to readers"
+      },
+      "was_incident_planned": {
+        "ui:help": ""
+      }
     },
-    "lat": {
-      "ui:help": "Manually find it."
+    "the_people_involved": {
+      "victim_names":{
+        "ui:help": "Generally comma separated list of name followed by age in bracket. Example - Ram (15), Shyam (16)"
+      },
+      "victim_social_classification": {
+        "ui:help": "Interpret from article"
+      },
+      "victim_sex": {
+        "ui:help": "Interpret from article"
+      },
+      "title": {
+        "ui:help": "Generally name of a victim. If there are more than one victim then follow it by “and others”. Example - Ram (15) and others"
+      },
+      "accused_names": {
+        "ui:help": "Generally comma separated list of name followed by age in bracket. Example - Ram (15), Shyam (16"
+      },
+      "accused_social_classification": {
+        "ui:help": "Interpret from article"
+      },
+      "accused_sex": {
+        "ui:help": "Interpret from article"
+      } 
     },
-    "lng": {
-      "ui:help": "Manually find it."
+    "hate_crime": {
+      "is_gender_hate_crime": {
+        "ui:help": "Cases of witchcraft (in case of women), 'social deviance', where it is evident that the victim was attacked because of being a woman/ transgender. If they were attacked not for their sex, but the nature of attack was gendered, example, sexual harassment, rape threats."
+      },
+      "is_caste_hate_crime": {
+        "ui:help": "Yes if someone is attacked because they belong to a different caste, for certain caste specific practices, for inter-caste marriage and relationships, for transgressing caste boundaries, for caste based derogatory remarks."
+      },
+      "is_race_hate_crime": {
+        "ui:help": "Yes if someone is attacked because they belong/perceived to belong to a different racial group i.e. have distinct biological and physical traits / features / appearances. Example: Attacks on people from the North-eastern part of India, on people from African nationals."
+      },
+      "is_religion_hate_crime": {
+        "ui:help": "Yes if attacked for practicing/not practicing a certain religious faith, for hurting religious sentiments, for a particular religious practice, inter-religious marriage/relationship."
+      },
+      "is_political_affiliation_hate_crime": {
+        "ui:help": "Yes if someone is attacked because they belong to a different political party, or ideology, have criticized a certain political viewpoint, are trying to convert people politically etc"
+      },
+      "is_sexual_orientation_and_gender_identity_hate_crime": {
+        "ui:help": "Yes if someone is attacked merely because they are homosexual / bisexual / asexual and / or for their gender identity/expression. For example,for cross dressing, for identifying with a gender that is different from their biological sex"
+      },
+      "is_disability_hate_crime": {
+        "ui:help": "Yes if someone with physical and/or mental disability is attacked (especially cases of Suspicions of witchcraft, Child lifting etc)"
+      },
+      "is_ethnicity_hate_crime": {
+        "ui:help": "Yes if someone is attacked because they belong to a different social or cultural group, speak a different dialect or language, trace their ancestry to a different lineage, come from a different tribe, or from a different region etc"
+      },
+      "is_hate_crime": {
+        "ui:help": "Yes if any of the hate crime categories above are yes."
+      }
     },
-    "victim_religion": {
-      "ui:help": "Take directly from article if mentioned. Deduce from name where possible to ascertain with some surety. In case of confusion or if victims are from multiple religions then leave blank."
-    },
-    "victim_tag": {
-      "ui:help": "Generally the occupation of the victim. E.g. agricultural labourers, farmers, BSF officer, housewife, etc."
-    },
-    "victim_action": {
-      "ui:help": "End this statement with a full stop."
-    },
-    "accused_religion": {
-      "ui:help": "Take directly from article if mentioned. Deduce from name where possible to ascertain with some surety. In case of confusion or if accused are from multiple religions then leave blank."
-    },
-    "accused_action": {
-      "ui:help": "End this statement with a full stop."
-    },
-    "the_lynching": {
-      "ui:help": "How did the actual lynching take place? More details on the incident. Please do not repeat details from above. End this statement with a full stop."
-    },
-    "count_injured": {
-      "ui:help": "People impacted but not dead"
-    },
-    "victim_names": {
-      "ui:help": "Comma separated list of name of victims followed by their age in bracket."
-    },
-    "title": {
-      "ui:help": "Choose one victim’s name (choose person who died over those who were injured), followed by age of the victim in brackets e.g. Junaid Khan (15). If there are more than one victim then append “and others” to the name of the victim e.g. Junaid Khan (15) and others."
-    },
-    "how_was_the_lynching_planned": {
-      "ui:help": "3 categories for now: 1. Planned where it was clearly planned against the victim. 2. Sporadic where it was a spontaneous act. 3. Neighbourhood watch where the mob was on the lookout for alleged criminals and prepared to punish him/her/them."
-    },
-    "accused_names": {
-      "ui:help": "Comma separated list of name of victims followed by their age in bracket."
-    },
-    "did_the_police_intervene_and_prevent_the_death?": {
-      "ui:help": "Yes if the police intervened and prevented a possible death. Otherwise, no."
-    },
-    "what_the_victim_did": {
-      "ui:help": "In two words"
-    },
-    "what_was_the_mob_doing": {
-      "ui:help": "In two words"
-    },
-    "menu": {
-      "ui:help": "In two words"
-    },
-    "is_notable_incident": {
-      "ui:help": "If yes, then this incident will be highlighted on map."
+    "addendum": {
+      "does_the_state_criminalise_victims_actions": {
+        "ui:widget": "hidden"
+      },
+      "which_law": {
+        "ui:widget": "hidden"
+      },
+      "referral_link_1": {
+        "ui:help": "Which other articles did you refer to fill up this card?"
+      }
     }
   }
 }

@@ -4,276 +4,429 @@
   "id": "http://example.com/example.json",
   "properties": {
     "data": {
-      "id": "http://example.com/example.json/properties/data",
+      "id": "/properties/data",
       "properties": {
-        "headline": {
-          "default": "Six people beaten by mob for allegedly carrying buffalo calves in Delhi: Reports",
-          "id": "/properties/headline",
-          "title": "Headline of the article",
-          "type": "string"
+        "copy_paste_from_article": {
+          "id": "/properties/data/properties/copy_paste_from_article",
+          "title": "Copy paste from primary articles",
+          "properties": {
+            "url": {
+              "id": "/properties/data/properties/copy_paste_from_article/properties/url",
+              "type": "string",
+              "title": "URL of primary article"
+            },
+            "headline": {
+              "id": "/properties/data/properties/copy_paste_from_article/properties/headline",
+              "type": "string",
+              "title": "Headline of primary article"
+            },
+            "image": {
+              "id": "/properties/data/properties/copy_paste_from_article/properties/image",
+              "type": "string",
+              "title": "Cover Image URL of primary article"
+            }
+          },
+          "required": [
+            "url",
+            "headline",
+            "image"
+          ],
+          "type": "object"
         },
-        "url": {
-          "default": "http://indianexpress.com/article/india/rajasthan-five-men-assaulted-by-gau-rakshaks-in-alwar-1-dead-4599964/",
-          "id": "http://example.com/example.json/properties/data/properties/url",
-          "title": "URL of the article",
-          "type": "string"
+        "when_and_where_it_occur": {
+          "id": "/properties/data/properties/when_and_where_it_occur",
+          "title": "When and where did it occur?",
+          "properties": {
+            "approximate_date_of_incident": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/approximate_date_of_incident",
+              "type": "string",
+              "title": "Approximate date of incident"
+            },
+            "state": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/state",
+              "type": "string",
+              "title": "State",
+              "enum": [
+                "Andaman and Nicobar Island", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "New Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+              ]
+            },
+            "area": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/area",
+              "type": "string",
+              "title": "Area - Village or town where the event occurred"
+            },
+            "district": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/district",
+              "type": "string",
+              "title": "District"
+            },
+            "area_classification": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/area_classification",
+              "type": "string",
+              "title": "Approximately is the area rural or urban?",
+              "enum": [
+                "Rural", "Urban"
+              ]
+            },
+            "party_whose_chief_minister_is_in_power": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/party_whose_chief_minister_is_in_power",
+              "type": "string",
+              "title": "Party whose Chief Minister was in power when the incident took place",
+              "enum": [
+                "AAP", "AIADMK", "BJP", "BJD", "Congress", "CPI-M", "JDU", "LDF", "PDP", "SAD", "SP", "TDP", "TMC", "UDF", "NPF", "President's rule"
+              ]
+            },
+            "lat": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/lat",
+              "type": "number",
+              "title": "Latitude"
+            },
+            "lng": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/lng",
+              "type": "number",
+              "title": "Longitude"
+            },
+            "police_vehicles_per_km": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/police_vehicles_per_km",
+              "type": "string",
+              "title": "Number of police vehicles per square kilometres in the state",
+              "enum": [
+                "Good", "Above Average", "Average", "Below Average", "Bad"
+              ]
+            },
+            "does_state_have_village_defence_force": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/does_state_have_village_defence_force",
+              "type": "string",
+              "title": "Does the state have a village defence force?",
+              "enum": [
+                "Yes", "No", "Don't know"
+              ]
+            },
+            "police_to_population_in_state": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/police_to_population_in_state",
+              "type": "string",
+              "title": "Police to population ratio in the state",
+              "enum": [
+                "Below UN recommendation", "Above UN recommendation"
+              ]
+            },
+            "judge_to_population_in_state": {
+              "id": "/properties/data/properties/when_and_where_it_occur/properties/judge_to_population_in_state",
+              "type": "string",
+              "title": "Judge to population ratio in the state",
+              "enum": [
+                "Good", "Above Average", "Average", "Below Average", "Bad"
+              ]
+            }
+          },
+          "required": [
+            "party_whose_chief_minister_is_in_power",
+            "district",
+            "area",
+            "judge_to_population_in_state",
+            "does_state_have_village_defence_force",
+            "police_vehicles_per_km",
+            "state",
+            "approximate_date_of_incident",
+            "lat",
+            "area_classification",
+            "lng",
+            "police_to_population_in_state"
+          ],
+          "type": "object"
         },
-        "story_source": {
-          "default": "Express Web Desk",
-          "id": "/properties/story_source",
-          "title": "Byline",
-          "type": "string"
+        "the_incident": {
+          "id": "/properties/data/properties/the_incident",
+          "title": "The incident",
+          "properties": {
+            "count_injured": {
+              "id": "/properties/data/properties/the_incident/properties/count_injured",
+              "type": "number",
+              "maximum": 100,
+              "minimum": 0,
+              "title": "Count of people injured"
+            },
+            "count_dead": {
+              "id": "/properties/data/properties/the_incident/properties/count_dead",
+              "type": "number",
+              "maximum": 100,
+              "minimum": 0,
+              "title": "Count of people dead"
+            },
+            "did_the_police_intervene": {
+              "id": "/properties/data/properties/the_incident/properties/did_the_police_intervene",
+              "type": "string",
+              "title": "Did the police intervene?",
+              "enum": [
+                "Yes", "No"
+              ]
+            },
+            "did_the_police_intervention_prevent_death": {
+              "id": "/properties/data/properties/the_incident/properties/did_the_police_intervention_prevent_death",
+              "type": "string",
+              "title": "If yes, was the police intervention able to prevent a death?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "what_the_victim_did": {
+              "id": "/properties/data/properties/the_incident/properties/what_the_victim_did",
+              "type": "string",
+              "title": "Scribble in one or two words what the victim doing prior to the lynching"
+            },
+            "what_was_the_mob_doing": {
+              "id": "/properties/data/properties/the_incident/properties/what_was_the_mob_doing",
+              "type": "string",
+              "title": "Scribble in one or two words what the accused doing"
+            },
+            "describe_the_event": {
+              "id": "/properties/data/properties/the_incident/properties/describe_the_event",
+              "type": "string",
+              "title": "Describe the incident in 1-2 lines"
+            },
+            "classification": {
+              "id": "/properties/data/properties/the_incident/properties/classification",
+              "type": "string",
+              "title": "How are we classifying the incident?",
+              "enum": [
+                "Cow Protection Related", "Disputes and Altercations", "Witchcraft Related", "Murder / Death", "Sexual harassment", "Child Lifting", "Others"
+              ]
+            },
+            "was_incident_planned": {
+              "id": "/properties/data/properties/the_incident/properties/was_incident_planned",
+              "type": "string",
+              "title": "Was the incident planned?",
+              "enum": [
+                "Planned", "Neighbourhood watch", "Spontaneous", "Not clear"
+              ]
+            }
+          },
+          "required": [
+            "did_the_police_intervention_prevent_death",
+            "classification",
+            "did_the_police_intervene",
+            "what_the_victim_did",
+            "was_incident_planned",
+            "describe_the_event",
+            "what_was_the_mob_doing",
+            "count_dead",
+            "count_injured"
+          ],
+          "type": "object"
         },
-        "story_source_summary": {
-          "default": "Wire Copies",
-          "id": "/properties/story_source_summary",
-          "title": "Byline Summary",
-          "type": "string",
-          "enum": [
-            "Wire Copies", "Reportage"
-          ]
+        "the_people_involved": {
+          "id": "/properties/data/properties/the_people_involved",
+          "title": "The people involved",
+          "properties": {
+            "victim_names": {
+              "id": "/properties/data/properties/the_people_involved/properties/victim_names",
+              "type": "string",
+              "title": "Name of the victims"
+            },
+            "victim_social_classification": {
+              "id": "/properties/data/properties/the_people_involved/properties/victim_social_classification",
+              "type": "string",
+              "title": "Social classification of the victims",
+              "enum": [
+                "Hindu (caste not clear)", "Hindus majorly (plus some others)", "Muslim", "Muslim majorly (plus some others)", "Dalit", "Sikh", "Christian", "Law enforcement", "Tribal", "Not clear"
+              ]
+            },
+            "victim_social_classification_notes": {
+              "id": "/properties/data/properties/the_people_involved/properties/victim_social_classification_notes",
+              "type": "string",
+              "title": "How did you decipher the social classification of the victims?",
+              "enum": [
+                "Mentioned in article", "Inferred from names", "Inferred from actions"
+              ]
+            },
+            "victim_sex": {
+              "id": "/properties/data/properties/the_people_involved/properties/victim_sex",
+              "type": "string",
+              "title": "What is the sex of the victim(s)?",
+              "enum": [
+                "Male", "Female", "Transgender", "Both sex", "Not clear"
+              ]
+            },
+            "title": {
+              "id": "/properties/data/properties/the_people_involved/properties/title",
+              "type": "string",
+              "title": "Title of the card"
+            },
+            "accused_names": {
+              "id": "/properties/data/properties/the_people_involved/properties/accused_names",
+              "type": "string",
+              "title": "Names of the accused"
+            },
+            "accused_social_classification": {
+              "id": "/properties/data/properties/the_people_involved/properties/accused_social_classification",
+              "type": "string",
+              "title": "Social classification of the accused",
+              "enum": [
+                "Hindu (caste not clear)", "Hindus majorly (plus some others)", "Muslim", "Muslim majorly (plus some others)", "Dalit", "Sikh", "Christian", "Law enforcement", "Tribal", "Not clear"
+              ]
+            },
+            "accused_social_classification_notes": {
+              "id": "/properties/data/properties/the_people_involved/properties/accused_social_classification_notes",
+              "type": "string",
+              "title": "How did you decipher the social classification of the accused?",
+              "enum": [
+                "Mentioned in article", "Inferred from names", "Inferred from actions"
+              ]
+            },
+            "accused_sex": {
+              "id": "/properties/data/properties/the_people_involved/properties/accused_sex",
+              "type": "string",
+              "title": "What is the sex of the accused(s)?",
+              "enum": [
+                "Male", "Female", "Transgender", "Both sex", "Not clear"
+              ]
+            }
+          },
+          "required": [
+            "accused_social_classification_notes",
+            "title",
+            "victim_social_classification",
+            "accused_social_classification",
+            "victim_social_classification_notes",
+            "victim_sex",
+            "accused_sex"
+          ],
+          "type": "object"
         },
-        "date": {
-          "default": "April 5, 2017",
-          "id": "http://example.com/example.json/properties/data/properties/date",
-          "title": "When was the article published?",
-          "type": "string"
+        "hate_crime": {
+          "id": "/properties/data/properties/hate_crime",
+          "title": "Hate Crime",
+          "properties": {
+            "is_gender_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_gender_hate_crime",
+              "type": "string",
+              "title": "Is this incident a gender based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_caste_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_caste_hate_crime",
+              "type": "string",
+              "title": "Is this incident a caste based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_race_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_race_hate_crime",
+              "type": "string",
+              "title": "Is this incident a race based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_religion_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_religion_hate_crime",
+              "type": "string",
+              "title": "Is this incident a religion based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_political_affiliation_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_political_affiliation_hate_crime",
+              "type": "string",
+              "title": "Is this incident a political affiliation based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_sexual_orientation_and_gender_identity_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_sexual_orientation_and_gender_identity_hate_crime",
+              "type": "string",
+              "title": "Is this incident a sexual orientation and gender identity based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_disability_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_disability_hate_crime",
+              "type": "string",
+              "title": "Is this incident a disability based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_ethnicity_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_ethnicity_hate_crime",
+              "type": "string",
+              "title": "Is this incident an ethnicity based hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            },
+            "is_hate_crime": {
+              "id": "/properties/data/properties/hate_crime/properties/is_hate_crime",
+              "type": "string",
+              "title": "Overall, is this incident a hate crime?",
+              "enum": [
+                "Yes", "No", "Not clear"
+              ]
+            }
+          },
+          "required": [
+            "is_disability_hate_crime",
+            "is_gender_hate_crime",
+            "is_ethnicity_hate_crime",
+            "is_religion_hate_crime",
+            "is_sexual_orientation_and_gender_identity_hate_crime",
+            "is_hate_crime",
+            "is_caste_hate_crime",
+            "is_race_hate_crime",
+            "is_political_affiliation_hate_crime"
+          ],
+          "type": "object"
         },
-        "image": {
-          "default": "http://images.indianexpress.com/2017/04/cow-vigilantism-759.jpg",
-          "id": "http://example.com/example.json/properties/data/properties/image",
-          "title": "URL of the Cover Image from the article",
-          "type": "string"
-        },
-        "state": {
-          "default": "Rajasthan",
-          "id": "http://example.com/example.json/properties/data/properties/state",
-          "title": "Where did the incident occur?",
-          "type": "string",
-          "enum": [
-            "Andaman and Nicobar Island", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "New Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
-          ]
-        },
-        "district": {
-          "default": "New Delhi",
-          "id": "/properties/district",
-          "title": "District",
-          "type": "string",
-          "enum": [
-            "Adilabad", "Agar Malwa", "Agra", "Ahmedabad", "Ahmednagar", "Aizawl", "Ajmer", "Akola", "Alappuzha", "Aligarh", "Alipurduar", "Alirajpur", "Allahabad", "Almora", "Alwar", "Ambala", "Ambedkar Nagar", "Amethi (Chatrapati Sahuji Mahraj Nagar)", "Amravati", "Amreli", "Amritsar", "Anand", "Anantapur", "Anantnag", "Angul", "Anjaw", "Anuppur", "Araria", "Aravalli", "Ariyalur", "Arwal", "Ashoknagar", "Auraiya", "Aurangabad", "Azamgarh", "Bagalkot", "Bageshwar", "Baghpat", "Bahraich", "Baksa", "Balaghat", "Balangir", "Balasore", "Ballia", "Balod", "Baloda Bazar", "Balrampur", "Banaskantha (Palanpur)", "Banda", "Bandipora", "Bangalore Rural", "Bangalore Urban", "Banka", "Bankura", "Banswara", "Barabanki", "Baramulla", "Baran", "Bareilly", "Bargarh", "Barmer", "Barnala", "Barpeta", "Barwani", "Bastar", "Basti", "Bathinda", "Beed", "Begusarai", "Belgaum", "Bellary", "Bemetara", "Betul", "Bhadradri Kothagudem", "Bhadrak", "Bhagalpur", "Bhandara", "Bharatpur", "Bharuch", "Bhavnagar", "Bhilwara", "Bhind", "Bhiwani", "Bhojpur", "Bhopal", "Bidar", "Bijapur", "Bijnor", "Bikaner", "Bilaspur", "Birbhum", "Bishnupur", "Biswanath", "Bokaro", "Bongaigaon", "Botad", "Boudh", "Budaun", "Budgam", "Bulandshahr", "Buldhana", "Bundi", "Burdwan (Bardhaman)", "Burhanpur", "Buxar", "Cachar", "Central Delhi", "Chamarajanagar", "Chamba", "Chamoli", "Champawat", "Champhai", "Chandauli", "Chandel", "Chandigarh", "Chandrapur", "Changlang", "Charaideo", "Charkhi Dadri", "Chatra", "Chennai", "Chhatarpur", "Chhindwara", "Chhota Udepur", "Chickmagalur", "Chikballapur", "Chirang", "Chitradurga", "Chitrakoot", "Chittoor", "Chittorgarh", "Churachandpur", "Churu", "Coimbatore", "Cooch Behar", "Cuddalore", "Cuttack", "Dadra & Nagar Haveli", "Dahod", "Dakshin Dinajpur (South Dinajpur)", "Dakshina Kannada", "Daman", "Damoh", "Dangs (Ahwa)", "Dantewada (South Bastar)", "Darbhanga", "Darjeeling", "Darrang", "Datia", "Dausa", "Davangere", "Dehradun", "Deogarh", "Deoghar", "Deoria", "Devbhoomi Dwarka", "Dewas", "Dhalai", "Dhamtari", "Dhanbad", "Dhar", "Dharmapuri", "Dharwad", "Dhemaji", "Dhenkanal", "Dholpur", "Dhubri", "Dhule", "Dibang Valley", "Dibrugarh", "Dima Hasao (North Cachar Hills)", "Dimapur", "Dindigul", "Dindori", "Diu", "Doda", "Dumka", "Dungarpur", "Durg", "East Champaran (Motihari)", "East Delhi", "East Garo Hills", "East Godavari", "East Jaintia Hills", "East Kameng", "East Khasi Hills", "East Siang", "East Sikkim", "East Singhbhum", "Ernakulam", "Erode", "Etah", "Etawah", "Faizabad", "Faridabad", "Faridkot", "Farrukhabad", "Fatehabad", "Fatehgarh Sahib", "Fatehpur", "Fazilka", "Ferozepur", "Firozabad", "Gadag", "Gadchiroli", "Gajapati", "Ganderbal", "Gandhinagar", "Ganjam", "Garhwa", "Gariaband", "Gautam Buddha Nagar", "Gaya", "Ghaziabad", "Ghazipur", "Gir Somnath", "Giridih", "Goalpara", "Godda", "Golaghat", "Gomati", "Gonda", "Gondia", "Gopalganj", "Gorakhpur", "Gulbarga", "Gumla", "Guna", "Guntur", "Gurdaspur", "Gurgaon", "Gwalior", "Hailakandi", "Hamirpur", "Hanumangarh", "Hapur (Panchsheel Nagar)", "Harda", "Hardoi", "Haridwar", "Hassan", "Hathras", "Haveri", "Hazaribag", "Hingoli", "Hisar", "Hojai", "Hooghly", "Hoshangabad", "Hoshiarpur", "Howrah", "Hyderabad", "Idukki", "Imphal East", "Imphal West", "Indore", "Jabalpur", "Jagatsinghapur", "Jagtial", "Jaipur", "Jaisalmer", "Jajpur", "Jalandhar", "Jalaun", "Jalgaon", "Jalna", "Jalore", "Jalpaiguri", "Jammu", "Jamnagar", "Jamtara", "Jamui", "Jangaon", "Janjgir-Champa", "Jashpur", "Jaunpur", "Jayashankar Bhoopalpally", "Jehanabad", "Jhabua", "Jhajjar", "Jhalawar", "Jhansi", "Jharsuguda", "Jhunjhunu", "Jind", "Jiribam", "Jodhpur", "Jogulamba Gadwal", "Jorhat", "Junagadh", "Jyotiba Phule Nagar (J.P. Nagar)", "Kabirdham (Kawardha)", "Kachchh", "Kaimur (Bhabua)", "Kaithal", "Kakching", "Kalahandi", "Kalimpong", "Kamareddy", "Kamjong", "Kamrup", "Kamrup Metropolitan", "Kanchipuram", "Kandhamal", "Kangpokpi", "Kangra", "Kanker (North Bastar)", "Kannauj", "Kannur", "Kanpur Dehat", "Kanpur Nagar", "Kanshiram Nagar (Kasganj)", "Kanyakumari", "Kapurthala", "Karaikal", "Karauli", "Karbi Anglong", "Kargil", "Karimganj", "Karimnagar", "Karnal", "Karur", "Kasaragod", "Kathua", "Katihar", "Katni", "Kaushambi", "Kendrapara", "Kendujhar (Keonjhar)", "Khagaria", "Khammam", "Khandwa", "Khargone", "Kheda (Nadiad)", "Khordha", "Khowai", "Khunti", "Kinnaur", "Kiphire", "Kishanganj", "Kishtwar", "Kodagu", "Koderma", "Kohima", "Kokrajhar", "Kolar", "Kolasib", "Kolhapur", "Kolkata", "Kollam", "Komaram Bheem Asifabad", "Kondagaon", "Koppal", "Koraput", "Korba", "Korea (Koriya)", "Kota", "Kottayam", "Kozhikode", "Kra Daadi", "Krishna", "Krishnagiri", "Kulgam", "Kullu", "Kupwara", "Kurnool", "Kurukshetra", "Kurung Kumey", "Kushinagar (Padrauna)", "Lahaul & Spiti", "Lakhimpur", "Lakhimpur - Kheri", "Lakhisarai", "Lakshadweep", "Lalitpur", "Latehar", "Latur", "Lawngtlai", "Leh", "Lohardaga", "Lohit", "Longding", "Longleng", "Lower Dibang Valley", "Lower Siang", "Lower Subansiri", "Lucknow", "Ludhiana", "Lunglei", "Madhepura", "Madhubani", "Madurai", "Mahabubabad", "Mahabubnagar", "Maharajganj", "Mahasamund", "Mahe", "Mahendragarh", "Mahisagar", "Mahoba", "Mainpuri", "Majuli", "Malappuram", "Malda", "Malkangiri", "Mamit", "Mancherial", "Mandi", "Mandla", "Mandsaur", "Mandya", "Mansa", "Mathura", "Mau", "Mayurbhanj", "Medak", "Medchal", "Meerut", "Mehsana", "Mewat", "Mirzapur", "Moga", "Mokokchung", "Mon", "Moradabad", "Morbi", "Morena", "Morigaon", "Muktsar", "Mumbai City", "Mumbai Suburban", "Mungeli", "Munger (Monghyr)", "Murshidabad", "Muzaffarnagar", "Muzaffarpur", "Mysore", "Nabarangpur", "Nadia", "Nagaon", "Nagapattinam", "Nagarkurnool", "Nagaur", "Nagpur", "Nainital", "Nalanda", "Nalbari", "Nalgonda", "Namakkal", "Namsai", "Nanded", "Nandurbar", "Narayanpur", "Narmada (Rajpipla)", "Narsinghpur", "Nashik", "Navsari", "Nawada", "Nawanshahr (Shahid Bhagat Singh Nagar)", "Nayagarh", "Neemuch", "Nellore (Sri Potti Sriramulu)", "New Delhi", "Nicobar", "Nilgiris", "Nirmal", "Nizamabad", "Noney", "North 24 Parganas", "North Delhi", "North East  Delhi", "North Garo Hills", "North Goa", "North Sikkim", "North Tripura", "North West  Delhi", "North and Middle Andaman", "Nuapada", "Osmanabad", "Pakur", "Palakkad", "Palamu", "Palghar", "Pali", "Palwal", "Panchkula", "Panchmahal (Godhra)", "Panipat", "Panna", "Papum Pare", "Parbhani", "Paschim Medinipur (West Medinipur)", "Patan", "Pathanamthitta", "Pathankot", "Patiala", "Patna", "Pauri Garhwal", "Peddapalli", "Perambalur", "Peren", "Phek", "Pherzawl", "Pilibhit", "Pithoragarh", "Pondicherry", "Poonch", "Porbandar", "Prakasam", "Pratapgarh", "Pudukkottai", "Pulwama", "Pune", "Purba Medinipur (East Medinipur)", "Puri", "Purnia (Purnea)", "Purulia", "RaeBareli", "Raichur", "Raigad", "Raigarh", "Raipur", "Raisen", "Rajanna Sircilla", "Rajgarh", "Rajkot", "Rajnandgaon", "Rajouri", "Rajsamand", "Ramanathapuram", "Ramban", "Ramgarh", "Ramnagara", "Rampur", "Ranchi", "Rangareddy", "Ratlam", "Ratnagiri", "Rayagada", "Reasi", "Rewa", "Rewari", "Ri Bhoi", "Rohtak", "Rohtas", "Rudraprayag", "Rupnagar", "Sabarkantha (Himmatnagar)", "Sagar", "Saharanpur", "Saharsa", "Sahibganj", "Sahibzada Ajit Singh (SAS) Nagar (Mohali)", "Saiha", "Salem", "Samastipur", "Samba", "Sambalpur", "Sambhal (Bhim Nagar)", "Sangareddy", "Sangli", "Sangrur", "Sant Kabir Nagar", "Sant Ravidas Nagar", "Saran", "Satara", "Satna", "Sawai Madhopur", "Sehore", "Senapati", "Seoni", "Sepahijala", "Seraikela-Kharsawan", "Serchhip", "Shahdara", "Shahdol", "Shahjahanpur", "Shajapur", "Shamali (Prabuddh Nagar)", "Sheikhpura", "Sheohar", "Sheopur", "Shimla", "Shimoga", "Shivpuri", "Shopian", "Shravasti", "Siang", "Siddharth Nagar", "Siddipet", "Sidhi", "Sikar", "Simdega", "Sindhudurg", "Singrauli", "Sirmaur (Sirmour)", "Sirohi", "Sirsa", "Sitamarhi", "Sitapur", "Sivaganga", "Sivasagar", "Siwan", "Solan", "Solapur", "Sonbhadra", "Sonepur", "Sonipat", "Sonitpur", "South  24 Parganas", "South Andaman", "South Delhi", "South East Delhi", "South Garo Hills", "South Goa", "South Salamara-Mankachar", "South Sikkim", "South Tripura", "South West  Delhi", "South West Garo Hills ", "South West Khasi Hills", "Sri Ganganagar", "Srikakulam", "Srinagar", "Sukma", "Sultanpur", "Sundargarh", "Supaul", "Surajpur  ", "Surat", "Surendranagar", "Surguja", "Suryapet", "Tamenglong", "Tapi (Vyara)", "Tarn Taran", "Tawang", "Tehri Garhwal", "Tengnoupal", "Thane", "Thanjavur", "Theni", "Thiruvananthapuram", "Thoothukudi (Tuticorin)", "Thoubal", "Thrissur", "Tikamgarh", "Tinsukia", "Tirap", "Tiruchirappalli", "Tirunelveli", "Tiruppur", "Tiruvallur", "Tiruvannamalai", "Tiruvarur", "Tonk", "Tuensang", "Tumkur", "Udaipur", "Udalguri", "Udham Singh Nagar", "Udhampur", "Udupi", "Ujjain", "Ukhrul", "Umaria", "Una", "Unakoti", "Unnao", "Upper Siang", "Upper Subansiri", "Uttar Dinajpur (North Dinajpur)", "Uttara Kannada (Karwar)", "Uttarkashi", "Vadodara", "Vaishali", "Valsad", "Varanasi", "Vellore", "Vidisha", "Vikarabad", "Viluppuram", "Virudhunagar", "Visakhapatnam", "Vizianagaram", "Wanaparthy", "Warangal", "Warangal (Rural)", "Wardha", "Washim", "Wayanad", "West Champaran", "West Delhi", "West Garo Hills", "West Godavari", "West Jaintia Hills", "West Kameng", "West Karbi Anglong", "West Khasi Hills", "West Siang", "West Sikkim", "West Singhbhum", "West Tripura", "Wokha", "YSR District, Kadapa (Cuddapah)", "Yadadri Bhuvanagiri", "Yadgir", "Yamunanagar", "Yanam", "Yavatmal", "Zunheboto"
-          ]
-        },
-        "area": {
-          "default": "Alwar",
-          "id": "http://example.com/example.json/properties/data/properties/area",
-          "title": "Area",
-          "type": "string"
-        },
-        "area_classification": {
-          "default": "Urban",
-          "id": "/properties/area_classification",
-          "title": "Area Classification",
-          "type": "string",
-          "enum": [
-            "Rural", "Urban"
-          ]
-        },
-        "state_ruling_party": {
-          "default": "Congress",
-          "id": "http://example.com/example.json/properties/data/properties/state_ruling_party",
-          "title": "Which party’s Chief Minister was in power in the state when the incident occurred?",
-          "type": "string"
-        },
-        "police_to_population": {
-          "id": "http://example.com/example.json/properties/data/properties/police_to_population",
-          "title": "Police to Population Ratio in that state",
-          "type": "string",
-          "enum": [
-            "Below UN recommendation", "Above UN recommendation"
-          ]
-        },
-        "judge_to_population": {
-          "id": "http://example.com/example.json/properties/data/properties/judge_to_population",
-          "title": "Judge to Population Ratio in that state",
-          "type": "string",
-          "enum": [
-            "Bad", "Below Average", "Average", "Above Average", "Good"
-          ]
-        },
-        "lat": {
-          "default": "",
-          "id": "http://example.com/example.json/properties/data/properties/lat",
-          "title": "Latitude",
-          "type": "number"
-        },
-        "lng": {
-          "default": "",
-          "id": "http://example.com/example.json/properties/data/properties/lng",
-          "title": "Longitude",
-          "type": "number"
-        },
-        "victim_religion": {
-          "default": "Muslim",
-          "id": "http://example.com/example.json/properties/data/properties/victim_religion",
-          "title": "Victim's religion",
-          "type": "string",
-          "enum": [
-            "", "Hindu", "Hindu Dalit", "Muslim", "Sikh", "Jain", "Christian", "Buddhist", "Jew"
-          ]
-        },
-        "victim_tag": {
-          "default": "farmers",
-          "id": "http://example.com/example.json/properties/data/properties/victim_tag",
-          "title": "Victim's profession or title",
-          "type": "string"
-        },
-        "victim_gender": {
-          "default": "Male",
-          "id": "http://example.com/example.json/properties/data/properties/victim_gender",
-          "title": "Victim's gender",
-          "type": "string",
-          "enum": [
-            "", "boy", "boys", "girl", "girls", "man", "men", "woman", "women", "Boy", "Boys", "Girl", "Girls", "Man", "Men", "Woman", "Women"
-          ]
-        },
-        "victim_action": {
-          "default": "were legally transporting two milch cows in a pickup truck on a Haryana-bound highway in Rajasthan",
-          "id": "http://example.com/example.json/properties/data/properties/victim_action",
-          "title": "What was victims doing when the mob lynching took place?",
-          "type": "string"
-        },
-        "accused_religion": {
-          "default": "Hindu",
-          "id": "http://example.com/example.json/properties/data/properties/accused_religion",
-          "title": "Accused's religion",
-          "type": "string",
-          "enum": [
-            "", "Hindu", "Hindu Dalit", "Muslim", "Sikh", "Jain", "Christian", "Buddhist", "Jew"
-          ]
-        },
-        "accused_tag": {
-          "default": "gau rakshaks",
-          "id": "http://example.com/example.json/properties/data/properties/accused_tag",
-          "title": "Accused's profession or title",
-          "type": "string"
-        },
-        "accused_gender": {
-          "default": "Male",
-          "id": "http://example.com/example.json/properties/data/properties/accused_gender",
-          "title": "Accused's gender",
-          "type": "string",
-          "enum": [
-            "", "boy", "boys", "girl", "girls", "man", "men", "woman", "women", "Boy", "Boys", "Girl", "Girls", "Man", "Men", "Woman", "Women"
-          ]
-        },
-        "accused_action": {
-          "default": "saw the victims's pick-up on the highway and assumed that they were illegally transporting bovines.",
-          "id": "http://example.com/example.json/properties/data/properties/accused_action",
-          "title": "What were the accused doing before the mob lynching took place?",
-          "type": "string"
-        },
-        "the_lynching": {
-          "default": "The Gau Rakshaks intercepted the pick-up and proceeded to beat up the men. Pehlu Khan succumbs to injuries.",
-          "id": "http://example.com/example.json/properties/data/properties/the_lynching",
-          "title": "Extra details of the lynching",
-          "type": "string"
-        },
-        "count_injured": {
-          "default": 0,
-          "id": "http://example.com/example.json/properties/data/properties/count_injured",
-          "title": "Number of victims injured",
-          "maximum": 100,
-          "minimum": 0,
-          "type": "number"
-        },
-        "count_dead": {
-          "default": 0,
-          "id": "http://example.com/example.json/properties/data/properties/count_dead",
-          "title": "Number of victims dead",
-          "maximum": 100,
-          "minimum": 0,
-          "type": "number"
-        },
-        "victim_names": {
-          "default": "Pehlu Khan (55), Azmat (22), Irshad, Aarif and Rafiq",
-          "id": "http://example.com/example.json/properties/data/properties/victim_names",
-          "title": "Names of the Victims",
-          "type": "string"
-        },
-        "title": {
-          "default": "Pehlu Khan (55) and others",
-          "id": "http://example.com/example.json/properties/data/properties/title",
-          "title": "Title of the card",
-          "type": "string"
-        },
-        "how_was_the_lynching_planned": {
-          "default": "Spontaneous",
-          "id": "/properties/how_was_the_lynching_planned",
-          "title": "Was the lynching planned?",
-          "type": "string",
-          "enum": [
-            "Planned", "Spontaneous", "Neighbourhood watch", "Dont know"
-          ]
-        },
-        "accused_names": {
-          "default": "",
-          "id": "http://example.com/example.json/properties/data/properties/accused_names",
-          "title": "Names of the Accused",
-          "type": "string"
-        },
-        "did_the_police_intervene_and_prevent_the_death?": {
-          "default": "No",
-          "id": "/properties/did_the_police_intervene_and_prevent_the_death?",
-          "title": "Did the police intervene and prevent death?",
-          "type": "string",
-          "enum": [
-            "No", "Yes"
-          ]
-        },
-        "does_the_state_criminalise_victims_actions": {
-          "default": "No",
-          "id": "http://example.com/example.json/properties/data/properties/does_the_state_criminalise_victims_actions",
-          "title": "If the allegation on the victim were true, would it be a punishable offence?",
-          "type": "string",
-          "enum": [
-            "Yes", "No", "May be"
-          ]
-        },
-        "what_the_victim_did": {
-          "default": "Transporting cattle",
-          "id": "/properties/what_the_victim_did",
-          "title": "Broad Category - What did the victim do?",
-          "type": "string"
-        },
-        "what_was_the_mob_doing": {
-          "default": "Cattle protection",
-          "id": "/properties/what_was_the_mob_doing",
-          "title": "Broad Category - What did the accused do?",
-          "type": "string"
-        },
-        "menu": {
-          "default": "Cattle Slaughter",
-          "id": "http://example.com/example.json/properties/data/properties/menu",
-          "title": "Broad Category - Reason for the lynching",
-          "type": "string",
-          "enum": [
-            "Other", "Cattle protection", "Petty dispute", "Sexual harassment", "Suspected child lifting", "Murder / Death", "General crime", "Witchcraft"
-          ]
-        },
-        "is_notable_incident": {
-          "default": "No",
-          "id": "http://example.com/example.json/properties/data/properties/is_notable_incident",
-          "title": "Is notable incident?",
-          "type": "string",
-          "enum": [
-            "Yes", "No"
-          ]
+        "addendum": {
+          "id": "/properties/data/properties/addendum",
+          "title": "Addendum",
+          "properties": {
+            "does_the_state_criminalise_victims_actions": {
+              "id": "/properties/data/properties/addendum/properties/does_the_state_criminalise_victims_actions",
+              "type": "string"
+            },
+            "which_law": {
+              "id": "/properties/data/properties/addendum/properties/which_law",
+              "type": "string"
+            },
+            "notes_to_explain_nuances": {
+              "id": "/properties/data/properties/addendum/properties/notes_to_explain_nuances",
+              "type": "string",
+              "title": "Are there any extra notes or caveats that you want readers to know about how you filled up this card?"
+            },
+            "referral_link_1": {
+              "id": "/properties/data/properties/addendum/properties/referral_link_1",
+              "type": "string",
+              "title": "Referral Link 1"
+            },
+            "referral_link_2": {
+              "id": "/properties/data/properties/addendum/properties/referral_link_2",
+              "type": "string",
+              "title": "Referral Link 2"
+            },
+            "referral_link_3": {
+              "id": "/properties/data/properties/addendum/properties/referral_link_3",
+              "type": "string",
+              "title": "Referral Link 3"
+            }
+          },
+          "type": "object"
         }
       },
-      "type": "object",
       "required": [
-        "headline", "url", "story_source", "story_source_summary", "date", "state", "district", "area_classification", "state_ruling_party", "police_to_population", "judge_to_population", "count_injured", "count_dead", "title", "how_was_the_lynching_planned", "did_the_police_intervene_and_prevent_the_death?", "what_the_victim_did", "what_was_the_mob_doing", "menu", "is_notable_incident", "lng", "lat"
-      ]
+        "hate_crime",
+        "the_people_involved",
+        "when_and_where_it_occur",
+        "copy_paste_from_article",
+        "the_incident"
+      ],
+      "type": "object"
     }
   },
   "required": [
