@@ -17,7 +17,7 @@
       "police_vehicles_per_km": "Average",
       "does_state_have_village_defence_force": "Yes",
       "police_to_population_in_state": "Below UN recommendation",
-      "judge_to_population_in_state": "Below Average"
+      "judge_to_population_in_state": "Below average"
     },
     "the_incident": {
       "count_injured": 3,
@@ -27,7 +27,7 @@
       "what_the_victim_did": "Nothing",
       "what_was_the_mob_doing": "Expressing anger",
       "describe_the_event": "Victim's cat entered neighbour’s house. An altercation followed. The neighbour, accompanied with his friends, attacked the family with a bamboo stick and a metal pipe.",
-      "classification": "Disputes and Altercations",
+      "classification": "Disputes and altercations",
       "was_incident_planned": "Spontaneous"
     },
     "the_people_involved": {

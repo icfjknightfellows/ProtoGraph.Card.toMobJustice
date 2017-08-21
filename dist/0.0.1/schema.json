@@ -91,7 +91,7 @@
               "type": "string",
               "title": "Number of police vehicles per square kilometres in the state",
               "enum": [
-                "Good", "Above Average", "Average", "Below Average", "Bad"
+                "Good", "Above average", "Average", "Below average", "Bad"
               ]
             },
             "does_state_have_village_defence_force": {
@@ -115,7 +115,7 @@
               "type": "string",
               "title": "Judge to population ratio in the state",
               "enum": [
-                "Good", "Above Average", "Average", "Below Average", "Bad"
+                "Good", "Above average", "Average", "Below average", "Bad"
               ]
             }
           },
@@ -166,7 +166,7 @@
               "type": "string",
               "title": "If yes, was the police intervention able to prevent a death?",
               "enum": [
-                "Yes", "No", "Not clear"
+                "Yes", "No", "Not clear", "Not applicable"
               ]
             },
             "what_the_victim_did": {
@@ -189,7 +189,7 @@
               "type": "string",
               "title": "How are we classifying the incident?",
               "enum": [
-                "Cow Protection Related", "Disputes and Altercations", "Witchcraft Related", "Murder / Death", "Sexual harassment", "Child Lifting", "Others"
+                "Cow protection related", "Disputes and altercations", "Witchcraft related", "Murder / Death", "Sexual harassment", "Child lifting", "Others"
               ]
             },
             "was_incident_planned": {
