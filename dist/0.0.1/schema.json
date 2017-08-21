@@ -73,7 +73,7 @@
               "type": "string",
               "title": "Party whose Chief Minister was in power when the incident took place",
               "enum": [
-                "AAP", "AIADMK", "BJP", "BJD", "Congress", "CPI-M", "JDU", "LDF", "PDP", "SAD", "SP", "TDP", "TMC", "UDF", "NPF", "President's rule"
+                "AAP", "AIADMK", "BJP", "BJD", "Congress", "CPI-M", "JDU", "LDF", "PDP", "SAD", "SP", "TDP", "TMC", "UDF", "NPF", "TRS", "President's rule"
               ]
             },
             "lat": {
