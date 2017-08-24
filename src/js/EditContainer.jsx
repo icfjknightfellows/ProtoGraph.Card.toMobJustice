@@ -285,10 +285,9 @@ export default class EditReportViolenceCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.the_people_involved.title}</h3><p>${this.state.dataJSON.data.when_and_where_it_occur.state}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.area}</p></blockquote>`
+    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.copy_paste_from_article.headline}</h3><p>${this.state.dataJSON.data.when_and_where_it_occur.approximate_date_of_incident}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.area}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.district}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.state}</p><p>${this.state.dataJSON.data.the_incident.describe_the_event}</p><p>${this.state.dataJSON.data.the_people_involved.title}</p><p>${this.state.dataJSON.data.the_incident.classification}</p><p>${this.state.dataJSON.data.the_people_involved.victim_names}</p><p>${this.state.dataJSON.data.the_people_involved.victim_social_classification}</p><p>${this.state.dataJSON.data.the_people_involved.accused_names}</p><p>${this.state.dataJSON.data.the_people_involved.accused_social_classification}</p></blockquote>`
     return seo_blockquote;
   }
-
 
   render() {
     if (this.state.schemaJSON === undefined) {
