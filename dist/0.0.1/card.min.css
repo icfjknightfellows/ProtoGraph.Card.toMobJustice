@@ -150,6 +150,7 @@
 
 .stamp-area{
   position: relative;
+  min-height: 140px;
 }
 
 .state-rubber_stamp {
@@ -212,7 +213,7 @@
   text-align: left;
   display: inline-block;
   left: 0px;
-  top: 90px;
+  bottom: 0px;
   position: absolute;
 
   opacity: 0.8;
