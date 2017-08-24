@@ -10,6 +10,8 @@
   padding: 15px;
   font-size: 14px;
   overflow: hidden;
+  letter-spacing: 0px;
+  box-sizing: initial !important;
 }
 
 .first-portion{
@@ -195,6 +197,7 @@
   top: 15px;
   padding: 7px 12px;
   background: url(../../src/img/noise.png) repeat;
+  box-sizing: initial !important;
 }
 
 .crime-rubber_stamp {
@@ -348,14 +351,15 @@
   background: url(../../src/img/noise.png) repeat;
 }
 
-table{
+.form-area table{
   font-size: 11px;
   margin-top: 5px;
 }
 
-td{
+.form-area-tr td{
   vertical-align: top;
-  padding-bottom: 3px;
+  line-height: 13px;
+  /*padding-bottom: 3px;*/
 }
 .text-right{text-align: right;}
 .text-left{text-align: left;}
@@ -372,7 +376,8 @@ td{
     padding: 0px;
     font-size: 14px;
     overflow: hidden;
-    box-sizing: border-box;
+    letter-spacing: 0px;
+    box-sizing: initial !important;
   }
   .col-8-area-mobile{width: 100%;}
   .col-7-area-mobile{width: 100%;}
@@ -780,6 +785,8 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
   padding: 10px 15px;
   height: 450px;
   overflow: hidden;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 
