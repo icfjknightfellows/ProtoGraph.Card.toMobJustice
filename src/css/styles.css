@@ -207,13 +207,12 @@
   text-transform: uppercase;
   font-weight: bold;
   color: red;
-  padding-top: 40px;
   float: left;
   padding: 5px;
   text-align: left;
   display: inline-block;
   left: 0px;
-  top:100px;
+  bottom: 0px;
   position: absolute;
 
   opacity: 0.8;
@@ -360,7 +359,6 @@
 .form-area-tr td{
   vertical-align: top;
   line-height: 15px;
-  /*padding-bottom: 3px;*/
 }
 .text-right{text-align: right;}
 .text-left{text-align: left;}
