@@ -100,7 +100,9 @@
           get_size: function(){
             var that = this;
             var intervalId = setInterval(function(){
-              clientRect = x.getData();
+              try {
+                clientRect = x.getData();
+              } catch (err) {}
               if(clientRect.height){
                 var height = clientRect.height,
                   width = clientRect.width;

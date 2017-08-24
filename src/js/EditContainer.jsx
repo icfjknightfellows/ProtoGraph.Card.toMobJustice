@@ -27,12 +27,12 @@ export default class EditReportViolenceCard extends React.Component {
   exportData() {
     let getDataObj = {
       step: this.state.step,
-      dataJSON: this.state.dataJSON.data,
+      dataJSON: this.state.dataJSON,
       schemaJSON: this.state.schemaJSON,
       optionalConfigJSON: this.state.dataJSON.configs,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.data.the_people_involved.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
@@ -285,7 +285,7 @@ export default class EditReportViolenceCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.data.title}</h3><p>${this.state.dataJSON.data.data.state}</p><p>${this.state.dataJSON.data.data.area}</p></blockquote>`
+    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.the_people_involved.title}</h3><p>${this.state.dataJSON.data.when_and_where_it_occur.state}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.area}</p></blockquote>`
     return seo_blockquote;
   }
 
@@ -319,7 +319,7 @@ export default class EditReportViolenceCard extends React.Component {
                     toReportViolence
                   </div>
                 </div>
-                <JSONSchemaForm 
+                <JSONSchemaForm
                   schema= {this.getSchemaJSON()}
                   onSubmit={((e) => this.onSubmitHandler(e))}
                   onChange={((e) => this.onChangeHandler(e))}
