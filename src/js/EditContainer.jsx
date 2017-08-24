@@ -285,7 +285,7 @@ export default class EditReportViolenceCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.data.title}</h3><p>${this.state.dataJSON.data.data.state}</p><p>${this.state.dataJSON.data.data.area}</p></blockquote>`
+    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.the_people_involved.title}</h3><p>${this.state.dataJSON.data.data.state}</p><p>${this.state.dataJSON.data.data.area}</p></blockquote>`
     return seo_blockquote;
   }
 
