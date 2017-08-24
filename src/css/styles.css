@@ -213,7 +213,7 @@
   text-align: left;
   display: inline-block;
   left: 0px;
-  bottom: 0px;
+  top:100px;
   position: absolute;
 
   opacity: 0.8;
@@ -359,7 +359,7 @@
 
 .form-area-tr td{
   vertical-align: top;
-  line-height: 13px;
+  line-height: 15px;
   /*padding-bottom: 3px;*/
 }
 .text-right{text-align: right;}
