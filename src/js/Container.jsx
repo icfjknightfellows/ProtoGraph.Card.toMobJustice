@@ -79,7 +79,8 @@ export default class ReportViolenceCard extends React.Component {
       return(<div>Loading</div>)
     } else {
       let styles = {
-        width: '640px'
+        maxWidth: '640px',
+        width: '100%'
       }
       const data = this.state.dataJSON.data;
       let copy_paste_from_article = data.copy_paste_from_article,
@@ -98,131 +99,132 @@ export default class ReportViolenceCard extends React.Component {
         disability = hate_crime.is_disability_hate_crime === 'Yes' ? 'Disability, ' : '',
         ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity' : '';
       return(
-        <div id="protograph-div" className="lynching-card" style={styles}>
-          <div className="stamp-area">
-            {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp">
-              <div className="inner-hate-crime-rubber_stamp">
-                <div className="state-name">Hate<br/>crime</div>
+        <div id="protograph-div" >
+          <div className="lynching-card" style={styles}>
+            <div className="stamp-area">
+              {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp">
+                <div className="inner-hate-crime-rubber_stamp">
+                  <div className="state-name">Hate<br/>crime</div>
+                </div>
+              </div> : ''}
+              <div className="crime-rubber_stamp">
+                <div className="stamp-text">classification :</div>
+                <div className="state-name">{the_incident.classification}</div>
               </div>
-            </div> : ''}
-            <div className="crime-rubber_stamp">
-              <div className="stamp-text">classification :</div>
-              <div className="state-name">{the_incident.classification}</div>
-            </div>
-            <div className="state-rubber_stamp">
-              <div className="stamp-text">state of law and order in</div>
-                <div className="state-name">{when_and_where_it_occur.state}</div>
-                <div className="form-area">
-                  <table>
-                    <tbody>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Judge to population:</td>
-                        <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Police to population:</td>
-                        <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Police mobility:</td>
-                        <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Village defence force:</td>
-                        <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div className="state-rubber_stamp">
+                <div className="stamp-text">state of law and order in</div>
+                  <div className="state-name">{when_and_where_it_occur.state}</div>
+                  <div className="form-area">
+                    <table>
+                      <tbody>
+                        <tr className="form-area-tr">
+                          <td className="text-right">Judge to population:</td>
+                          <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
+                        </tr>
+                        <tr className="form-area-tr">
+                          <td className="text-right">Police to population:</td>
+                          <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
+                        </tr>
+                        <tr className="form-area-tr">
+                          <td className="text-right">Police mobility:</td>
+                          <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
+                        </tr>
+                        <tr className="form-area-tr">
+                          <td className="text-right">Village defence force:</td>
+                          <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
-            </div>
             <div className="first-portion">
-              <div className="col-area col-8-area border-right">
-                <div className="form-title">INCIDENT INFORMATION:</div>
-                <div className="card-title">{the_people_involved.title}</div>
-                <div className="form-element event-fixed-height">
-                  <div className="form-lable">Event description:</div>
-                  <div className="form-content">{the_incident.describe_the_event}</div>
-                </div>
-                <div className="form-element">
-                  <div className="form-lable"> Type/s of hate crime:</div>
-                  {gender === '' && caste === '' && race === '' && religion === '' && political === '' && sexual === '' && disability === '' && ethnicity === '' ? '-': <div className="form-content">{gender} {caste} {race} {religion} {political} {sexual} {disability} {ethnicity}</div>} 
-                </div>
-                <div className="col-area col-7-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable">Was the incident planned?</div>
-                    <div className="form-content">{the_incident.was_incident_planned}</div>
-                  </div>
-                </div>
-                <div className="col-area col-2-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable"> Injured:</div>
-                    <div className="form-content">{the_incident.count_injured}</div>
-                  </div>
-                </div>
-                <div className="col-area col-2-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable"> Dead:</div>
-                    <div className="form-content">{the_incident.count_dead}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-area col-4-area">
-                <div className="image-area">
-                  <div className="form-lable">Photo:</div>
-                  {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
-                </div>
-                <div className="area-info">
-                  <div className="form-element">
-                    <div className="form-lable">Date:</div>
-                    <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
+                <div className="col-area col-8-area border-right">
+                  <div className="form-title">INCIDENT INFORMATION:</div>
+                  <div className="card-title">{the_people_involved.title}</div>
+                  <div className="form-element event-fixed-height">
+                    <div className="form-lable">Event description:</div>
+                    <div className="form-content">{the_incident.describe_the_event}</div>
                   </div>
                   <div className="form-element">
-                    <div className="form-lable">District:</div>
-                    <div className="form-content">{when_and_where_it_occur.district}</div>
+                    <div className="form-lable"> Type/s of hate crime:</div>
+                    {gender === '' && caste === '' && race === '' && religion === '' && political === '' && sexual === '' && disability === '' && ethnicity === '' ? '-': <div className="form-content">{gender} {caste} {race} {religion} {political} {sexual} {disability} {ethnicity}</div>} 
                   </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area:</div>
-                    <div className="form-content">{when_and_where_it_occur.area}</div>
+                  <div className="col-area col-7-area no-padding-col">
+                    <div className="form-element no-bottom-margin">
+                      <div className="form-lable">Was the incident planned?</div>
+                      <div className="form-content">{the_incident.was_incident_planned}</div>
+                    </div>
                   </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area type:</div>
-                    <div className="form-content">{when_and_where_it_occur.area_classification}</div>
+                  <div className="col-area col-2-area no-padding-col">
+                    <div className="form-element no-bottom-margin">
+                      <div className="form-lable"> Injured:</div>
+                      <div className="form-content">{the_incident.count_injured}</div>
+                    </div>
                   </div>
-                  <div className="form-element">
-                    <div className="form-lable">Ruling party:</div>
-                    <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
+                  <div className="col-area col-2-area no-padding-col">
+                    <div className="form-element no-bottom-margin">
+                      <div className="form-lable"> Dead:</div>
+                      <div className="form-content">{the_incident.count_dead}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+                <div className="col-area col-4-area">
+                  <div className="image-area">
+                    <div className="form-lable">Photo:</div>
+                    {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
+                  </div>
+                  <div className="area-info">
+                    <div className="form-element">
+                      <div className="form-lable">Date:</div>
+                      <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">District:</div>
+                      <div className="form-content">{when_and_where_it_occur.district}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Area:</div>
+                      <div className="form-content">{when_and_where_it_occur.area}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Area type:</div>
+                      <div className="form-content">{when_and_where_it_occur.area_classification}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Ruling party:</div>
+                      <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div className="second-portion">
-              <div className="col-area col-6-area border-right">
-                <div className="form-title">VICTIM INFORMATION:</div>
-                {the_people_involved.victim_names !== '' ? <div className="form-element names-fixed-height"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.victim_names}</div></div> : ''}
-                <div className="form-element">
-                  <div className="form-lable">Gender</div>
-                  <div className="form-content">{the_people_involved.victim_sex}</div>
+                <div className="col-area col-6-area border-right">
+                  <div className="form-title">VICTIM INFORMATION:</div>
+                  {the_people_involved.victim_names !== '' ? <div className="form-element names-fixed-height"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.victim_names}</div></div> : ''}
+                  <div className="form-element">
+                    <div className="form-lable">Gender</div>
+                    <div className="form-content">{the_people_involved.victim_sex}</div>
+                  </div>
+                  <div className="form-element">
+                    <div className="form-lable">Social classification:</div>
+                    <div className="form-content">{the_people_involved.victim_social_classification}</div>
+                    <div className="hint-text">({the_people_involved.victim_social_classification_notes})</div>
+                  </div>
                 </div>
-                <div className="form-element">
-                  <div className="form-lable">Social classification:</div>
-                  <div className="form-content">{the_people_involved.victim_social_classification}</div>
-                  <div className="hint-text">({the_people_involved.victim_social_classification_notes})</div>
+                <div className="col-area col-6-area">
+                  <div className="form-title">ACCUSED INFORMATION:</div>
+                  {the_people_involved.accused_names !== '' ? <div className="form-element names-fixed-height"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.accused_names}</div></div> : ''}
+                  <div className="form-element">
+                    <div className="form-lable">Gender</div>
+                    <div className="form-content">{the_people_involved.accused_sex}</div>
+                  </div>
+                  <div className="form-element">
+                    <div className="form-lable">Social classification:</div>
+                    <div className="form-content">{the_people_involved.accused_social_classification}</div>
+                    <div className="hint-text">({the_people_involved.accused_social_classification_notes})</div>
+                  </div>
                 </div>
-              </div>
-              <div className="col-area col-6-area">
-                <div className="form-title">ACCUSED INFORMATION:</div>
-                {the_people_involved.accused_names !== '' ? <div className="form-element names-fixed-height"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.accused_names}</div></div> : ''}
-                <div className="form-element">
-                  <div className="form-lable">Gender</div>
-                  <div className="form-content">{the_people_involved.accused_sex}</div>
-                </div>
-                <div className="form-element">
-                  <div className="form-lable">Social classification:</div>
-                  <div className="form-content">{the_people_involved.accused_social_classification}</div>
-                  <div className="hint-text">({the_people_involved.accused_social_classification_notes})</div>
-                </div>
-              </div>
             </div>
             {addendum.notes_to_explain_nuances !== 'No' ? <div className="note">
               <div className="form-title">NOTE:</div>
@@ -234,6 +236,7 @@ export default class ReportViolenceCard extends React.Component {
               {addendum.referral_link_2 !== '' ? <div className="single-link note-text">{addendum.referral_link_2}</div>: ''}
               {addendum.referral_link_3 !== '' ? <div className="single-link note-text">{addendum.referral_link_3}</div>: ''}
             </div> : '' }
+          </div>
         </div>
       )
     }
@@ -244,7 +247,8 @@ export default class ReportViolenceCard extends React.Component {
       return(<div>Loading</div>)
     } else {
       let styles = {
-        width: '300px'
+        maxWidth: '300px',
+        width: '100%'
       }
       const data = this.state.dataJSON.data;
       let copy_paste_from_article = data.copy_paste_from_article,
@@ -280,144 +284,146 @@ export default class ReportViolenceCard extends React.Component {
         }
       }     
       return(
-        <div id="protograph-div" className="lynching-card-mobile" style={styles}>
-          <div className="stamp-area-mobile">
-            {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp-mobile">
-              <div className="inner-hate-crime-rubber_stamp-mobile">
-                <div className="state-name-mobile">Hate<br/>crime</div>
-              </div>
-            </div> : ''}
-            <div className="crime-rubber_stamp-mobile">
-              <div className="stamp-text">classification :</div>
-              <div className="state-name">{the_incident.classification}</div>
-            </div>
-            <div className="state-rubber_stamp-mobile">
-              <div className="stamp-text">state of law and order in</div>
-                <div className="state-name">{when_and_where_it_occur.state}</div>
-                <div className="form-area">
-                <table>
-                  <tbody>
-                    <tr className="form-area-tr">
-                      <td className="text-right">Judge to population:</td>
-                      <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
-                    </tr>
-                    <tr className="form-area-tr">
-                      <td className="text-right">Police to population:</td>
-                      <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
-                    </tr>
-                    <tr className="form-area-tr">
-                      <td className="text-right">Police mobility:</td>
-                      <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
-                    </tr>
-                    <tr className="form-area-tr">
-                      <td className="text-right">Village defence force:</td>
-                      <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="first-portion-mobile">
-            <div className="col-area col-8-area-mobile border-right-mobile">
-              <div className="form-title">INCIDENT INFORMATION:</div>
-              <div className="card-title">{the_people_involved.title}</div>
-              <div className="form-element event-fixed-height-mobile">
-                <div className="form-lable">Event description:</div>
-                <div className="form-content">{the_incident.describe_the_event}</div>
-              </div>
-              <div className="form-element">
-                <div className="form-lable"> Type/s of hate crime:</div>
-                {gender === '' && caste === '' && race === '' && religion === '' && political === '' && sexual === '' && disability === '' && ethnicity === '' ? '-': <div className="form-content">{gender} {caste} {race} {religion} {political} {sexual} {disability} {ethnicity}</div>} 
-              </div>
-              <div className="form-element">
-                <div className="form-lable">Was the incident planned?</div>
-                <div className="form-content">{the_incident.was_incident_planned}</div>
-              </div>  
-              <div className="col-area col-2-area-mobile" style={{padding: 0}}>
-                <div className="form-element">
-                  <div className="form-lable"> Injured:</div>
-                  <div className="form-content">{the_incident.count_injured}</div>
+        <div id="protograph-div" >
+          <div className="lynching-card-mobile" style={styles}>
+            <div className="stamp-area-mobile">
+              {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp-mobile">
+                <div className="inner-hate-crime-rubber_stamp-mobile">
+                  <div className="state-name-mobile">Hate<br/>crime</div>
                 </div>
+              </div> : ''}
+              <div className="crime-rubber_stamp-mobile">
+                <div className="stamp-text">classification :</div>
+                <div className="state-name">{the_incident.classification}</div>
               </div>
-              <div className="col-area col-2-area-mobile" style={{padding: 0}}>
-                <div className="form-element">
-                  <div className="form-lable"> Dead:</div>
-                  <div className="form-content">{the_incident.count_dead}</div>
-                </div>
-              </div>
-              <button id="read-more-button" style={button_style} onClick={(e) => this.handleReadMoreClick(e)}>Keep reading</button>
-            </div>
-            <div className="hide-content" style={content_style}> 
-              <div className="col-area col-4-area-mobile">
-                <div className="image-area-mobile">
-                  <div className="form-lable">Photo:</div>
-                  {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
-                </div>
-                <div className="area-info">
-                  <div className="form-element">
-                    <div className="form-lable">Date:</div>
-                    <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">District:</div>
-                    <div className="form-content">{when_and_where_it_occur.district}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area:</div>
-                    <div className="form-content">{when_and_where_it_occur.area}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area type:</div>
-                    <div className="form-content">{when_and_where_it_occur.area_classification}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Ruling party:</div>
-                    <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
-                  </div>
-                </div>
-              </div>
-            <div className="second-portion">
-              <div className="col-area col-6-area-mobile border-right-mobile">
-                <div className="form-title">VICTIM INFORMATION:</div>
-                {the_people_involved.victim_names !== '' ? <div className="form-element names-fixed-height-mobile"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.victim_names}</div></div> : ''}
-                <div className="form-element">
-                  <div className="form-lable">Gender</div>
-                  <div className="form-content">{the_people_involved.victim_sex}</div>
-                </div>
-                <div className="form-element">
-                  <div className="form-lable">Social classification:</div>
-                  <div className="form-content">{the_people_involved.victim_social_classification}</div>
-                  <div className="hint-text">({the_people_involved.victim_social_classification_notes})</div>
-                </div>
-              </div>
-              <div className="col-area col-6-area-mobile">
-                <div className="form-title">ACCUSED INFORMATION:</div>
-                {the_people_involved.accused_names !== '' ? <div className="form-element names-fixed-height-mobile"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.accused_names}</div></div> : ''}
-                <div className="form-element">
-                  <div className="form-lable">Gender</div>
-                  <div className="form-content">{the_people_involved.accused_sex}</div>
-                </div>
-                <div className="form-element">
-                  <div className="form-lable">Social classification:</div>
-                  <div className="form-content">{the_people_involved.accused_social_classification}</div>
-                  <div className="hint-text">({the_people_involved.accused_social_classification_notes})</div>
+              <div className="state-rubber_stamp-mobile">
+                <div className="stamp-text">state of law and order in</div>
+                  <div className="state-name">{when_and_where_it_occur.state}</div>
+                  <div className="form-area">
+                  <table>
+                    <tbody>
+                      <tr className="form-area-tr">
+                        <td className="text-right">Judge to population:</td>
+                        <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
+                      </tr>
+                      <tr className="form-area-tr">
+                        <td className="text-right">Police to population:</td>
+                        <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
+                      </tr>
+                      <tr className="form-area-tr">
+                        <td className="text-right">Police mobility:</td>
+                        <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
+                      </tr>
+                      <tr className="form-area-tr">
+                        <td className="text-right">Village defence force:</td>
+                        <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-            {addendum.notes_to_explain_nuances !== 'No' ? <div className="note-mobile">
-              <div className="form-title">NOTE:</div>
-              <div className="note-text">{addendum.notes_to_explain_nuances}</div>
-            </div>: ''}
-            {addendum.referral_link_1 !== '' && addendum.referral_link_2 !== '' && addendum.referral_link_3 !== '' ? <div className="referral-links">
-              <div className="form-title">REFERRAL LINKS:</div>
-              {addendum.referral_link_1 !== '' ? <div className="single-link note-text">{addendum.referral_link_1}</div>: ''}
-              {addendum.referral_link_2 !== '' ? <div className="single-link note-text">{addendum.referral_link_2}</div>: ''}
-              {addendum.referral_link_3 !== '' ? <div className="single-link note-text">{addendum.referral_link_3}</div>: ''}
-            </div> : '' }
+            <div className="first-portion-mobile">
+              <div className="col-area col-8-area-mobile border-right-mobile">
+                <div className="form-title">INCIDENT INFORMATION:</div>
+                <div className="card-title">{the_people_involved.title}</div>
+                <div className="form-element event-fixed-height-mobile">
+                  <div className="form-lable">Event description:</div>
+                  <div className="form-content">{the_incident.describe_the_event}</div>
+                </div>
+                <div className="form-element">
+                  <div className="form-lable"> Type/s of hate crime:</div>
+                  {gender === '' && caste === '' && race === '' && religion === '' && political === '' && sexual === '' && disability === '' && ethnicity === '' ? '-': <div className="form-content">{gender} {caste} {race} {religion} {political} {sexual} {disability} {ethnicity}</div>} 
+                </div>
+                <div className="form-element">
+                  <div className="form-lable">Was the incident planned?</div>
+                  <div className="form-content">{the_incident.was_incident_planned}</div>
+                </div>  
+                <div className="col-area col-2-area-mobile" style={{padding: 0}}>
+                  <div className="form-element">
+                    <div className="form-lable"> Injured:</div>
+                    <div className="form-content">{the_incident.count_injured}</div>
+                  </div>
+                </div>
+                <div className="col-area col-2-area-mobile" style={{padding: 0}}>
+                  <div className="form-element">
+                    <div className="form-lable"> Dead:</div>
+                    <div className="form-content">{the_incident.count_dead}</div>
+                  </div>
+                </div>
+                <button id="read-more-button" style={button_style} onClick={(e) => this.handleReadMoreClick(e)}>Keep reading</button>
+              </div>
+              <div className="hide-content" style={content_style}> 
+                <div className="col-area col-4-area-mobile">
+                  <div className="image-area-mobile">
+                    <div className="form-lable">Photo:</div>
+                    {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
+                  </div>
+                  <div className="area-info">
+                    <div className="form-element">
+                      <div className="form-lable">Date:</div>
+                      <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">District:</div>
+                      <div className="form-content">{when_and_where_it_occur.district}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Area:</div>
+                      <div className="form-content">{when_and_where_it_occur.area}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Area type:</div>
+                      <div className="form-content">{when_and_where_it_occur.area_classification}</div>
+                    </div>
+                    <div className="form-element">
+                      <div className="form-lable">Ruling party:</div>
+                      <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
+                    </div>
+                  </div>
+                </div>
+              <div className="second-portion">
+                <div className="col-area col-6-area-mobile border-right-mobile">
+                  <div className="form-title">VICTIM INFORMATION:</div>
+                  {the_people_involved.victim_names !== '' ? <div className="form-element names-fixed-height-mobile"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.victim_names}</div></div> : ''}
+                  <div className="form-element">
+                    <div className="form-lable">Gender</div>
+                    <div className="form-content">{the_people_involved.victim_sex}</div>
+                  </div>
+                  <div className="form-element">
+                    <div className="form-lable">Social classification:</div>
+                    <div className="form-content">{the_people_involved.victim_social_classification}</div>
+                    <div className="hint-text">({the_people_involved.victim_social_classification_notes})</div>
+                  </div>
+                </div>
+                <div className="col-area col-6-area-mobile">
+                  <div className="form-title">ACCUSED INFORMATION:</div>
+                  {the_people_involved.accused_names !== '' ? <div className="form-element names-fixed-height-mobile"><div className="form-lable">Name/s:</div><div className="form-content">{the_people_involved.accused_names}</div></div> : ''}
+                  <div className="form-element">
+                    <div className="form-lable">Gender</div>
+                    <div className="form-content">{the_people_involved.accused_sex}</div>
+                  </div>
+                  <div className="form-element">
+                    <div className="form-lable">Social classification:</div>
+                    <div className="form-content">{the_people_involved.accused_social_classification}</div>
+                    <div className="hint-text">({the_people_involved.accused_social_classification_notes})</div>
+                  </div>
+                </div>
+              </div>
+              {addendum.notes_to_explain_nuances !== 'No' ? <div className="note-mobile">
+                <div className="form-title">NOTE:</div>
+                <div className="note-text">{addendum.notes_to_explain_nuances}</div>
+              </div>: ''}
+              {addendum.referral_link_1 !== '' && addendum.referral_link_2 !== '' && addendum.referral_link_3 !== '' ? <div className="referral-links">
+                <div className="form-title">REFERRAL LINKS:</div>
+                {addendum.referral_link_1 !== '' ? <div className="single-link note-text">{addendum.referral_link_1}</div>: ''}
+                {addendum.referral_link_2 !== '' ? <div className="single-link note-text">{addendum.referral_link_2}</div>: ''}
+                {addendum.referral_link_3 !== '' ? <div className="single-link note-text">{addendum.referral_link_3}</div>: ''}
+              </div> : '' }
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       )
     }   
   }
