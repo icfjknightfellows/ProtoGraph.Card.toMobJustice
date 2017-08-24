@@ -32,7 +32,7 @@ export default class EditReportViolenceCard extends React.Component {
       optionalConfigJSON: this.state.dataJSON.configs,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.the_people_involved.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
@@ -319,7 +319,7 @@ export default class EditReportViolenceCard extends React.Component {
                     toReportViolence
                   </div>
                 </div>
-                <JSONSchemaForm 
+                <JSONSchemaForm
                   schema= {this.getSchemaJSON()}
                   onSubmit={((e) => this.onSubmitHandler(e))}
                   onChange={((e) => this.onChangeHandler(e))}
