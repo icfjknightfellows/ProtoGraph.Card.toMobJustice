@@ -91,13 +91,13 @@ export default class ReportViolenceCard extends React.Component {
         addendum = data.addendum;
       let police_ratio = when_and_where_it_occur.police_to_population_in_state.split(" "),
         gender = hate_crime.is_gender_hate_crime === 'Yes' ? 'Gender, ' : '',
-        caste = hate_crime.is_caste_hate_crime === 'Yes' ? 'caste, ' : '',
-        race = hate_crime.is_race_hate_crime === 'Yes' ? 'race, ' : '',
-        religion = hate_crime.is_religion_hate_crime === 'Yes' ? 'religion, ' : '',
-        political = hate_crime.is_political_affiliation_hate_crime === 'Yes' ? 'political affiliation, ' : '',
-        sexual = hate_crime.is_sexual_orientation_and_gender_identity_hate_crime === 'Yes' ? 'sexual orientation and gender identity, ' : '',
-        disability = hate_crime.is_disability_hate_crime === 'Yes' ? 'disability, ' : '',
-        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'ethnicity' : '';
+        caste = hate_crime.is_caste_hate_crime === 'Yes' ? 'Caste, ' : '',
+        race = hate_crime.is_race_hate_crime === 'Yes' ? 'Race, ' : '',
+        religion = hate_crime.is_religion_hate_crime === 'Yes' ? 'Religion, ' : '',
+        political = hate_crime.is_political_affiliation_hate_crime === 'Yes' ? 'Political affiliation, ' : '',
+        sexual = hate_crime.is_sexual_orientation_and_gender_identity_hate_crime === 'Yes' ? 'Sexual orientation and gender identity, ' : '',
+        disability = hate_crime.is_disability_hate_crime === 'Yes' ? 'Disability, ' : '',
+        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity' : '';
       return(
         <div id="protograph-div" className="lynching-card" style={styles}>
           <div className="stamp-area">
