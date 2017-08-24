@@ -1,8 +1,681 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+
+.lynching-card{
+  font-family: 'Lato', sans-serif;
+  background:#FBF3E6;
+  box-shadow: 0px 4px 5px lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.first-portion{
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+}
+
+.col-area{
+  display: inline-block;
+  float: left;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.col-8-area{width: 70%;}
+.col-7-area{width: 60%;}
+.col-6-area{width: 50%;}
+.col-4-area{width: 30%;}
+.col-2-area{width: 20%;}
+
+.border-right{
+  border-right: 1px solid lightgrey;
+  margin-left: -1px;
+}
+
+.form-title{
+  font-size: 11px;
+  color: grey;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.card-title{
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.form-lable{
+  font-size: 10px;
+  color: grey;
+  margin-bottom: 5px;
+}
+
+.form-element{
+  margin-bottom: 15px;
+}
+
+.note{
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 15px 10px;
+}
+
+.note-text{
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.referral-links{
+  padding: 15px 10px;
+}
+
+.single-link{
+  text-decoration: underline;
+  margin-bottom: 5px;
+  color: #E57373;
+}
+
+.form-content{
+  font-family: 'Special Elite', cursive;
+  /*font-family: 'Architects Daughter', cursive;*/
+  /*font-family: monospace;*/
+  line-height: 24px;
+}
+
+.hint-text{
+  font-size: 12px;
+  color: grey;
+  font-style: italic;
+}
+
+.no-padding-col{
+  padding: 0px !important;
+}
+
+.names-fixed-height{
+  min-height: 100px;
+}
+
+.event-fixed-height{
+  min-height: 100px;
+}
+
+.area-info .form-element .form-lable{
+  display: inline-block;
+  width: 60px;
+}
+
+.area-info .form-element .form-content{
+  display: inline-block;
+}
+
+.area-info .form-element{
+  margin-bottom: 0px;
+}
+
+.count-area{
+  border-top: 1px solid lightgrey;
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.count-area .form-element .form-lable{
+  width: 50px;
+}
+
+.image-area{
+  margin-bottom: 10px;
+}
+
+.no-bottom-margin{
+  margin-bottom: 0px;
+}
+
+/*stamp-css*/
+
+.stamp-area{
+  position: relative;
+}
+
+.state-rubber_stamp {
+  font-family: 'Vollkorn', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  border: 2px solid black;
+  float: right;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  left: 15px;
+  top: 15px;
+  opacity: 0.8;
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  /*position:absolute;*/
+  margin-bottom: 10px;
+}
+
+.state-name{
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+}
+
+.state-rubber_stamp::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  right: 15px;
+  top: 15px;
+  padding: 7px 12px;
+  background: url(../../src/img/noise.png) repeat;
+}
+
+.crime-rubber_stamp {
+  font-family: 'Vollkorn', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+  padding-top: 40px;
+  float: left;
+  padding: 5px;
+  text-align: left;
+  display: inline-block;
+  left: 0px;
+  top: 90px;
+  position: absolute;
+
+  opacity: 0.8;
+  -webkit-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+}
+
+.crime-rubber_stamp .state-name{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+.crime-rubber_stamp .stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+    font-family: 'Lato', sans-serif;
+    color: grey;
+    font-weight: 100;
+}
+
+.crime-rubber_stamp::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  right: 15px;
+  top: 15px;
+  padding: 7px 12px;
+  background: url(../../src/img/noise.png) repeat;
+}
+
+.hate-crime-rubber_stamp {
+  font-family: 'Vollkorn', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+  height: 90px;
+  width: 90px;
+  padding-top: 40px;
+  border: 2px solid red;
+  float: left;
+  padding: 5px;
+  border-radius: 5000px;
+  text-align: center;
+  display: inline-block;
+  left: -17px;
+  top: -20px;
+  position: absolute;
+
+  opacity: 0.8;
+  -webkit-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  /*position:absolute;*/
+}
+
+.hate-crime-rubber_stamp .state-name{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+
+.hate-crime-rubber_stamp .stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+}
+
+.hate-crime-rubber_stamp::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  right: 15px;
+  top: 15px;
+  padding: 7px 12px;
+  background: url(../../src/img/noise.png) repeat;
+}
+
+.inner-hate-crime-rubber_stamp {
+  font-family: 'Vollkorn', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: red;
+  height: 80px;
+  width: 80px;
+  padding-top: 40px;
+  border: 1px solid red;
+  float: left;
+  padding: 5px;
+  border-radius: 5000px;
+  text-align: center;
+  display: inline-block;
+  left: 4px;
+  top: 4px;
+  position: absolute;
+
+  opacity: 0.8;
+  -webkit-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  /*position:absolute;*/
+}
+
+.inner-hate-crime-rubber_stamp .state-name{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 15px;
+}
+
+.inner-hate-crime-rubber_stamp .stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+}
+
+.inner-hate-crime-rubber_stamp::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  right: 15px;
+  top: 15px;
+  padding: 7px 12px;
+  background: url(../../src/img/noise.png) repeat;
+}
+
+table{
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+td{
+  vertical-align: top;
+  padding-bottom: 3px;
+}
+.text-right{text-align: right;}
+.text-left{text-align: left;}
+
+
+/*===========Render Mobile===================================*/
+
+.lynching-card-mobile{
+    font-family: 'Lato', sans-serif;
+    background:#FBF3E6;
+    box-shadow: 0px 4px 5px lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    font-size: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .col-8-area-mobile{width: 100%;}
+  .col-7-area-mobile{width: 100%;}
+  .col-6-area-mobile{width: 100%;}
+  .col-4-area-mobile{width: 100%;}
+  .col-2-area-mobile{width: 50%;}
+
+  .border-right-mobile{
+    border-right: 0px solid lightgrey;
+    margin-left: 0px;
+  }
+
+  .names-fixed-height-mobile{
+    min-height: 0px;
+  }
+
+  .event-fixed-height-mobile{
+    min-height: 0px;
+  }
+
+  .note-mobile{
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+
+  .first-portion-mobile{
+    border: 0px;
+  }
+
+  .no-padding-col-mobile{
+    margin-bottom: 15px !important;
+    padding: 0px !important;
+  }
+
+  .image-area-mobile{
+    margin-top: -20px;
+  }
+
+  .hate-crime-rubber_stamp-mobile {
+    font-family: 'Vollkorn', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+    padding-top: 40px;
+    border: 2px solid red;
+    float: left;
+    padding: 5px;
+    border-radius: 5000px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+
+    left: -7px;
+    top: -10px;
+    height: 70px !important;
+    width: 70px !important;
+
+    opacity: 0.8;
+    -webkit-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+  }
+
+  .hate-crime-rubber_stamp-mobile .state-name-mobile{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 5px;
+  }
+
+  .hate-crime-rubber_stamp-mobile .stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+  }
+
+
+  .hate-crime-rubber_stamp-mobile::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    right: 15px;
+    top: 15px;
+    padding: 7px 12px;
+    background: url(../../src/img/noise.png) repeat;
+  } 
+
+  .inner-hate-crime-rubber_stamp-mobile{
+    font-family: 'Vollkorn', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+    padding-top: 40px;
+    border: 1px solid red;
+    float: left;
+    padding: 5px;
+    border-radius: 5000px;
+    text-align: center;
+    display: inline-block;
+    left: 4px;
+    top: 4px;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    height: 60px;
+    width: 60px;
+  }
+
+  .state-rubber_stamp-mobile{
+    font-family: 'Vollkorn', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    left: 15px;
+    top: 15px;
+    opacity: 0.8;
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    margin-bottom: 10px;
+    float: none;
+    margin-top: 8px;
+    margin-left: 6px;
+  }
+
+  .state-rubber_stamp-mobile::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    right: 15px;
+    top: 15px;
+    padding: 7px 12px;
+    background: url(../../src/img/noise.png) repeat;
+  }
+
+  .crime-rubber_stamp-mobile .state-name{
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 5px;
+  }
+
+  .crime-rubber_stamp-mobile .stamp-text{
+    font-size: 10px;
+    padding: 0px;
+    line-height: 15px;
+    font-family: 'Lato', sans-serif;
+    color: grey;
+    font-weight: 100;
+  }
+
+  .crime-rubber_stamp-mobile{
+    font-family: 'Vollkorn', serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+    padding-top: 40px;
+    float: left;
+    padding: 5px;
+    text-align: left;
+    display: inline-block;
+    opacity: 0.8;
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    top: 170px;
+    left: 5px;
+    position: absolute;
+  }
+
+  .crime-rubber_stamp-mobile::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    right: 15px;
+    top: 15px;
+    padding: 7px 12px;
+    background: url(../../src/img/noise.png) repeat;
+  }
+
+  .stamp-area-mobile{
+    height: 250px;
+    position: relative;
+  }
+
+  .inner-hate-crime-rubber_stamp-mobile .state-name-mobile{
+    font-size: 18px !important;
+    line-height: 18px !important;
+    margin-top: 13px !important;
+  }
+
+
+/*============= mobile version =============*/
+
+/*@media only screen and (max-width: 500px) {
+  .lynching-card{
+    font-family: 'Lato', sans-serif;
+    background:#FBF3E6;
+    box-shadow: 0px 4px 5px lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    font-size: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }*/
+/*  .col-8-area{width: 100%;}
+  .col-7-area{width: 100%;}
+  .col-6-area{width: 100%;}
+  .col-4-area{width: 100%;}
+  .col-2-area{width: 50%;}
+
+  .border-right{
+    border-right: 0px solid lightgrey;
+    margin-left: 0px;
+  }
+
+  .names-fixed-height{
+    min-height: 0px;
+  }
+
+  .event-fixed-height{
+    min-height: 0px;
+  }
+
+  .note{
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+
+  .first-portion{
+    border: 0px;
+  }
+
+  .no-padding-col{
+    margin-bottom: 15px !important;
+  }
+
+  .image-area{
+    margin-top: -20px;
+  }
+
+  .hate-crime-rubber_stamp{
+    left: -7px;
+    top: -10px;
+    height: 70px !important;
+    width: 70px !important;
+  }*/
+
+/*  .inner-hate-crime-rubber_stamp{
+    height: 60px;
+    width: 60px;
+  }
+
+  .state-rubber_stamp{
+    float: none;
+    margin-top: 8px;
+    margin-left: 6px;
+  }
+
+  .crime-rubber_stamp{
+    top: 170px;
+    left: 5px;
+  }
+
+  .stamp-area{
+    height: 250px;
+  }
+
+  .inner-hate-crime-rubber_stamp .state-name{
+    font-size: 18px !important;
+    line-height: 18px !important;
+    margin-top: 13px !important;
+  }
+
+}*/
+
+/*======OLD css======================================================================*/
+
 body{
   margin: 0px;
 }
 
-.protograph-card{
+/*.protograph-card{
   padding: 20px;
   transition: 0.2s ease-in-out;
 }
@@ -82,14 +755,14 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
 
 .hide-content{
   display: none;
-}
+}*/
 
 .no-image-div{
   width: 100%;
   height: 190px;
   background-color: #efefef;
 }
-
+/*
 .protograph-card:hover > .protograph-footer > .protograph-credits{
   color: #7a7a7a;
 }
@@ -101,7 +774,7 @@ h6{font-weight: 400 !important; font-size: 0.8em; color: gray !important;}
 .protograph-card:hover > .protograph-footer > .protograph-credits:hover{
   color: blue;
 }
-
+*/
 #ProtoScreenshot {
   width: 450px;
   padding: 10px 15px;
