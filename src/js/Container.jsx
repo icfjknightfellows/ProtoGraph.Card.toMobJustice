@@ -53,7 +53,6 @@ export default class ReportViolenceCard extends React.Component {
     if (this.state.fetchingData){
       axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
         .then(axios.spread((card, schema, opt_config, opt_config_schema) => {
-          console.log(card, "card")
           this.setState({
             fetchingData: false,
             dataJSON: {
