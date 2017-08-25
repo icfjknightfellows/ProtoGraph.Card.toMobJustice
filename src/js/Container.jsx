@@ -305,7 +305,7 @@ export default class ReportViolenceCard extends React.Component {
         police_ratio = when_and_where_it_occur.police_to_population_in_state.split(" ");
       return(
         <div id="ProtoScreenshot" className="lynching-card">
-          <div className="stamp-area">
+          <div style={{position: 'relative'}}>
             {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp">
               <div className="inner-hate-crime-rubber_stamp">
                 <div className="state-name">Hate<br/>crime</div>

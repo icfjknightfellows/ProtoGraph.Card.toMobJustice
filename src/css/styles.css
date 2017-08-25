@@ -506,11 +506,6 @@ body{
   -ms-transform: rotate(30deg);
 }
 
-#ProtoScreenshot .stamp-area{
-  position: relative;
-  min-height: auto;
-}
-
 #ProtoScreenshot .crime-rubber_stamp{
   position: relative;
 }
