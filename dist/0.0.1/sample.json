@@ -42,11 +42,11 @@
       "accused_sex": "Male"
     },
     "hate_crime": {
-      "is_gender_hate_crime": "Yes",
-      "is_caste_hate_crime": "Yes",
-      "is_race_hate_crime": "Yes",
+      "is_gender_hate_crime": "No",
+      "is_caste_hate_crime": "No",
+      "is_race_hate_crime": "No",
       "is_religion_hate_crime": "No",
-      "is_political_affiliation_hate_crime": "Yes",
+      "is_political_affiliation_hate_crime": "No",
       "is_sexual_orientation_and_gender_identity_hate_crime": "Yes",
       "is_disability_hate_crime": "Yes",
       "is_ethnicity_hate_crime": "No",

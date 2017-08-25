@@ -275,7 +275,7 @@ export default class ReportViolenceCard extends React.Component {
                 <div className="form-element">
                   <div className="form-content place-info-area">{when_and_where_it_occur.approximate_date_of_incident}
                   </div>
-                  <div className="form-content place-info-area" style={{float: 'right'}}>{when_and_where_it_occur.state}
+                  <div className="form-content place-info-area" style={{float: 'right'}}>{when_and_where_it_occur.state.substring(0, 18)}
                   </div>
                 </div>
                 <div className="place-info-area">
