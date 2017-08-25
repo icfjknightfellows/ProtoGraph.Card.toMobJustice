@@ -174,27 +174,31 @@ export default class ReportViolenceCard extends React.Component {
                     <div className="form-lable">Photo:</div>
                     {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
                   </div>
-                  <div className="area-info">
-                    <div className="form-element">
-                      <div className="form-lable">Date:</div>
-                      <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
-                    </div>
-                    <div className="form-element">
-                      <div className="form-lable">District:</div>
-                      <div className="form-content">{when_and_where_it_occur.district}</div>
-                    </div>
-                    <div className="form-element">
-                      <div className="form-lable">Area:</div>
-                      <div className="form-content">{when_and_where_it_occur.area}</div>
-                    </div>
-                    <div className="form-element">
-                      <div className="form-lable">Area type:</div>
-                      <div className="form-content">{when_and_where_it_occur.area_classification}</div>
-                    </div>
-                    <div className="form-element">
-                      <div className="form-lable">Ruling party:</div>
-                      <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
-                    </div>
+                  <div>
+                    <table style={{width: '100%'}}>
+                      <tbody>
+                        <tr className="place-area-tr">
+                          <td className="text-left form-lable">Date:</td>
+                          <td className="text-left form-content">{when_and_where_it_occur.approximate_date_of_incident}</td>
+                        </tr>
+                        <tr className="place-area-tr">
+                          <td className="text-left form-lable">District:</td>
+                          <td className="text-left form-content">{when_and_where_it_occur.district}</td>
+                        </tr>
+                        <tr className="place-area-tr">
+                          <td className="text-left form-lable">Area:</td>
+                          <td className="text-left form-content">{when_and_where_it_occur.area}</td>
+                        </tr>
+                        <tr className="place-area-tr">
+                          <td className="text-left form-lable">Area type:</td>
+                          <td className="text-left form-content">{when_and_where_it_occur.area_classification}</td>
+                        </tr>
+                        <tr className="place-area-tr">
+                          <td className="text-left form-lable">Ruling party:</td>
+                          <td className="text-left form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
             </div>
@@ -226,7 +230,7 @@ export default class ReportViolenceCard extends React.Component {
                   </div>
                 </div>
             </div>
-            {addendum.notes_to_explain_nuances !== 'No' ? <div className="note">
+            {addendum.notes_to_explain_nuances !== 'No' || addendum.notes_to_explain_nuances !== '' ? <div className="note">
               <div className="form-title">NOTE:</div>
               <div className="note-text">{addendum.notes_to_explain_nuances}</div>
             </div>: ''}
@@ -389,3 +393,25 @@ export default class ReportViolenceCard extends React.Component {
   }
 }
  
+ // <div className="area-info">
+                  //   <div className="form-element">
+                  //     <div className="form-lable">Date:</div>
+                  //     <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
+                  //   </div>
+                  //   <div className="form-element">
+                  //     <div className="form-lable">District:</div>
+                  //     <div className="form-content">{when_and_where_it_occur.district}</div>
+                  //   </div>
+                  //   <div className="form-element">
+                  //     <div className="form-lable">Area:</div>
+                  //     <div className="form-content">{when_and_where_it_occur.area}</div>
+                  //   </div>
+                  //   <div className="form-element">
+                  //     <div className="form-lable">Area type:</div>
+                  //     <div className="form-content">{when_and_where_it_occur.area_classification}</div>
+                  //   </div>
+                  //   <div className="form-element">
+                  //     <div className="form-lable">Ruling party:</div>
+                  //     <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
+                  //   </div>
+                  // </div>
