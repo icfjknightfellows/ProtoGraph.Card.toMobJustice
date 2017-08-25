@@ -20,6 +20,7 @@
   position: relative;
   box-sizing: content-box;
   display: inline-block;
+  width: 100%
 }
 
 .col-area{
