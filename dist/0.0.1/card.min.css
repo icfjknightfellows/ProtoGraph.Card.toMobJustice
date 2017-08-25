@@ -415,121 +415,8 @@
   margin-top: -20px;
 }
 
-.hate-crime-rubber_stamp-mobile {
-  font-family: 'Vollkorn', serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: red;
-  padding-top: 40px;
-  border: 2px solid red;
-  float: left;
-  padding: 5px;
-  border-radius: 5000px;
-  text-align: center;
-  display: inline-block;
-  position: absolute;
-
-  left: -7px;
-  top: -10px;
-  height: 70px !important;
-  width: 70px !important;
-
-  opacity: 0.8;
-  -webkit-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-}
-
-.hate-crime-rubber_stamp-mobile .state-name-mobile{
-  font-size: 22px;
-  line-height: 24px;
-  margin-top: 5px;
-}
-
-.hate-crime-rubber_stamp-mobile .stamp-text{
-  font-size: 10px;
-  padding: 0px;
-  line-height: 15px;
-}
-
-
-.hate-crime-rubber_stamp-mobile::after {
-  position: absolute;
-  content: " ";
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  right: 15px;
-  top: 15px;
-  padding: 7px 12px;
-  background: url(https://s3.ap-south-1.amazonaws.com/cdn.protograph/Assets/noise.png) repeat;
-} 
-
-.inner-hate-crime-rubber_stamp-mobile{
-  font-family: 'Vollkorn', serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: red;
-  padding-top: 40px;
-  border: 1px solid red;
-  float: left;
-  padding: 5px;
-  border-radius: 5000px;
-  text-align: center;
-  display: inline-block;
-  left: 4px;
-  top: 4px;
-  position: absolute;
-  opacity: 0.8;
-  -webkit-transform: rotate(-10deg);
-  -o-transform: rotate(-10deg);
-  -moz-transform: rotate(-10deg);
-  -ms-transform: rotate(-10deg);
-  height: 60px;
-  width: 60px;
-}
-
-.state-rubber_stamp-mobile{
-  font-family: 'Vollkorn', serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: black;
-  border: 2px solid black;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  display: inline-block;
-  left: 15px;
-  top: 15px;
-  opacity: 0.8;
-  -webkit-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  margin-bottom: 10px;
-  float: none;
-  margin-top: 8px;
-  margin-left: 6px;
-}
-
-.state-rubber_stamp-mobile::after {
-  position: absolute;
-  content: " ";
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  right: 15px;
-  top: 15px;
-  padding: 7px 12px;
-  background: url(https://s3.ap-south-1.amazonaws.com/cdn.protograph/Assets/noise.png) repeat;
-}
-
 .crime-rubber_stamp-mobile .state-name{
-  font-size: 22px;
+  font-size: 18px;
   line-height: 24px;
   margin-top: 5px;
 }
@@ -549,9 +436,8 @@
   text-transform: uppercase;
   font-weight: bold;
   color: red;
-  padding-top: 40px;
   float: left;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
   display: inline-block;
   opacity: 0.8;
@@ -559,9 +445,7 @@
   -o-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
-  top: 170px;
   left: 5px;
-  position: absolute;
 }
 
 .crime-rubber_stamp-mobile::after {
@@ -577,7 +461,6 @@
 }
 
 .stamp-area-mobile{
-  height: 250px;
   position: relative;
 }
 
@@ -587,6 +470,11 @@
   margin-top: 13px !important;
 }
 
+.place-info-area {
+  padding-left: 10px;
+  padding-right:10px;
+  padding-bottom: 10px;
+}
 
 body{
   margin: 0px;
