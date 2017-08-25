@@ -230,7 +230,7 @@ export default class ReportViolenceCard extends React.Component {
                   </div>
                 </div>
             </div>
-            {addendum.notes_to_explain_nuances !== 'No' || addendum.notes_to_explain_nuances !== '' ? <div className="note">
+            {addendum.notes_to_explain_nuances !== '' ? <div className="note">
               <div className="form-title">NOTE:</div>
               <div className="note-text">{addendum.notes_to_explain_nuances}</div>
             </div>: ''}
