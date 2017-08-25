@@ -495,19 +495,23 @@ body{
   margin-right: 0px;
 }
 
-#read-more-button {
-  width: 276px;
-  border-radius: 5px;
-  padding: 10px 0px;
-  font-size: 14px;
-  background: #060606 !important;
-  transition: 0.2s ease-in-out;
-  cursor: pointer;
-  font-family: 'Special Elite', cursive;
-  border: 1px solid #FBF3E6;
-  color: white;
-  margin-bottom: 15px;
+#ProtoScreenshot .hate-crime-rubber_stamp{
+  float:right;
+  top: -21px;
+  right: -21px;
+  left: auto;
+  -webkit-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
 }
 
+#ProtoScreenshot .stamp-area{
+  position: relative;
+  min-height: auto;
+}
 
+#ProtoScreenshot .crime-rubber_stamp{
+  position: relative;
+}
 

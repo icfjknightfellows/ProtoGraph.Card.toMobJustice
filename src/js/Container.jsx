@@ -315,33 +315,7 @@ export default class ReportViolenceCard extends React.Component {
               <div className="stamp-text">classification :</div>
               <div className="state-name">{the_incident.classification}</div>
             </div>
-            <div className="state-rubber_stamp">
-              <div className="stamp-text">state of law and order in</div>
-                <div className="state-name">{when_and_where_it_occur.state}</div>
-                <div className="form-area">
-                  <table>
-                    <tbody>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Judge to population:</td>
-                        <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Police to population:</td>
-                        <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Police mobility:</td>
-                        <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
-                      </tr>
-                      <tr className="form-area-tr">
-                        <td className="text-right">Village defence force:</td>
-                        <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+          </div>
             <div className="first-portion">
               <div className="col-area col-8-area border-right">
                 <div className="form-title">INCIDENT INFORMATION:</div>
