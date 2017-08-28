@@ -97,7 +97,16 @@ export default class ReportViolenceCard extends React.Component {
         political = hate_crime.is_political_affiliation_hate_crime === 'Yes' ? 'Political affiliation, ' : '',
         sexual = hate_crime.is_sexual_orientation_and_gender_identity_hate_crime === 'Yes' ? 'Sexual orientation and gender identity, ' : '',
         disability = hate_crime.is_disability_hate_crime === 'Yes' ? 'Disability, ' : '',
-        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity' : '';
+        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity, ' : '';
+
+      let hatecrimes=gender+caste+race+religion+political+sexual+disability+ethnicity;
+      hatecrimes=hatecrimes.slice(0,-2);
+      for (let i=0;i < hatecrimes.length ; i++) {
+        if(hatecrimes[i]===","){
+          console.log(hatecrimes[i+2]); 
+          hatecrimes=hatecrimes.replace(hatecrimes[i+2],hatecrimes[i+2].toLowerCase())
+        }
+      }
       return(
         <div id="protograph-div" >
           <div className="lynching-card" style={styles}>
@@ -148,7 +157,7 @@ export default class ReportViolenceCard extends React.Component {
                   </div>
                   <div className="form-element">
                     <div className="form-lable"> Type/s of hate crime:</div>
-                    {gender === '' && caste === '' && race === '' && religion === '' && political === '' && sexual === '' && disability === '' && ethnicity === '' ? '-': <div className="form-content">{gender} {caste} {race} {religion} {political} {sexual} {disability} {ethnicity}</div>} 
+                    {hatecrimes === '' ? '-': <div className="form-content">{hatecrimes}</div>} 
                   </div>
                   <div className="col-area col-7-area no-padding-col">
                     <div className="form-element no-bottom-margin">
@@ -392,26 +401,3 @@ export default class ReportViolenceCard extends React.Component {
     }
   }
 }
- 
- // <div className="area-info">
-                  //   <div className="form-element">
-                  //     <div className="form-lable">Date:</div>
-                  //     <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
-                  //   </div>
-                  //   <div className="form-element">
-                  //     <div className="form-lable">District:</div>
-                  //     <div className="form-content">{when_and_where_it_occur.district}</div>
-                  //   </div>
-                  //   <div className="form-element">
-                  //     <div className="form-lable">Area:</div>
-                  //     <div className="form-content">{when_and_where_it_occur.area}</div>
-                  //   </div>
-                  //   <div className="form-element">
-                  //     <div className="form-lable">Area type:</div>
-                  //     <div className="form-content">{when_and_where_it_occur.area_classification}</div>
-                  //   </div>
-                  //   <div className="form-element">
-                  //     <div className="form-lable">Ruling party:</div>
-                  //     <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
-                  //   </div>
-                  // </div>

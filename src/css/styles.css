@@ -69,7 +69,8 @@
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   position: relative;
-  box-sizing: content-box;
+  width: 100%
+  box-sizing: border-box;
   display: inline-block;
   padding: 15px 10px;
 }
