@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Special+Elite');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 
 .lynching-card{
-  font-family: sans-serif;
+  font-family: lato;
   background: white;
   /*background:#FBF3E6;*/
   box-shadow: 0px 4px 5px lightgrey;
@@ -13,6 +12,7 @@
   overflow: hidden;
   letter-spacing: 0px;
   box-sizing: initial !important;
+  color: #333;
 }
 
 .first-portion{
@@ -92,7 +92,7 @@
 }
 
 .form-content{
-  font-family: sans-serif;
+  font-family: lato;
   /*font-family: 'Special Elite', cursive;*/
   line-height: 24px;
 }
@@ -234,7 +234,7 @@
     font-size: 10px;
     padding: 0px;
     line-height: 15px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', lato;
     color: grey;
     font-weight: 100;
 }
@@ -375,8 +375,8 @@
 /*===========Render Mobile===================================*/
 
 .lynching-card-mobile{
-  font-family: 'Lato', sans-serif;
-  background:#FBF3E6;
+  font-family: 'Lato', lato;
+  background:white;
   box-shadow: 0px 4px 5px lightgrey;
   margin-left: auto;
   margin-right: auto;
@@ -433,7 +433,7 @@
   font-size: 10px;
   padding: 0px;
   line-height: 15px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', lato;
   color: grey;
   font-weight: 100;
 }
