@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
 
 .lynching-card{
-  font-family: 'Lato', sans-serif;
-  background:#FBF3E6;
+  font-family: sans-serif;
+  background: white;
+  /*background:#FBF3E6;*/
   box-shadow: 0px 4px 5px lightgrey;
   margin-left: auto;
   margin-right: auto;
@@ -91,9 +92,8 @@
 }
 
 .form-content{
-  font-family: 'Special Elite', cursive;
-  /*font-family: 'Architects Daughter', cursive;*/
-  /*font-family: monospace;*/
+  font-family: sans-serif;
+  /*font-family: 'Special Elite', cursive;*/
   line-height: 24px;
 }
 

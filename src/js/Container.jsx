@@ -245,10 +245,11 @@ export default class ReportViolenceCard extends React.Component {
             </div>: ''}
             {addendum.referral_link_1 !== '' && addendum.referral_link_2 !== '' && addendum.referral_link_3 !== '' ? <div className="referral-links">
               <div className="form-title">REFERRAL LINKS:</div>
-              {addendum.referral_link_1 !== '' ? <div className="single-link note-text">{addendum.referral_link_1}</div>: ''}
-              {addendum.referral_link_2 !== '' ? <div className="single-link note-text">{addendum.referral_link_2}</div>: ''}
-              {addendum.referral_link_3 !== '' ? <div className="single-link note-text">{addendum.referral_link_3}</div>: ''}
-            </div> : '' }
+              <div className="single-link note-text"><a href={copy_paste_from_article.url}  target="_blank">{copy_paste_from_article.headline}</a></div>
+              {addendum.referral_link_1 !== '' ? <div className="single-link note-text"><a href={addendum.referral_link_1} target="_blank">{addendum.referral_link_1}</a></div>: ''}
+              {addendum.referral_link_2 !== '' ? <div className="single-link note-text"><a href={addendum.referral_link_2} target="_blank">{addendum.referral_link_2}</a></div>: ''}
+              {addendum.referral_link_3 !== '' ? <div className="single-link note-text"><a href={addendum.referral_link_3} target="_blank">{addendum.referral_link_3}</a></div>: ''}
+            </div> : <div className="referral-links"><div className="form-title">REFERRAL LINKS:</div><div className="single-link note-text"><a href={copy_paste_from_article.url} target="_blank">{copy_paste_from_article.headline}</a></div></div> }
           </div>
         </div>
       )
