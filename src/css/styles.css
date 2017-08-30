@@ -454,6 +454,7 @@
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   left: 5px;
+  width: 100%;
 }
 
 .crime-rubber_stamp-mobile::after {
