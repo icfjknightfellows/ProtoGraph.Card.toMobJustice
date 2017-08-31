@@ -127,19 +127,23 @@ export default class ReportViolenceCard extends React.Component {
                     <table>
                       <tbody>
                         <tr className="form-area-tr">
-                          <td className="text-right">Judge to population:</td>
+                          <td className="text-left">Judge to population</td>
+                          <td>:</td>
                           <td className="text-left">{when_and_where_it_occur.judge_to_population_in_state}</td>
                         </tr>
                         <tr className="form-area-tr">
-                          <td className="text-right">Police to population:</td>
+                          <td className="text-left">Police to population</td>
+                          <td>:</td>
                           <td className="text-left">{police_ratio[0]} {police_ratio[1]}<br/>{police_ratio[2]}</td>
                         </tr>
                         <tr className="form-area-tr">
-                          <td className="text-right">Police mobility:</td>
+                          <td className="text-left">Police mobility</td>
+                          <td>:</td>
                           <td className="text-left">{when_and_where_it_occur.police_vehicles_per_km}</td>
                         </tr>
                         <tr className="form-area-tr">
-                          <td className="text-right">Village defence force:</td>
+                          <td className="text-left">Village defence force</td>
+                          <td>:</td>
                           <td className="text-left">{when_and_where_it_occur.does_state_have_village_defence_force}</td>
                         </tr>
                       </tbody>
