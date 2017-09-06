@@ -22,6 +22,8 @@ ProtoGraph.Card.toReportViolence.prototype.renderLaptop = function (data) {
   this.mode = 'laptop';
   ReactDOM.render(
     <ReportViolenceCard
+      viewCastId={this.options.viewCastId}
+      piwikCallback={this.options.piwikCallback}
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -38,6 +40,8 @@ ProtoGraph.Card.toReportViolence.prototype.renderMobile = function (data) {
   this.mode = 'mobile';
   ReactDOM.render(
     <ReportViolenceCard
+      viewCastId={this.options.viewCastId}
+      piwikCallback={this.options.piwikCallback}
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -55,6 +59,8 @@ ProtoGraph.Card.toReportViolence.prototype.renderScreenshot = function (data) {
   this.mode = 'screenshot';
   ReactDOM.render(
     <ReportViolenceCard
+      viewCastId={this.options.viewCastId}
+      piwikCallback={this.options.piwikCallback}
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}

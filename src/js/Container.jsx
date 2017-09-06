@@ -64,7 +64,7 @@ export default class ReportViolenceCard extends React.Component {
              });
 
              if (typeof this.props.piwikCallback === "function") {
-               this.props.piwikCallback('toExplain', 'loaded', this.props.viewCastId);
+               this.props.piwikCallback('toReportViolence', 'loaded', this.props.viewCastId);
              }
 
            }));
