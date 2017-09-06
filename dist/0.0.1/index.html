@@ -27,6 +27,7 @@
        siteId = '1';
        base_url = origin;
      }
+     base_url = "https://dnt71st2q6cqr.cloudfront.net"
 
      if(siteId){
        var _paq = _paq || [];
@@ -113,7 +114,7 @@
                  that.send("resize_frame", {height: height, width: width});
                  clearInterval(intervalId);
                }
-             }, 10)
+             }, 200)
 
            },
            change_mode: function(mode, readMoreEnabled){
