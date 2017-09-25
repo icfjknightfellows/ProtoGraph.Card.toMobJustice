@@ -189,7 +189,7 @@
               "type": "string",
               "title": "How are we classifying the incident?",
               "enum": [
-                "Cow protection related", "Disputes and altercations", "Witchcraft related", "Murder / Death", "Sexual harassment", "Child lifting", "Others"
+                "Cow protection related", "Disputes and altercations", "Petty issues", "Road rage", "Past, ongoing dispute", "Land, property related", "Objecting to something","Witchcraft related", "Murder / Death", "Sexual harassment", "Child lifting", "Others", "Protesting sexual harassment", "Suspicion of theft", "Choice in relationships", "Suspicion of kidnapping"
               ]
             },
             "was_incident_planned": {

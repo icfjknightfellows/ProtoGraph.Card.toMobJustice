@@ -214,9 +214,9 @@
   text-align: left;
   display: inline-block;
   left: 0px;
-  bottom: 0px;
+  bottom: -20px;
   position: absolute;
-
+  width: 340px;
   opacity: 0.8;
   -webkit-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -496,9 +496,9 @@ body{
 }
 
 #ProtoScreenshot {
-  width: 450px;
-  padding: 10px 15px;
-  height: 450px;
+  width: 300px;
+  padding: 5px;
+  height: 150px;
   overflow: hidden;
   margin-left: 0px;
   margin-right: 0px;
