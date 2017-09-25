@@ -403,7 +403,7 @@ export default class ReportViolenceCard extends React.Component {
       let copy_paste_from_article = data.copy_paste_from_article;
       return (
         <div id="ProtoScreenshot">
-          {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%', height:'100%'}}/> : <div style={{backgroundColor: 'white'}}></div>}
+          {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div style={{backgroundColor: 'white'}}></div>}
         </div>
       )
     }
