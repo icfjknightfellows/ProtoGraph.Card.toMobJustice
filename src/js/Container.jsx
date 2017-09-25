@@ -309,87 +309,101 @@ export default class ReportViolenceCard extends React.Component {
     }   
   }
 
+  // renderScreenshot() {
+  //   if (this.state.schemaJSON === undefined ){
+  //     return(<div>Loading</div>)
+  //   } else {
+  //     const data = this.state.dataJSON.data;
+  //     let copy_paste_from_article = data.copy_paste_from_article,
+  //       when_and_where_it_occur = data.when_and_where_it_occur,
+  //       the_incident = data.the_incident,
+  //       the_people_involved = data.the_people_involved,
+  //       hate_crime = data.hate_crime,
+  //       addendum = data.addendum,
+  //       police_ratio = when_and_where_it_occur.police_to_population_in_state.split(" ");
+  //     return(
+  //       <div id="ProtoScreenshot" className="lynching-card">
+  //         <div style={{position: 'relative'}}>
+  //           {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp">
+  //             <div className="inner-hate-crime-rubber_stamp">
+  //               <div className="state-name">Hate<br/>crime</div>
+  //             </div>
+  //           </div> : ''}
+  //           <div className="crime-rubber_stamp">
+  //             <div className="stamp-text">classification :</div>
+  //             <div className="state-name">{the_incident.classification}</div>
+  //           </div>
+  //         </div>
+  //           <div className="first-portion">
+  //             <div className="col-area col-8-area border-right">
+  //               <div className="form-title">INCIDENT INFORMATION:</div>
+  //               <div className="card-title">{the_people_involved.title}</div>
+  //               <div className="form-element event-fixed-height">
+  //                 <div className="form-lable">Event description:</div>
+  //                 <div className="form-content">{the_incident.describe_the_event}</div>
+  //               </div>
+  //               <div className="col-area col-7-area no-padding-col">
+  //                 <div className="form-element no-bottom-margin">
+  //                   <div className="form-lable">Was the incident planned?</div>
+  //                   <div className="form-content">{the_incident.was_incident_planned}</div>
+  //                 </div>
+  //               </div>
+  //               <div className="col-area col-2-area no-padding-col">
+  //                 <div className="form-element no-bottom-margin">
+  //                   <div className="form-lable"> Injured:</div>
+  //                   <div className="form-content">{the_incident.count_injured}</div>
+  //                 </div>
+  //               </div>
+  //               <div className="col-area col-2-area no-padding-col">
+  //                 <div className="form-element no-bottom-margin">
+  //                   <div className="form-lable"> Dead:</div>
+  //                   <div className="form-content">{the_incident.count_dead}</div>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //             <div className="col-area col-4-area">
+  //               <div className="image-area">
+  //                 <div className="form-lable">Photo:</div>
+  //                 {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
+  //               </div>
+  //               <div className="area-info">
+  //                 <div className="form-element">
+  //                   <div className="form-lable">Date:</div>
+  //                   <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
+  //                 </div>
+  //                 <div className="form-element">
+  //                   <div className="form-lable">District:</div>
+  //                   <div className="form-content">{when_and_where_it_occur.district}</div>
+  //                 </div>
+  //                 <div className="form-element">
+  //                   <div className="form-lable">Area:</div>
+  //                   <div className="form-content">{when_and_where_it_occur.area}</div>
+  //                 </div>
+  //                 <div className="form-element">
+  //                   <div className="form-lable">Area type:</div>
+  //                   <div className="form-content">{when_and_where_it_occur.area_classification}</div>
+  //                 </div>
+  //                 <div className="form-element">
+  //                   <div className="form-lable">Ruling party:</div>
+  //                   <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           </div>
+  //       </div>
+  //     )
+  //   }
+  // }
+
   renderScreenshot() {
     if (this.state.schemaJSON === undefined ){
       return(<div>Loading</div>)
     } else {
       const data = this.state.dataJSON.data;
-      let copy_paste_from_article = data.copy_paste_from_article,
-        when_and_where_it_occur = data.when_and_where_it_occur,
-        the_incident = data.the_incident,
-        the_people_involved = data.the_people_involved,
-        hate_crime = data.hate_crime,
-        addendum = data.addendum,
-        police_ratio = when_and_where_it_occur.police_to_population_in_state.split(" ");
-      return(
-        <div id="ProtoScreenshot" className="lynching-card">
-          <div style={{position: 'relative'}}>
-            {hate_crime.is_hate_crime === 'Yes' ? <div className="hate-crime-rubber_stamp">
-              <div className="inner-hate-crime-rubber_stamp">
-                <div className="state-name">Hate<br/>crime</div>
-              </div>
-            </div> : ''}
-            <div className="crime-rubber_stamp">
-              <div className="stamp-text">classification :</div>
-              <div className="state-name">{the_incident.classification}</div>
-            </div>
-          </div>
-            <div className="first-portion">
-              <div className="col-area col-8-area border-right">
-                <div className="form-title">INCIDENT INFORMATION:</div>
-                <div className="card-title">{the_people_involved.title}</div>
-                <div className="form-element event-fixed-height">
-                  <div className="form-lable">Event description:</div>
-                  <div className="form-content">{the_incident.describe_the_event}</div>
-                </div>
-                <div className="col-area col-7-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable">Was the incident planned?</div>
-                    <div className="form-content">{the_incident.was_incident_planned}</div>
-                  </div>
-                </div>
-                <div className="col-area col-2-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable"> Injured:</div>
-                    <div className="form-content">{the_incident.count_injured}</div>
-                  </div>
-                </div>
-                <div className="col-area col-2-area no-padding-col">
-                  <div className="form-element no-bottom-margin">
-                    <div className="form-lable"> Dead:</div>
-                    <div className="form-content">{the_incident.count_dead}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-area col-4-area">
-                <div className="image-area">
-                  <div className="form-lable">Photo:</div>
-                  {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div className="no-image-div protograph-margin"></div>}
-                </div>
-                <div className="area-info">
-                  <div className="form-element">
-                    <div className="form-lable">Date:</div>
-                    <div className="form-content">{when_and_where_it_occur.approximate_date_of_incident}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">District:</div>
-                    <div className="form-content">{when_and_where_it_occur.district}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area:</div>
-                    <div className="form-content">{when_and_where_it_occur.area}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Area type:</div>
-                    <div className="form-content">{when_and_where_it_occur.area_classification}</div>
-                  </div>
-                  <div className="form-element">
-                    <div className="form-lable">Ruling party:</div>
-                    <div className="form-content">{when_and_where_it_occur.party_whose_chief_minister_is_in_power}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      let copy_paste_from_article = data.copy_paste_from_article;
+      return (
+        <div id="ProtoScreenshot">
+          {copy_paste_from_article.image !== '' ? <img src={copy_paste_from_article.image} style={{width: '100%'}}/> : <div style={{backgroundColor: 'white'}}></div>}
         </div>
       )
     }
