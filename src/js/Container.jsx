@@ -76,7 +76,7 @@ export default class ReportViolenceCard extends React.Component {
 
   renderLaptop(){
     if (this.state.schemaJSON === undefined ){
-      return(<div>Loading</div>)
+      return(<div></div>)
     } else {
       let styles = {
         maxWidth: '640px',
@@ -97,13 +97,13 @@ export default class ReportViolenceCard extends React.Component {
         political = hate_crime.is_political_affiliation_hate_crime === 'Yes' ? 'Political affiliation, ' : '',
         sexual = hate_crime.is_sexual_orientation_and_gender_identity_hate_crime === 'Yes' ? 'Sexual orientation and gender identity, ' : '',
         disability = hate_crime.is_disability_hate_crime === 'Yes' ? 'Disability, ' : '',
-        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity, ' : '';
+        ethnicity = hate_crime.is_ethnicity_hate_crime === 'Yes' ? 'Ethnicity, ' : '',
+        title = the_people_involved.title.includes("...") ? the_people_involved.title.slice(0,the_people_involved.title.length -3) : the_people_involved.title;
 
       let hatecrimes=gender+caste+race+religion+political+sexual+disability+ethnicity;
       hatecrimes=hatecrimes.slice(0,-2);
       for (let i=0;i < hatecrimes.length ; i++) {
         if(hatecrimes[i]===","){
-          console.log(hatecrimes[i+2]); 
           hatecrimes=hatecrimes.replace(hatecrimes[i+2],hatecrimes[i+2].toLowerCase())
         }
       }
@@ -154,7 +154,7 @@ export default class ReportViolenceCard extends React.Component {
             <div className="first-portion">
                 <div className="col-area col-8-area border-right">
                   <div className="form-title">INCIDENT INFORMATION:</div>
-                  <div className="card-title">{the_people_involved.title}</div>
+                  <div className="card-title">{title}</div>
                   <div className="form-element event-fixed-height">
                     <div className="form-lable">Event description:</div>
                     <div className="form-content">{the_incident.describe_the_event}</div>
@@ -271,7 +271,8 @@ export default class ReportViolenceCard extends React.Component {
       const data = this.state.dataJSON.data;
       let when_and_where_it_occur = data.when_and_where_it_occur,
         the_incident = data.the_incident,
-        the_people_involved = data.the_people_involved;    
+        the_people_involved = data.the_people_involved,
+        title = the_people_involved.title.includes("...") ? the_people_involved.title.slice(0,the_people_involved.title.length -3) : the_people_involved.title;  
       return(
         <div id="protograph-div" >
           <div className="lynching-card-mobile" style={styles}>
@@ -284,7 +285,7 @@ export default class ReportViolenceCard extends React.Component {
             <div className="first-portion-mobile">
               <div className="col-area col-8-area-mobile border-right-mobile">
                 <div className="form-title">INCIDENT INFORMATION:</div>
-                <div className="card-title">{the_people_involved.title}</div>
+                <div className="card-title">{title}</div>
                 <div className="event-fixed-height-mobile">
                   <div className="form-content">{the_incident.describe_the_event}</div>
                 </div>
