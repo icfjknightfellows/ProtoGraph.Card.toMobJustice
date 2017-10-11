@@ -52,8 +52,10 @@
       var x = new ProtoGraph.Card.toReportViolence();
       function findGetParameter(parameterName) {
         var result = null,
-            tmp = [];
-        location.search
+            tmp = [],
+            search_url = decodeURIComponent(location.search);
+
+        search_url
             .substr(1)
             .split("&")
             .forEach(function (item) {
@@ -67,6 +69,9 @@
         schema_id = findGetParameter('schema_id'),
         mode = findGetParameter('mode');
 
+      if (siteId && view_cast_id) {
+        _paq.push(['trackEvent', 'toReportViolence', 'page_view', view_cast_id]);
+      }
 
       var ReceiverConsumer = Oasis.Consumer.extend({
         requests: {
