@@ -4,7 +4,6 @@
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Violence Card</title>
-    <link rel="stylesheet" type="text/css" href="https://dwln9tzsi7g07.cloudfront.net/Assets/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="card.min.css">
     <script type="text/javascript">
       var siteId, origin, base_url;
@@ -46,7 +45,7 @@
   </head>
   <body>
     <div id="report-violence-div">
-    <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
+    <script src="https://dwln9tzsi7g07.cloudfront.net/lib/protograph-core.min.js"></script>
     <script src = "card.min.js"></script>
     <script type="text/javascript">
       var x = new ProtoGraph.Card.toReportViolence();
@@ -63,7 +62,7 @@
               if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
             });
         return result;
-      }
+    }
 
       let view_cast_id = findGetParameter('view_cast_id'),
         schema_id = findGetParameter('schema_id'),
@@ -75,7 +74,7 @@
 
       var ReceiverConsumer = Oasis.Consumer.extend({
         requests: {
-          receive: function(mode) {
+          receive: function(mode, readMoreEnabled) {
             if(typeof (view_cast_id) !== 'undefined' && typeof(schema_id) !== 'undefined'){
               var that = this,
                 data_base_path = base_url + "/" + view_cast_id,
@@ -95,7 +94,7 @@
                   that.send('resize_frame', {width: '100%', height: h})
                 }
               })
-              renderWithMode(mode);
+              renderWithMode(mode, readMoreEnabled);
             }
           }
         },
@@ -103,7 +102,9 @@
           get_size: function(){
             var that = this;
             var intervalId = setInterval(function(){
-              clientRect = x.getData();
+              try {
+                clientRect = x.getData();
+              } catch (err) {}
               if(clientRect.height){
                 var height = clientRect.height,
                   width = clientRect.width;
@@ -114,8 +115,8 @@
             }, 10)
 
           },
-          change_mode: function(mode){
-            renderWithMode(mode);
+          change_mode: function(mode, readMoreEnabled){
+            renderWithMode(mode, readMoreEnabled);
             var that = this;
             setTimeout(function(){
               height = x.getData().height;
@@ -130,13 +131,13 @@
         }
       });
 
-      function renderWithMode(mode) {
+      function renderWithMode(mode, readMoreEnabled) {
         switch(mode){
           case "laptop":
             x.renderLaptop();
             break;
           case "mobile":
-            x.renderMobile();
+            x.renderMobile(readMoreEnabled);
             break;
         }
       }

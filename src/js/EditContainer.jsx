@@ -10,8 +10,7 @@ export default class EditReportViolenceCard extends React.Component {
     this.state = {
       step: 1,
       dataJSON: {
-        card_data: {},
-        configs: {}
+        data: {}
       },
       uiSchemaJSON: {},
       mode: "laptop",
@@ -19,7 +18,8 @@ export default class EditReportViolenceCard extends React.Component {
       errorOnFetchingData: undefined,
       schemaJSON: undefined,
       optionalConfigJSON: {},
-      optionalConfigSchemaJSON: undefined
+      optionalConfigSchemaJSON: undefined,
+      readMoreEnabled: true
     }
     this.toggleMode = this.toggleMode.bind(this);
   }
@@ -27,24 +27,22 @@ export default class EditReportViolenceCard extends React.Component {
   exportData() {
     let getDataObj = {
       step: this.state.step,
-      dataJSON: this.state.dataJSON.card_data,
+      dataJSON: this.state.dataJSON,
       schemaJSON: this.state.schemaJSON,
-      optionalConfigJSON: this.state.dataJSON.configs,
+      optionalConfigJSON: this.state.optionalConfigJSON,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.data.the_people_involved.title.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
   componentDidMount() {
-    // get sample json data based on type i.e string or object
     if (typeof this.props.dataURL === "string"){
       axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL),  axios.get(this.props.uiSchemaURL)])
         .then(axios.spread((card, schema, opt_config, opt_config_schema, uiSchema) => {
           this.setState({
             dataJSON: {
-              card_data: card.data,
-              configs: opt_config.data
+              data: card.data.data
             },
             schemaJSON: schema.data,
             optionalConfigJSON: opt_config.data,
@@ -60,12 +58,90 @@ export default class EditReportViolenceCard extends React.Component {
     }
   }
 
+  getSchemaJSON() {
+    switch(this.state.step){
+      case 1:
+        return this.state.schemaJSON.properties.data.properties.copy_paste_from_article;
+        break;
+      case 2:
+        return this.state.schemaJSON.properties.data.properties.when_and_where_it_occur;
+        break;
+      case 3:
+        return this.state.schemaJSON.properties.data.properties.the_incident;
+        break;
+      case 4:
+        return this.state.schemaJSON.properties.data.properties.the_people_involved;
+        break;
+      case 5:
+        return this.state.schemaJSON.properties.data.properties.hate_crime;
+        break;
+      case 6:
+        return this.state.schemaJSON.properties.data.properties.addendum;
+        break;
+      case 7:
+        return this.state.optionalConfigSchemaJSON;
+        break;
+    }
+  }
+
+  getFormData() {
+    switch(this.state.step) {
+      case 1:
+        return this.state.dataJSON.data.copy_paste_from_article;
+        break;
+      case 2:
+        return this.state.dataJSON.data.when_and_where_it_occur;
+        break;
+      case 3:
+        return this.state.dataJSON.data.the_incident;
+        break;
+      case 4:
+        return this.state.dataJSON.data.the_people_involved;
+        break;
+      case 5:
+        return this.state.dataJSON.data.hate_crime;
+        break;
+      case 6:
+        return this.state.dataJSON.data.addendum;
+        break;
+      case 7:
+        return this.state.optionalConfigJSON;
+        break;
+    }
+  }
+
+  getUISchemaJSON() {
+    switch(this.state.step) {
+      case 1:
+        return {}
+        break;
+      case 2:
+        return this.state.uiSchemaJSON.data.when_and_where_it_occur;
+        break;
+      case 3:
+        return this.state.uiSchemaJSON.data.the_incident;
+        break;
+      case 4:
+        return this.state.uiSchemaJSON.data.the_people_involved;
+        break;
+      case 5:
+        return this.state.uiSchemaJSON.data.hate_crime;
+        break;
+      case 6:
+        return this.state.uiSchemaJSON.data.addendum;
+        break;
+      default:
+        return {};
+        break;
+    }
+  }
+
   onChangeHandler({formData}) {
     switch (this.state.step) {
       case 1:
         this.setState((prevStep, prop) => {
           let dataJSON = prevStep.dataJSON;
-          dataJSON.card_data = formData
+          dataJSON.data.copy_paste_from_article = formData
           return {
             dataJSON: dataJSON
           }
@@ -74,12 +150,54 @@ export default class EditReportViolenceCard extends React.Component {
       case 2:
         this.setState((prevStep, prop) => {
           let dataJSON = prevStep.dataJSON;
-          dataJSON.configs = formData
+          dataJSON.data.when_and_where_it_occur = formData
           return {
             dataJSON: dataJSON
-            // optionalConfigJSON: dataJSON
           }
         })
+        break;
+      case 3:
+        this.setState((prevStep, prop) => {
+          let dataJSON = prevStep.dataJSON;
+          dataJSON.data.the_incident = formData
+          return {
+            dataJSON: dataJSON
+          }
+        })
+        break;
+      case 4:
+        this.setState((prevStep, prop) => {
+          let dataJSON = prevStep.dataJSON;
+          dataJSON.data.the_people_involved = formData
+          return {
+            dataJSON: dataJSON
+          }
+        })
+        break;
+      case 5:
+        this.setState((prevStep, prop) => {
+          let dataJSON = prevStep.dataJSON;
+          dataJSON.data.hate_crime = formData
+          return {
+            dataJSON: dataJSON
+          }
+        })
+        break;
+      case 6:
+        this.setState((prevStep, prop) => {
+          let dataJSON = prevStep.dataJSON;
+          dataJSON.data.addendum = formData
+          return {
+            dataJSON: dataJSON
+          }
+        })
+        break;
+      case 7:
+        this.setState((prevStep, prop) => {
+          return {
+            optionalConfigJSON: formData
+          }
+        });
         break;
     }
   }
@@ -87,11 +205,18 @@ export default class EditReportViolenceCard extends React.Component {
   onSubmitHandler({formData}) {
     switch(this.state.step) {
       case 1:
-        this.setState({
-          step: 2
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        this.setState((prevStep, prop) => {
+          return {
+            step: prevStep.step + 1
+          }
         });
         break;
-      case 2:
+      case 7:
         if (typeof this.props.onPublishCallback === "function") {
           this.setState({ publishing: true });
           let publishCallback = this.props.onPublishCallback();
@@ -103,40 +228,18 @@ export default class EditReportViolenceCard extends React.Component {
     }
   }
 
-  renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.card_data.data.title}</h3><p>${this.state.dataJSON.card_data.data.state}</p><p>${this.state.dataJSON.card_data.data.area}</p></blockquote>`
-    return seo_blockquote;
-  }
-
-  renderSchemaJSON() {
-    switch(this.state.step){
-      case 1:
-        return this.state.schemaJSON;
-        break;
-      case 2:
-        return this.state.optionalConfigSchemaJSON;
-        break;
-    }
-  }
-
-  renderFormData() {
-    switch(this.state.step) {
-      case 1:
-        return this.state.dataJSON.card_data;
-        break;
-      case 2:
-        return this.state.dataJSON.configs;
-        break;
-    }
-  }
-
   showLinkText() {
     switch(this.state.step) {
       case 1:
         return '';
         break;
       case 2:
-        return '< Back to building the card';
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+        return '< Back';
         break;
     }
   }
@@ -144,9 +247,14 @@ export default class EditReportViolenceCard extends React.Component {
   showButtonText() {
     switch(this.state.step) {
       case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
         return 'Next';
         break;
-      case 2:
+      case 7:
         return 'Publish';
         break;
     }
@@ -176,6 +284,11 @@ export default class EditReportViolenceCard extends React.Component {
     })
   }
 
+  renderSEO() {
+    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.data.copy_paste_from_article.headline}</h3><p>${this.state.dataJSON.data.when_and_where_it_occur.approximate_date_of_incident}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.area}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.district}</p><p>${this.state.dataJSON.data.when_and_where_it_occur.state}</p><p>${this.state.dataJSON.data.the_incident.describe_the_event}</p><p>${this.state.dataJSON.data.the_people_involved.title}</p><p>${this.state.dataJSON.data.the_incident.classification}</p><p>${this.state.dataJSON.data.the_people_involved.victim_names}</p><p>${this.state.dataJSON.data.the_people_involved.victim_social_classification}</p><p>${this.state.dataJSON.data.the_people_involved.accused_names}</p><p>${this.state.dataJSON.data.the_people_involved.accused_social_classification}</p></blockquote>`
+    return seo_blockquote;
+  }
+
   render() {
     if (this.state.schemaJSON === undefined) {
       return(
@@ -202,14 +315,15 @@ export default class EditReportViolenceCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    ToReportViolence
+                    toReportViolence
                   </div>
                 </div>
-                <JSONSchemaForm schema={this.renderSchemaJSON()}
+                <JSONSchemaForm
+                  schema= {this.getSchemaJSON()}
                   onSubmit={((e) => this.onSubmitHandler(e))}
                   onChange={((e) => this.onChangeHandler(e))}
-                  formData={this.renderFormData()}
-                  uiSchema={this.state.uiSchemaJSON}
+                  formData = {this.getFormData()}
+                  uiSchema={this.getUISchemaJSON()}
                   >
                   <a id="protograph-prev-link" className={`${this.state.publishing ? 'protograph-disable' : ''}`} onClick={((e) => this.onPrevHandler(e))}>{this.showLinkText()} </a>
                   <button type="submit" className={`${this.state.publishing ? 'ui primary loading disabled button' : ''} default-button protograph-primary-button`}>{this.showButtonText()}</button>
@@ -233,6 +347,7 @@ export default class EditReportViolenceCard extends React.Component {
                   </div>
                 </div>
                 <ReportViolenceCard
+                  readMoreEnabled={this.state.readMoreEnabled}
                   mode={this.state.mode}
                   dataJSON={this.state.dataJSON}
                   schemaJSON={this.state.schemaJSON}
